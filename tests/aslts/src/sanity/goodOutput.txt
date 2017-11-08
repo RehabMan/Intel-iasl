@@ -1,0 +1,2544 @@
+
+
+ACPI Warning: Table header for [MATS] has invalid ASCII character(s) (20170929/acfileio-614)
+
+ACPI: RSDP  000024 (v02 Intel )
+ACPI: XSDT  0000A4 (v00 Intel  AcpiExec 00001001 INTL 20170929)
+ACPI: FACP  00010C (v05 ALASKA A M I    01072009 AMI  00010013)
+ACPI: DSDT  00C518 (v02 ALASKA A M I    00000088 INTL 20091112)
+ACPI: FACS  000040
+ACPI: APIC  000092 (v03 ALASKA A M I    01072009 AMI  00010013)
+ACPI: DMAR  0000B8 (v01 INTEL  HSW      00000001 INTL 00000001)
+ACPI: FACS  000040
+ACPI: FPDT  000044 (v01 ALASKA A M I    01072009 AMI  00010013)
+ACPI: HPET  000038 (v01 ALASKA A M I    01072009 AMI. 00000005)
+ACPI: MATS  000034 (v02 ALASKA A M I    00000002 w?x2 00000000)
+ACPI: MCFG  00003C (v01 ALASKA A M I    01072009 MSFT 00000097)
+ACPI: SSDT  000539 (v01 PmRef  Cpu0Ist  00003000 INTL 20051117)
+ACPI: SSDT  000AD8 (v01 PmRef  CpuPm    00003000 INTL 20051117)
+ACPI: SSDT  00036D (v01 SataRe SataTabl 00001000 INTL 20091112)
+ACPI: SSDT  003299 (v01 SaSsdt SaSsdt   00003000 INTL 20091112)
+ACPI: SSDT  0003D3 (v01 PmRef  Cpu0Cst  00003001 INTL 20051117)
+ACPI: SSDT  0005AA (v01 PmRef  ApIst    00003000 INTL 20051117)
+ACPI: SSDT  000119 (v01 PmRef  ApCst    00003000 INTL 20051117)
+Initializing General Purpose Events (GPEs):
+    Initialized GPE 00 to 3F [_GPE] 8 regs on interrupt  (SCI)
+
+Initializing Namespace objects:
+Table [DSDT: A M I   ] (id 01) - 1878 Objects with 134 Devices,  43 Regions,  444 Methods (270/174/37 Serial/Non/Cvt)
+ACPI: Executed 1 blocks of module-level executable AML code
+Table [SSDT: Cpu0Ist ] (id 02) -    7 Objects with   0 Devices,   0 Regions,    2 Methods (0/2/0 Serial/Non/Cvt)
+Table [SSDT: CpuPm   ] (id 03) -   82 Objects with   0 Devices,   1 Regions,   28 Methods (12/16/12 Serial/Non/Cvt)
+Table [SSDT: SataTabl] (id 04) -   35 Objects with   6 Devices,   0 Regions,   10 Methods (1/9/0 Serial/Non/Cvt)
+Table [SSDT: SaSsdt  ] (id 05) -  396 Objects with  23 Devices,   8 Regions,  111 Methods (29/82/1 Serial/Non/Cvt)
+Table [SSDT: Cpu0Cst ] (id 06) -   14 Objects with   0 Devices,   0 Regions,    1 Methods (1/0/0 Serial/Non/Cvt)
+Table [SSDT: ApIst   ] (id 07) -   49 Objects with   0 Devices,   0 Regions,   28 Methods (0/28/0 Serial/Non/Cvt)
+Table [SSDT: ApCst   ] (id 08) -    7 Objects with   0 Devices,   0 Regions,    7 Methods (0/7/0 Serial/Non/Cvt)
+ACPI: 8 ACPI AML tables successfully acquired and loaded
+
+Completing Region/Field/Buffer/Package initialization:
+    Initialized 51/52 Regions 33/33 Fields 38/38 Buffers 85/87 Packages (2479 nodes)
+Initializing Device/Processor/Thermal objects and executing _INI/_STA methods:
+ACPI Exec: Exception AE_AML_LOOP_TIMEOUT during execution
+ACPI Exec: Evaluating Method or Node: [OSUP]
+
+ACPI Exec: AML Opcode [While], Method Offset ~00053
+Failed at AML Offset 0002D, Opcode 00A2: While (
+
+Initialized Local Variables for Method [OSUP]:
+    Local0:  <Obj>             Integer 00000000E0000548
+    Local1:  <Obj>             Integer 0000000000000050
+    Local2:  <Obj>             Integer 0000000000000000
+
+Initialized Arguments for Method [OSUP]:  (1 arguments defined for method invocation)
+    Arg0:    <Obj>             Integer 00000000E0000000
+
+ACPI Error: Method parse/execution failed \_GPE.OSUP, AE_AML_LOOP_TIMEOUT (20170929/psparse-677)
+ACPI Error: Method parse/execution failed \_SB.PCI0.RP01._INI, AE_AML_LOOP_TIMEOUT (20170929/psparse-677)
+ACPI Error: AE_AML_LOOP_TIMEOUT, during \_SB.PCI0.RP01._INI execution (20170929/nsinit-821)
+    Executed 5 _INI methods requiring 2 _STA executions (examined 175 objects)
+Unexpected AE_BAD_PARAMETER from AcpiInstallGpeHandler (aeexec-936)
+Unexpected AE_BAD_PARAMETER from AcpiEnableGpe (aeexec-939)
+Unexpected AE_BAD_PARAMETER from AcpiDisableGpe (aeexec-942)
+ACPI Namespace (from \___ () subtree):
+ 0  _GPE Scope         00 
+ 1    _L1D Method        01 Args 0 Len 0020 Aml 
+ 1    _L09 Method        01 Args 0 Len 0206 Aml 
+ 1    _L0D Method        01 Args 0 Len 01AA Aml 
+ 1    _L01 Method        01 Args 0 Len 0626 Aml 
+ 1    _L02 Method        01 Args 0 Len 0066 Aml 
+ 1    _L06 Method        01 Args 0 Len 002E Aml 
+ 1    _L07 Method        01 Args 0 Len 0016 Aml 
+ 1    OL1E Method        01 Args 0 Len 00FA Aml 
+ 1    PEMA Integer       01 = 00000000E0000000
+ 1    TBRP Integer       01 = 0000000000000001
+ 1    OSUP Method        01 Args 1 Len 005D Aml 
+ 1    MMRP Method        01 Args 0 Len 0023 Aml 
+ 1    MMTB Method        01 Args 0 Len 003A Aml 
+ 1    TBAC Method        01 Args 0 Len 0094 Aml 
+ 1    TBFF Method        01 Args 0 Len 0036 Aml 
+ 1    _E1E Method        01 Args 0 Len 00A7 Aml 
+ 0  _PR_ Scope         00 
+ 1    CPU0 Processor     01 ID 01 Len 06 Addr 0000000000001810
+ 2      _PPC Integer       02 = 0000000000000000
+ 2      _PCT Method        02 Args 0 Len 0059 Aml 
+ 2      _PSS Package       02 Elements 10
+ 2      PSDF Integer       02 = 0000000000000000
+ 2      _PSD Method        02 Args 0 Len 0044 Aml 
+ 2      HPSD Package       02 Elements 01
+ 2      SPSD Package       02 Elements 01
+ 2      HI0_ Integer       03 = 0000000000000000
+ 2      HC0_ Integer       03 = 0000000000000000
+ 2      _PDC Method        03 Args 1 Len 0036 Aml 
+ 2      _OSC Method        03 Args 4 Len 0011 Aml 
+ 2      CPDC Method        03 Args 1 Len 0061 Aml 
+ 2      COSC Method        03 Args 4 Len 00B6 Aml 
+ 2      GCAP Method        03 Args 1 Len 00A7 Aml 
+ 2      C1TM Package       06 Elements 04
+ 2      C3TM Package       06 Elements 04
+ 2      C6TM Package       06 Elements 04
+ 2      C7TM Package       06 Elements 04
+ 2      CDTM Package       06 Elements 04
+ 2      MWES Buffer        06 Len 11 = 82 0C 00 7F 01 02 01 00 00 00 00 00
+ 2      AC2V Integer       06 = 0000000000000000
+ 2      AC3V Integer       06 = 0000000000000000
+ 2      C3ST Package       06 Elements 04
+ 2      C2ST Package       06 Elements 03
+ 2      C1ST Package       06 Elements 02
+ 2      CSTF Integer       06 = 0000000000000000
+ 2      GEAR Integer       06 = 0000000000000000
+ 2      _CST Method        06 Args 0 Len 028E Aml 
+ 1    CPU1 Processor     01 ID 02 Len 06 Addr 0000000000001810
+ 2      HI1_ Integer       03 = 0000000000000000
+ 2      HC1_ Integer       03 = 0000000000000000
+ 2      _PDC Method        03 Args 1 Len 0019 Aml 
+ 2      _OSC Method        03 Args 4 Len 001C Aml 
+ 2      GCAP Method        03 Args 1 Len 0077 Aml 
+ 2      APCT Method        03 Args 0 Len 0043 Aml 
+ 2      APPT Method        03 Args 0 Len 0042 Aml 
+ 2      _PPC Method        07 Args 0 Len 0010 Aml 
+ 2      _PCT Method        07 Args 0 Len 0010 Aml 
+ 2      _PSS Method        07 Args 0 Len 0010 Aml 
+ 2      PSDF Integer       07 = 0000000000000000
+ 2      _PSD Method        07 Args 0 Len 0044 Aml 
+ 2      HPSD Package       07 Elements 01
+ 2      SPSD Package       07 Elements 01
+ 2      _CST Method        08 Args 0 Len 0010 Aml 
+ 1    CPU2 Processor     01 ID 03 Len 06 Addr 0000000000001810
+ 2      _PDC Method        03 Args 1 Len 0019 Aml 
+ 2      _OSC Method        03 Args 4 Len 001C Aml 
+ 2      GCAP Method        03 Args 1 Len 008D Aml 
+ 2      _PPC Method        07 Args 0 Len 0010 Aml 
+ 2      _PCT Method        07 Args 0 Len 0010 Aml 
+ 2      _PSS Method        07 Args 0 Len 0010 Aml 
+ 2      PSDF Integer       07 = 0000000000000000
+ 2      _PSD Method        07 Args 0 Len 0044 Aml 
+ 2      HPSD Package       07 Elements 01
+ 2      SPSD Package       07 Elements 01
+ 2      _CST Method        08 Args 0 Len 0010 Aml 
+ 1    CPU3 Processor     01 ID 04 Len 06 Addr 0000000000001810
+ 2      _PDC Method        03 Args 1 Len 0019 Aml 
+ 2      _OSC Method        03 Args 4 Len 001C Aml 
+ 2      GCAP Method        03 Args 1 Len 008D Aml 
+ 2      _PPC Method        07 Args 0 Len 0010 Aml 
+ 2      _PCT Method        07 Args 0 Len 0010 Aml 
+ 2      _PSS Method        07 Args 0 Len 0010 Aml 
+ 2      PSDF Integer       07 = 0000000000000000
+ 2      _PSD Method        07 Args 0 Len 0044 Aml 
+ 2      HPSD Package       07 Elements 01
+ 2      SPSD Package       07 Elements 01
+ 2      _CST Method        08 Args 0 Len 0010 Aml 
+ 1    CPU4 Processor     01 ID 05 Len 06 Addr 0000000000001810
+ 2      _PDC Method        03 Args 1 Len 0019 Aml 
+ 2      _OSC Method        03 Args 4 Len 001C Aml 
+ 2      GCAP Method        03 Args 1 Len 008D Aml 
+ 2      _PPC Method        07 Args 0 Len 0010 Aml 
+ 2      _PCT Method        07 Args 0 Len 0010 Aml 
+ 2      _PSS Method        07 Args 0 Len 0010 Aml 
+ 2      PSDF Integer       07 = 0000000000000000
+ 2      _PSD Method        07 Args 0 Len 0044 Aml 
+ 2      HPSD Package       07 Elements 01
+ 2      SPSD Package       07 Elements 01
+ 2      _CST Method        08 Args 0 Len 0010 Aml 
+ 1    CPU5 Processor     01 ID 06 Len 06 Addr 0000000000001810
+ 2      _PDC Method        03 Args 1 Len 0019 Aml 
+ 2      _OSC Method        03 Args 4 Len 001C Aml 
+ 2      GCAP Method        03 Args 1 Len 008D Aml 
+ 2      _PPC Method        07 Args 0 Len 0010 Aml 
+ 2      _PCT Method        07 Args 0 Len 0010 Aml 
+ 2      _PSS Method        07 Args 0 Len 0010 Aml 
+ 2      PSDF Integer       07 = 0000000000000000
+ 2      _PSD Method        07 Args 0 Len 0044 Aml 
+ 2      HPSD Package       07 Elements 01
+ 2      SPSD Package       07 Elements 01
+ 2      _CST Method        08 Args 0 Len 0010 Aml 
+ 1    CPU6 Processor     01 ID 07 Len 06 Addr 0000000000001810
+ 2      _PDC Method        03 Args 1 Len 0019 Aml 
+ 2      _OSC Method        03 Args 4 Len 001C Aml 
+ 2      GCAP Method        03 Args 1 Len 008D Aml 
+ 2      _PPC Method        07 Args 0 Len 0010 Aml 
+ 2      _PCT Method        07 Args 0 Len 0010 Aml 
+ 2      _PSS Method        07 Args 0 Len 0010 Aml 
+ 2      PSDF Integer       07 = 0000000000000000
+ 2      _PSD Method        07 Args 0 Len 0044 Aml 
+ 2      HPSD Package       07 Elements 01
+ 2      SPSD Package       07 Elements 01
+ 2      _CST Method        08 Args 0 Len 0010 Aml 
+ 1    CPU7 Processor     01 ID 08 Len 06 Addr 0000000000001810
+ 2      _PDC Method        03 Args 1 Len 0019 Aml 
+ 2      _OSC Method        03 Args 4 Len 001C Aml 
+ 2      GCAP Method        03 Args 1 Len 008D Aml 
+ 2      _PPC Method        07 Args 0 Len 0010 Aml 
+ 2      _PCT Method        07 Args 0 Len 0010 Aml 
+ 2      _PSS Method        07 Args 0 Len 0010 Aml 
+ 2      PSDF Integer       07 = 0000000000000000
+ 2      _PSD Method        07 Args 0 Len 0044 Aml 
+ 2      HPSD Package       07 Elements 01
+ 2      SPSD Package       07 Elements 01
+ 2      _CST Method        08 Args 0 Len 0010 Aml 
+ 1    PPMT Region        03 [SystemMemory] Addr 000000006A1F8E98 Len 003A
+ 1    PGRV RegionField   03 Rgn [PPMT] Off 000 Len 08 Acc 01
+ 1    CFGD RegionField   03 Rgn [PPMT] Off 008 Len 20 Acc 01
+ 1    ACRT RegionField   03 Rgn [PPMT] Off 030 Len 08 Acc 01
+ 1    APSV RegionField   03 Rgn [PPMT] Off 038 Len 08 Acc 01
+ 1    AAC0 RegionField   03 Rgn [PPMT] Off 040 Len 08 Acc 01
+ 1    CPID RegionField   03 Rgn [PPMT] Off 048 Len 20 Acc 01
+ 1    CPPC RegionField   03 Rgn [PPMT] Off 068 Len 08 Acc 01
+ 1    CCTP RegionField   03 Rgn [PPMT] Off 070 Len 08 Acc 01
+ 1    CLVL RegionField   03 Rgn [PPMT] Off 078 Len 08 Acc 01
+ 1    CBMI RegionField   03 Rgn [PPMT] Off 080 Len 08 Acc 01
+ 1    PL10 RegionField   03 Rgn [PPMT] Off 088 Len 10 Acc 01
+ 1    PL20 RegionField   03 Rgn [PPMT] Off 098 Len 10 Acc 01
+ 1    PLW0 RegionField   03 Rgn [PPMT] Off 0A8 Len 08 Acc 01
+ 1    CTC0 RegionField   03 Rgn [PPMT] Off 0B0 Len 08 Acc 01
+ 1    TAR0 RegionField   03 Rgn [PPMT] Off 0B8 Len 08 Acc 01
+ 1    PPC0 RegionField   03 Rgn [PPMT] Off 0C0 Len 08 Acc 01
+ 1    PL11 RegionField   03 Rgn [PPMT] Off 0C8 Len 10 Acc 01
+ 1    PL21 RegionField   03 Rgn [PPMT] Off 0D8 Len 10 Acc 01
+ 1    PLW1 RegionField   03 Rgn [PPMT] Off 0E8 Len 08 Acc 01
+ 1    CTC1 RegionField   03 Rgn [PPMT] Off 0F0 Len 08 Acc 01
+ 1    TAR1 RegionField   03 Rgn [PPMT] Off 0F8 Len 08 Acc 01
+ 1    PPC1 RegionField   03 Rgn [PPMT] Off 100 Len 08 Acc 01
+ 1    PL12 RegionField   03 Rgn [PPMT] Off 108 Len 10 Acc 01
+ 1    PL22 RegionField   03 Rgn [PPMT] Off 118 Len 10 Acc 01
+ 1    PLW2 RegionField   03 Rgn [PPMT] Off 128 Len 08 Acc 01
+ 1    CTC2 RegionField   03 Rgn [PPMT] Off 130 Len 08 Acc 01
+ 1    TAR2 RegionField   03 Rgn [PPMT] Off 138 Len 08 Acc 01
+ 1    PPC2 RegionField   03 Rgn [PPMT] Off 140 Len 08 Acc 01
+ 1    C3MW RegionField   03 Rgn [PPMT] Off 148 Len 08 Acc 01
+ 1    C6MW RegionField   03 Rgn [PPMT] Off 150 Len 08 Acc 01
+ 1    C7MW RegionField   03 Rgn [PPMT] Off 158 Len 08 Acc 01
+ 1    CDMW RegionField   03 Rgn [PPMT] Off 160 Len 08 Acc 01
+ 1    C3LT RegionField   03 Rgn [PPMT] Off 168 Len 10 Acc 01
+ 1    C6LT RegionField   03 Rgn [PPMT] Off 178 Len 10 Acc 01
+ 1    C7LT RegionField   03 Rgn [PPMT] Off 188 Len 10 Acc 01
+ 1    CDLT RegionField   03 Rgn [PPMT] Off 198 Len 10 Acc 01
+ 1    CDLV RegionField   03 Rgn [PPMT] Off 1A8 Len 10 Acc 01
+ 1    CDPW RegionField   03 Rgn [PPMT] Off 1B8 Len 10 Acc 01
+ 1    MPMF RegionField   03 Rgn [PPMT] Off 1C8 Len 08 Acc 01
+ 0  _SB_ Device        00 Notify Object: 
+ 1    PR00 Package       01 Elements 1B
+ 1    AR00 Package       01 Elements 1B
+ 1    PR04 Package       01 Elements 04
+ 1    AR04 Package       01 Elements 04
+ 1    PR05 Package       01 Elements 04
+ 1    AR05 Package       01 Elements 04
+ 1    PR06 Package       01 Elements 04
+ 1    AR06 Package       01 Elements 04
+ 1    PR07 Package       01 Elements 04
+ 1    AR07 Package       01 Elements 04
+ 1    PR08 Package       01 Elements 04
+ 1    AR08 Package       01 Elements 04
+ 1    PR09 Package       01 Elements 04
+ 1    AR09 Package       01 Elements 04
+ 1    PR0E Package       01 Elements 04
+ 1    AR0E Package       01 Elements 04
+ 1    PR0F Package       01 Elements 04
+ 1    AR0F Package       01 Elements 04
+ 1    PR02 Package       01 Elements 04
+ 1    AR02 Package       01 Elements 04
+ 1    PR0A Package       01 Elements 04
+ 1    AR0A Package       01 Elements 04
+ 1    PR0B Package       01 Elements 04
+ 1    AR0B Package       01 Elements 04
+ 1    PRSA Buffer        01 Len 06 = 23 78 DC 18 79 00
+ 1    PRSB Alias         01 Target PRSA ()
+ 1    PRSC Alias         01 Target PRSA ()
+ 1    PRSD Alias         01 Target PRSA ()
+ 1    PRSE Alias         01 Target PRSA ()
+ 1    PRSF Alias         01 Target PRSA ()
+ 1    PRSG Alias         01 Target PRSA ()
+ 1    PRSH Alias         01 Target PRSA ()
+ 1    PCI0 Device        01 Notify Object: 
+ 2      _HID Integer       01 = 00000000080AD041
+ 2      _CID Integer       01 = 00000000030AD041
+ 2      _ADR Integer       01 = 0000000000000000
+ 2      _BBN Method        01 Args 0 Len 0005 Aml 
+ 2      _UID Integer       01 = 0000000000000000
+ 2      _PRT Method        01 Args 0 Len 0010 Aml 
+ 2      HBUS Region        01 [PCI_Config] Addr 0000000000000000 Len 0100
+ 2      EPEN RegionField   01 Rgn [HBUS] Off 200 Len 01 Acc 04
+ 2      EPBR RegionField   01 Rgn [HBUS] Off 20C Len 14 Acc 04
+ 2      MHEN RegionField   01 Rgn [HBUS] Off 240 Len 01 Acc 04
+ 2      MHBR RegionField   01 Rgn [HBUS] Off 24F Len 11 Acc 04
+ 2      GCLK RegionField   01 Rgn [HBUS] Off 280 Len 01 Acc 04
+ 2      D0EN RegionField   01 Rgn [HBUS] Off 2A0 Len 01 Acc 04
+ 2      D1F2 RegionField   01 Rgn [HBUS] Off 2A1 Len 01 Acc 04
+ 2      D1F1 RegionField   01 Rgn [HBUS] Off 2A2 Len 01 Acc 04
+ 2      D1F0 RegionField   01 Rgn [HBUS] Off 2A3 Len 01 Acc 04
+ 2      PXEN RegionField   01 Rgn [HBUS] Off 300 Len 01 Acc 04
+ 2      PXSZ RegionField   01 Rgn [HBUS] Off 301 Len 02 Acc 04
+ 2      PXBR RegionField   01 Rgn [HBUS] Off 31A Len 06 Acc 04
+ 2      DIEN RegionField   01 Rgn [HBUS] Off 340 Len 01 Acc 04
+ 2      DIBR RegionField   01 Rgn [HBUS] Off 34C Len 14 Acc 04
+ 2      MEBR RegionField   01 Rgn [HBUS] Off 394 Len 0C Acc 04
+ 2      PM0H RegionField   01 Rgn [HBUS] Off 404 Len 02 Acc 04
+ 2      PM1L RegionField   01 Rgn [HBUS] Off 408 Len 02 Acc 04
+ 2      PM1H RegionField   01 Rgn [HBUS] Off 40C Len 02 Acc 04
+ 2      PM2L RegionField   01 Rgn [HBUS] Off 410 Len 02 Acc 04
+ 2      PM2H RegionField   01 Rgn [HBUS] Off 414 Len 02 Acc 04
+ 2      PM3L RegionField   01 Rgn [HBUS] Off 418 Len 02 Acc 04
+ 2      PM3H RegionField   01 Rgn [HBUS] Off 41C Len 02 Acc 04
+ 2      PM4L RegionField   01 Rgn [HBUS] Off 420 Len 02 Acc 04
+ 2      PM4H RegionField   01 Rgn [HBUS] Off 424 Len 02 Acc 04
+ 2      PM5L RegionField   01 Rgn [HBUS] Off 428 Len 02 Acc 04
+ 2      PM5H RegionField   01 Rgn [HBUS] Off 42C Len 02 Acc 04
+ 2      PM6L RegionField   01 Rgn [HBUS] Off 430 Len 02 Acc 04
+ 2      PM6H RegionField   01 Rgn [HBUS] Off 434 Len 02 Acc 04
+ 2      TUUD RegionField   01 Rgn [HBUS] Off 554 Len 13 Acc 04
+ 2      TLUD RegionField   01 Rgn [HBUS] Off 5F4 Len 0C Acc 04
+ 2      HTSE RegionField   01 Rgn [HBUS] Off 647 Len 01 Acc 04
+ 2      MCHT Region        01 [SystemMemory] Addr 00000000FED10000 Len 1100
+ 2      BUF0 Buffer        01 Len 1D4 = 88 0D 00 02 0C 00 00 00 00 00 FF 00
+ 2      _CRS Method        01 Args 0 Len 02FF Aml 
+ 2      GUID Buffer        01 Len 10 = 5B 4D DB 33 F7 1F 1C 40 96 57 74 41
+ 2      SUPP Integer       01 = 0000000000000000
+ 2      CTRL Integer       01 = 0000000000000000
+ 2      XCNT Integer       01 = 0000000000000000
+ 2      _OSC Method        01 Args 4 Len 010A Aml 
+ 2      AR00 Method        01 Args 0 Len 0007 Aml 
+ 2      PR00 Method        01 Args 0 Len 0007 Aml 
+ 2      AR02 Method        01 Args 0 Len 0007 Aml 
+ 2      PR02 Method        01 Args 0 Len 0007 Aml 
+ 2      AR04 Method        01 Args 0 Len 0007 Aml 
+ 2      PR04 Method        01 Args 0 Len 0007 Aml 
+ 2      AR05 Method        01 Args 0 Len 0007 Aml 
+ 2      PR05 Method        01 Args 0 Len 0007 Aml 
+ 2      AR06 Method        01 Args 0 Len 0007 Aml 
+ 2      PR06 Method        01 Args 0 Len 0007 Aml 
+ 2      AR07 Method        01 Args 0 Len 0007 Aml 
+ 2      PR07 Method        01 Args 0 Len 0007 Aml 
+ 2      AR08 Method        01 Args 0 Len 0007 Aml 
+ 2      PR08 Method        01 Args 0 Len 0007 Aml 
+ 2      AR09 Method        01 Args 0 Len 0007 Aml 
+ 2      PR09 Method        01 Args 0 Len 0007 Aml 
+ 2      AR0E Method        01 Args 0 Len 0007 Aml 
+ 2      PR0E Method        01 Args 0 Len 0007 Aml 
+ 2      AR0F Method        01 Args 0 Len 0007 Aml 
+ 2      PR0F Method        01 Args 0 Len 0007 Aml 
+ 2      AR0A Method        01 Args 0 Len 0007 Aml 
+ 2      PR0A Method        01 Args 0 Len 0007 Aml 
+ 2      AR0B Method        01 Args 0 Len 0007 Aml 
+ 2      PR0B Method        01 Args 0 Len 0007 Aml 
+ 2      TPMX Device        01 
+ 3        _HID Integer       01 = 00000000010CD041
+ 3        _UID Integer       01 = 0000000000000001
+ 3        CRS_ Buffer        01 Len 0E = 86 09 00 00 00 00 D4 FE 00 50 00 00
+ 3        _CRS Method        01 Args 0 Len 0005 Aml 
+ 3        _STA Method        01 Args 0 Len 000B Aml 
+ 2      LPCB Device        01 
+ 3        _ADR Integer       01 = 00000000001F0000
+ 3        LPC1 Region        01 [PCI_Config] Addr 0000000000000000 Len 0100
+ 3        LPC0 Region        01 [PCI_Config] Addr 0000000000000040 Len 00C0
+ 3        IOD0 RegionField   01 Rgn [LPC0] Off 200 Len 08 Acc 01
+ 3        IOD1 RegionField   01 Rgn [LPC0] Off 208 Len 08 Acc 01
+ 3        GR03 RegionField   01 Rgn [LPC0] Off 3C6 Len 02 Acc 01
+ 3        GR08 RegionField   01 Rgn [LPC0] Off 3D0 Len 02 Acc 01
+ 3        GR09 RegionField   01 Rgn [LPC0] Off 3D2 Len 02 Acc 01
+ 3        GR0A RegionField   01 Rgn [LPC0] Off 3D4 Len 02 Acc 01
+ 3        GR0B RegionField   01 Rgn [LPC0] Off 3D6 Len 02 Acc 01
+ 3        GR19 RegionField   01 Rgn [LPC0] Off 3E2 Len 02 Acc 01
+ 3        RAEN RegionField   01 Rgn [LPC0] Off 580 Len 01 Acc 01
+ 3        RCBA RegionField   01 Rgn [LPC0] Off 58E Len 12 Acc 01
+ 3        DMAC Device        01 
+ 4          _HID Integer       01 = 000000000002D041
+ 4          _CRS Buffer        01 Len 25 = 47 01 00 00 00 00 01 20 47 01 81 00
+ 3        FWHD Device        01 
+ 4          _HID Integer       01 = 000000000008D425
+ 4          _CRS Buffer        01 Len 0E = 86 09 00 00 00 00 00 FF 00 00 00 01
+ 3        HPET Device        01 
+ 4          _HID Integer       01 = 000000000301D041
+ 4          _UID Integer       01 = 0000000000000000
+ 4          BUF0 Buffer        01 Len 0E = 86 09 00 01 00 00 D0 FE 00 04 00 00
+ 4          _STA Method        01 Args 0 Len 0021 Aml 
+ 4          _CRS Method        01 Args 0 Len 004F Aml 
+ 3        IPIC Device        01 
+ 4          _HID Integer       01 = 000000000000D041
+ 4          _CRS Buffer        01 Len 8D = 47 01 20 00 20 00 01 02 47 01 24 00
+ 3        LDRC Device        01 
+ 4          _HID Integer       01 = 00000000020CD041
+ 4          _UID Integer       01 = 0000000000000002
+ 4          BUF0 Buffer        01 Len A2 = 47 01 2E 00 2E 00 01 02 47 01 4E 00
+ 4          _CRS Method        01 Args 0 Len 00C3 Aml 
+ 3        RTC_ Device        01 
+ 4          _HID Integer       01 = 00000000000BD041
+ 4          _CRS Buffer        01 Len 0D = 47 01 70 00 70 00 01 08 22 00 01 79
+ 3        TIMR Device        01 
+ 4          _HID Integer       01 = 000000000001D041
+ 4          _CRS Buffer        01 Len 15 = 47 01 40 00 40 00 01 04 47 01 50 00
+ 3        CWDT Device        01 
+ 4          _HID Integer       01 = 000000000D3FD425
+ 4          _CID Integer       01 = 00000000020CD041
+ 4          BUF0 Buffer        01 Len 0A = 47 01 54 18 54 18 04 04 79 00
+ 4          _STA Method        01 Args 0 Len 000F Aml 
+ 4          _CRS Method        01 Args 0 Len 0005 Aml 
+ 3        SIO1 Device        01 
+ 4          _HID Integer       01 = 00000000020CD041
+ 4          _UID Integer       01 = 0000000000000111
+ 4          CRS_ Buffer        01 Len 22 = 47 01 00 00 00 00 00 00 47 01 00 00
+ 4          _CRS Method        01 Args 0 Len 011B Aml 
+ 4          DCAT Package       01 Elements 16
+ 4          MUT0 Mutex         01 Object 
+ 4          ENFG Method        01 Args 1 Len 003B Aml 
+ 4          EXFG Method        01 Args 0 Len 0014 Aml 
+ 4          LPTM Method        01 Args 1 Len 0016 Aml 
+ 4          UHID Method        01 Args 1 Len 0026 Aml 
+ 4          IOID Region        01 [SystemIO] Addr 000000000000002E Len 0002
+ 4          INDX RegionField   01 Rgn [IOID] Off 000 Len 08 Acc 01
+ 4          DATA RegionField   01 Rgn [IOID] Off 008 Len 08 Acc 01
+ 4          LDN_ IndexField    01 Idx [INDX] Dat [DATA] Off 038 Len 08 Acc 01
+ 4          SCF1 IndexField    01 Idx [INDX] Dat [DATA] Off 108 Len 08 Acc 01
+ 4          SCF2 IndexField    01 Idx [INDX] Dat [DATA] Off 110 Len 08 Acc 01
+ 4          SCF3 IndexField    01 Idx [INDX] Dat [DATA] Off 118 Len 08 Acc 01
+ 4          SCF4 IndexField    01 Idx [INDX] Dat [DATA] Off 120 Len 08 Acc 01
+ 4          SCF5 IndexField    01 Idx [INDX] Dat [DATA] Off 128 Len 08 Acc 01
+ 4          SCF6 IndexField    01 Idx [INDX] Dat [DATA] Off 130 Len 08 Acc 01
+ 4          CKCF IndexField    01 Idx [INDX] Dat [DATA] Off 148 Len 08 Acc 01
+ 4          ACTR IndexField    01 Idx [INDX] Dat [DATA] Off 180 Len 08 Acc 01
+ 4          IOAH IndexField    01 Idx [INDX] Dat [DATA] Off 300 Len 08 Acc 01
+ 4          IOAL IndexField    01 Idx [INDX] Dat [DATA] Off 308 Len 08 Acc 01
+ 4          IOH2 IndexField    01 Idx [INDX] Dat [DATA] Off 310 Len 08 Acc 01
+ 4          IOL2 IndexField    01 Idx [INDX] Dat [DATA] Off 318 Len 08 Acc 01
+ 4          INTR IndexField    01 Idx [INDX] Dat [DATA] Off 380 Len 08 Acc 01
+ 4          DMCH IndexField    01 Idx [INDX] Dat [DATA] Off 3A0 Len 08 Acc 01
+ 4          RGE0 IndexField    01 Idx [INDX] Dat [DATA] Off 700 Len 08 Acc 01
+ 4          RGE1 IndexField    01 Idx [INDX] Dat [DATA] Off 708 Len 08 Acc 01
+ 4          RGE2 IndexField    01 Idx [INDX] Dat [DATA] Off 710 Len 08 Acc 01
+ 4          RGE3 IndexField    01 Idx [INDX] Dat [DATA] Off 718 Len 08 Acc 01
+ 4          RGE4 IndexField    01 Idx [INDX] Dat [DATA] Off 720 Len 08 Acc 01
+ 4          RGE5 IndexField    01 Idx [INDX] Dat [DATA] Off 728 Len 08 Acc 01
+ 4          RGE6 IndexField    01 Idx [INDX] Dat [DATA] Off 730 Len 08 Acc 01
+ 4          RGE7 IndexField    01 Idx [INDX] Dat [DATA] Off 738 Len 08 Acc 01
+ 4          RGE8 IndexField    01 Idx [INDX] Dat [DATA] Off 740 Len 08 Acc 01
+ 4          RGE9 IndexField    01 Idx [INDX] Dat [DATA] Off 748 Len 08 Acc 01
+ 4          OPT0 IndexField    01 Idx [INDX] Dat [DATA] Off 780 Len 08 Acc 01
+ 4          OPT1 IndexField    01 Idx [INDX] Dat [DATA] Off 788 Len 08 Acc 01
+ 4          OPT2 IndexField    01 Idx [INDX] Dat [DATA] Off 790 Len 08 Acc 01
+ 4          OPT3 IndexField    01 Idx [INDX] Dat [DATA] Off 798 Len 08 Acc 01
+ 4          OPT4 IndexField    01 Idx [INDX] Dat [DATA] Off 7A0 Len 08 Acc 01
+ 4          OPT5 IndexField    01 Idx [INDX] Dat [DATA] Off 7A8 Len 08 Acc 01
+ 4          OPT6 IndexField    01 Idx [INDX] Dat [DATA] Off 7B0 Len 08 Acc 01
+ 4          OPT7 IndexField    01 Idx [INDX] Dat [DATA] Off 7B8 Len 08 Acc 01
+ 4          OPT8 IndexField    01 Idx [INDX] Dat [DATA] Off 7C0 Len 08 Acc 01
+ 4          OPT9 IndexField    01 Idx [INDX] Dat [DATA] Off 7C8 Len 08 Acc 01
+ 4          RNTR Region        01 [SystemIO] Addr 0000000000000A20 Len 0010
+ 4          PMES RegionField   01 Rgn [RNTR] Off 000 Len 08 Acc 01
+ 4          PMEE RegionField   01 Rgn [RNTR] Off 020 Len 01 Acc 01
+ 4          PMS3 RegionField   01 Rgn [RNTR] Off 040 Len 08 Acc 01
+ 4          PMS2 RegionField   01 Rgn [RNTR] Off 048 Len 08 Acc 01
+ 4          PMS1 RegionField   01 Rgn [RNTR] Off 050 Len 08 Acc 01
+ 4          PME3 RegionField   01 Rgn [RNTR] Off 060 Len 08 Acc 01
+ 4          PME2 RegionField   01 Rgn [RNTR] Off 068 Len 08 Acc 01
+ 4          PME1 RegionField   01 Rgn [RNTR] Off 070 Len 08 Acc 01
+ 4          CGLD Method        01 Args 1 Len 0009 Aml 
+ 4          DSTA Method        01 Args 1 Len 0078 Aml 
+ 4          DCNT Method        01 Args 2 Len 0048 Aml 
+ 4          CRS1 Buffer        01 Len 10 = 47 01 00 00 00 00 01 00 22 00 00 2A
+ 4          CRS2 Buffer        01 Len 18 = 47 01 00 00 00 00 01 00 47 01 00 00
+ 4          CRS4 Buffer        01 Len 0E = 47 01 00 00 00 00 01 00 23 00 00 19
+ 4          DCRS Method        01 Args 2 Len 0076 Aml 
+ 4          DCR2 Method        01 Args 2 Len 009E Aml 
+ 4          DCR4 Method        01 Args 2 Len 005D Aml 
+ 4          DSRS Method        01 Args 2 Len 009A Aml 
+ 4          DSR2 Method        01 Args 2 Len 00A2 Aml 
+ 4          DSR4 Method        01 Args 2 Len 0060 Aml 
+ 4          IRQM BufferField   01 Buf [CRS1] Off 048 Len 10 Acc 02
+ 4          DMAM BufferField   01 Buf [CRS1] Off 060 Len 08 Acc 01
+ 4          IO11 BufferField   01 Buf [CRS1] Off 010 Len 10 Acc 02
+ 4          IO12 BufferField   01 Buf [CRS1] Off 020 Len 10 Acc 02
+ 4          LEN1 BufferField   01 Buf [CRS1] Off 038 Len 08 Acc 01
+ 4          IRQE BufferField   01 Buf [CRS2] Off 088 Len 10 Acc 02
+ 4          DMAE BufferField   01 Buf [CRS2] Off 0A0 Len 08 Acc 01
+ 4          IO21 BufferField   01 Buf [CRS2] Off 010 Len 10 Acc 02
+ 4          IO22 BufferField   01 Buf [CRS2] Off 020 Len 10 Acc 02
+ 4          LEN2 BufferField   01 Buf [CRS2] Off 038 Len 08 Acc 01
+ 4          IO31 BufferField   01 Buf [CRS2] Off 050 Len 10 Acc 02
+ 4          IO32 BufferField   01 Buf [CRS2] Off 060 Len 10 Acc 02
+ 4          LEN3 BufferField   01 Buf [CRS2] Off 078 Len 08 Acc 01
+ 4          IRQL BufferField   01 Buf [CRS4] Off 048 Len 10 Acc 02
+ 4          IOHL BufferField   01 Buf [CRS4] Off 010 Len 10 Acc 02
+ 4          IORL BufferField   01 Buf [CRS4] Off 020 Len 10 Acc 02
+ 4          ALMN BufferField   01 Buf [CRS4] Off 030 Len 08 Acc 01
+ 4          LENG BufferField   01 Buf [CRS4] Off 038 Len 08 Acc 01
+ 3        PMFG Integer       01 = 0000000000000000
+ 3        SIOS Method        01 Args 1 Len 00EC Aml 
+ 3        SIOW Method        01 Args 1 Len 009E Aml 
+ 3        PS2K Device        01 
+ 4          _HID Method        01 Args 0 Len 0005 Aml 
+ 4          _CID Method        01 Args 0 Len 0005 Aml 
+ 4          _STA Method        01 Args 0 Len 0012 Aml 
+ 4          _CRS Buffer        01 Len 15 = 47 01 60 00 60 00 00 01 47 01 64 00
+ 4          _PRS Buffer        01 Len 18 = 31 00 47 01 60 00 60 00 00 01 47 01
+ 4          _PSW Method        01 Args 1 Len 0006 Aml 
+ 4          _PRW Method        01 Args 0 Len 0009 Aml 
+ 3        PS2M Device        01 
+ 4          _HID Method        01 Args 0 Len 0005 Aml 
+ 4          _CID Method        01 Args 0 Len 0005 Aml 
+ 4          _STA Method        01 Args 0 Len 0012 Aml 
+ 4          CRS1 Buffer        01 Len 05 = 22 00 10 79 00
+ 4          CRS2 Buffer        01 Len 15 = 47 01 60 00 60 00 00 01 47 01 64 00
+ 4          _CRS Method        01 Args 0 Len 0017 Aml 
+ 4          _PRS Buffer        01 Len 08 = 31 00 22 00 10 38 79 00
+ 4          _PSW Method        01 Args 1 Len 0006 Aml 
+ 4          _PRW Method        01 Args 0 Len 0009 Aml 
+ 3        UAR1 Device        01 
+ 4          _UID Integer       01 = 0000000000000001
+ 4          _HID Method        01 Args 0 Len 000D Aml 
+ 4          _STA Method        01 Args 0 Len 000D Aml 
+ 4          _DIS Method        01 Args 0 Len 000D Aml 
+ 4          _CRS Method        01 Args 0 Len 000E Aml 
+ 4          _SRS Method        01 Args 1 Len 000D Aml 
+ 4          _PRS Buffer        01 Len 4F = 31 00 47 01 F8 03 F8 03 01 08 22 10
+ 3        RMSC Device        01 
+ 4          _HID Integer       01 = 00000000020CD041
+ 4          _UID Integer       01 = 0000000000000010
+ 4          CRS1 Buffer        01 Len 72 = 47 01 10 00 10 00 00 10 47 01 22 00
+ 4          CRS2 Buffer        01 Len 62 = 47 01 10 00 10 00 00 10 47 01 22 00
+ 4          _CRS Method        01 Args 0 Len 0017 Aml 
+ 3        COPR Device        01 
+ 4          _HID Integer       01 = 00000000040CD041
+ 4          _CRS Buffer        01 Len 0D = 47 01 F0 00 F0 00 00 10 22 00 20 79
+ 3        CPSB Region        01 [SystemMemory] Addr 000000006A0F4E18 Len 0010
+ 3        RTCX RegionField   01 Rgn [CPSB] Off 000 Len 01 Acc 01
+ 3        SBB0 RegionField   01 Rgn [CPSB] Off 001 Len 07 Acc 01
+ 3        SBB1 RegionField   01 Rgn [CPSB] Off 008 Len 08 Acc 01
+ 3        SBB2 RegionField   01 Rgn [CPSB] Off 010 Len 08 Acc 01
+ 3        SBB3 RegionField   01 Rgn [CPSB] Off 018 Len 08 Acc 01
+ 3        SBB4 RegionField   01 Rgn [CPSB] Off 020 Len 08 Acc 01
+ 3        SBB5 RegionField   01 Rgn [CPSB] Off 028 Len 08 Acc 01
+ 3        SBB6 RegionField   01 Rgn [CPSB] Off 030 Len 08 Acc 01
+ 3        SBB7 RegionField   01 Rgn [CPSB] Off 038 Len 08 Acc 01
+ 3        SBB8 RegionField   01 Rgn [CPSB] Off 040 Len 08 Acc 01
+ 3        SBB9 RegionField   01 Rgn [CPSB] Off 048 Len 08 Acc 01
+ 3        SBBA RegionField   01 Rgn [CPSB] Off 050 Len 08 Acc 01
+ 3        SBBB RegionField   01 Rgn [CPSB] Off 058 Len 08 Acc 01
+ 3        SBBC RegionField   01 Rgn [CPSB] Off 060 Len 08 Acc 01
+ 3        SBBD RegionField   01 Rgn [CPSB] Off 068 Len 08 Acc 01
+ 3        SBBE RegionField   01 Rgn [CPSB] Off 070 Len 08 Acc 01
+ 3        SBBF RegionField   01 Rgn [CPSB] Off 078 Len 08 Acc 01
+ 3        SPTS Method        01 Args 1 Len 0074 Aml 
+ 3        SWAK Method        01 Args 1 Len 0015 Aml 
+ 3        SMIE Region        01 [SystemIO] Addr 0000000000001800 Len 0004
+ 3        RTCS RegionField   01 Rgn [SMIE] Off 00A Len 01 Acc 01
+ 3        PEXS RegionField   01 Rgn [SMIE] Off 00E Len 01 Acc 01
+ 3        WAKS RegionField   01 Rgn [SMIE] Off 00F Len 01 Acc 01
+ 3        PWBT RegionField   01 Rgn [SMIE] Off 018 Len 01 Acc 01
+ 3        SLPR Region        01 [SystemIO] Addr 0000000000001830 Len 0008
+ 3        SLPE RegionField   01 Rgn [SLPR] Off 004 Len 01 Acc 01
+ 3        SLPX RegionField   01 Rgn [SLPR] Off 024 Len 01 Acc 01
+ 3        LPCR Region        01 [PCI_Config] Addr 0000000000000080 Len 0004
+ 3        SIOH Method        01 Args 0 Len 0022 Aml 
+ 3        H_EC Device        01 
+ 4          _HID Integer       01 = 00000000090CD041
+ 4          _UID Integer       01 = 0000000000000001
+ 4          _STA Method        01 Args 0 Len 0011 Aml 
+ 4          B1CC Integer       01 = 0000000000000000
+ 4          B1ST Integer       01 = 0000000000000000
+ 4          B2CC Integer       01 = 0000000000000000
+ 4          B2ST Integer       01 = 0000000000000000
+ 4          CFAN Integer       01 = 0000000000000000
+ 4          CMDR Integer       01 = 0000000000000000
+ 4          DOCK Integer       01 = 0000000000000000
+ 4          EJET Integer       01 = 0000000000000000
+ 4          MCAP Integer       01 = 0000000000000000
+ 4          PLMX Integer       01 = 0000000000000000
+ 4          PECH Integer       01 = 0000000000000000
+ 4          PECL Integer       01 = 0000000000000000
+ 4          PENV Integer       01 = 0000000000000000
+ 4          PINV Integer       01 = 0000000000000000
+ 4          PPSH Integer       01 = 0000000000000000
+ 4          PPSL Integer       01 = 0000000000000000
+ 4          PSTP Integer       01 = 0000000000000000
+ 4          RPWR Integer       01 = 0000000000000000
+ 4          LIDS Integer       01 = 0000000000000000
+ 4          LSTE Integer       01 = 0000000000000000
+ 4          SLPC Integer       01 = 0000000000000000
+ 4          VPWR Integer       01 = 0000000000000000
+ 4          WTMS Integer       01 = 0000000000000000
+ 4          AWT2 Integer       01 = 0000000000000000
+ 4          AWT1 Integer       01 = 0000000000000000
+ 4          AWT0 Integer       01 = 0000000000000000
+ 4          DLED Integer       01 = 0000000000000000
+ 4          ECMD Method        01 Args 1 Len 0016 Aml 
+ 4          BAT0 Device        01 
+ 5            _HID Integer       01 = 000000000A0CD041
+ 5            _UID Integer       01 = 0000000000000000
+ 5            _STA Method        01 Args 0 Len 0002 Aml 
+ 4          BAT1 Device        01 
+ 5            _HID Integer       01 = 000000000A0CD041
+ 5            _UID Integer       01 = 0000000000000001
+ 5            _STA Method        01 Args 0 Len 0002 Aml 
+ 4          BAT2 Device        01 
+ 5            _HID Integer       01 = 000000000A0CD041
+ 5            _UID Integer       01 = 0000000000000002
+ 5            _STA Method        01 Args 0 Len 0002 Aml 
+ 2      RP01 Device        01 
+ 3        _ADR Integer       01 = 00000000001C0000
+ 3        PXCS Region        01 [PCI_Config] Addr 0000000000000000 Len 0380
+ 3        VDID RegionField   01 Rgn [PXCS] Off 000 Len 20 Acc 01
+ 3        L0SE RegionField   01 Rgn [PXCS] Off 280 Len 01 Acc 01
+ 3        LDIS RegionField   01 Rgn [PXCS] Off 284 Len 01 Acc 01
+ 3        LASX RegionField   01 Rgn [PXCS] Off 29D Len 01 Acc 01
+ 3        HPCE RegionField   01 Rgn [PXCS] Off 2A6 Len 01 Acc 01
+ 3        ABPX RegionField   01 Rgn [PXCS] Off 2D0 Len 01 Acc 01
+ 3        PDCX RegionField   01 Rgn [PXCS] Off 2D3 Len 01 Acc 01
+ 3        PDSX RegionField   01 Rgn [PXCS] Off 2D6 Len 01 Acc 01
+ 3        PSPX RegionField   01 Rgn [PXCS] Off 310 Len 01 Acc 01
+ 3        PMEP RegionField   01 Rgn [PXCS] Off 311 Len 01 Acc 01
+ 3        D3HT RegionField   01 Rgn [PXCS] Off 520 Len 02 Acc 01
+ 3        HPEX RegionField   01 Rgn [PXCS] Off 6DE Len 01 Acc 01
+ 3        PMEX RegionField   01 Rgn [PXCS] Off 6DF Len 01 Acc 01
+ 3        L23E RegionField   01 Rgn [PXCS] Off 712 Len 01 Acc 01
+ 3        L23R RegionField   01 Rgn [PXCS] Off 713 Len 01 Acc 01
+ 3        LEDM RegionField   01 Rgn [PXCS] Off 1923 Len 01 Acc 01
+ 3        HPSX RegionField   01 Rgn [PXCS] Off 6FE Len 01 Acc 01
+ 3        PMSX RegionField   01 Rgn [PXCS] Off 6FF Len 01 Acc 01
+ 3        _STA Method        01 Args 0 Len 0013 Aml 
+ 3        LTRV Package       01 Elements 04
+ 3        OPTS Integer       01 = 0000000000000000
+ 3        RPAV Integer       01 = 0000000000000000
+ 3        _DSM Method        01 Args 4 Len 0164 Aml 
+ 3        PXSX Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          _PRW Method        01 Args 0 Len 0009 Aml 
+ 4          _RMV Method        01 Args 0 Len 0005 Aml 
+ 3        _REG Method        01 Args 2 Len 0010 Aml 
+ 3        HPME Method        01 Args 0 Len 0062 Aml 
+ 3        _PRT Method        01 Args 0 Len 0010 Aml 
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 3        TBHR Integer       01 = 0000000000000003
+ 3        _INI Method        01 Args 0 Len 003F Aml 
+ 3        TWAK Method        01 Args 1 Len 013E Aml 
+ 3        TPTS Method        01 Args 1 Len 003B Aml 
+ 2      RP02 Device        01 
+ 3        _ADR Integer       01 = 00000000001C0001
+ 3        PXCS Region        01 [PCI_Config] Addr 0000000000000000 Len 0380
+ 3        VDID RegionField   01 Rgn [PXCS] Off 000 Len 20 Acc 01
+ 3        L0SE RegionField   01 Rgn [PXCS] Off 280 Len 01 Acc 01
+ 3        LDIS RegionField   01 Rgn [PXCS] Off 284 Len 01 Acc 01
+ 3        LASX RegionField   01 Rgn [PXCS] Off 29D Len 01 Acc 01
+ 3        HPCE RegionField   01 Rgn [PXCS] Off 2A6 Len 01 Acc 01
+ 3        ABPX RegionField   01 Rgn [PXCS] Off 2D0 Len 01 Acc 01
+ 3        PDCX RegionField   01 Rgn [PXCS] Off 2D3 Len 01 Acc 01
+ 3        PDSX RegionField   01 Rgn [PXCS] Off 2D6 Len 01 Acc 01
+ 3        PSPX RegionField   01 Rgn [PXCS] Off 310 Len 01 Acc 01
+ 3        PMEP RegionField   01 Rgn [PXCS] Off 311 Len 01 Acc 01
+ 3        D3HT RegionField   01 Rgn [PXCS] Off 520 Len 02 Acc 01
+ 3        HPEX RegionField   01 Rgn [PXCS] Off 6DE Len 01 Acc 01
+ 3        PMEX RegionField   01 Rgn [PXCS] Off 6DF Len 01 Acc 01
+ 3        L23E RegionField   01 Rgn [PXCS] Off 712 Len 01 Acc 01
+ 3        L23R RegionField   01 Rgn [PXCS] Off 713 Len 01 Acc 01
+ 3        LEDM RegionField   01 Rgn [PXCS] Off 1923 Len 01 Acc 01
+ 3        HPSX RegionField   01 Rgn [PXCS] Off 6FE Len 01 Acc 01
+ 3        PMSX RegionField   01 Rgn [PXCS] Off 6FF Len 01 Acc 01
+ 3        _STA Method        01 Args 0 Len 0013 Aml 
+ 3        LTRV Package       01 Elements 04
+ 3        OPTS Integer       01 = 0000000000000000
+ 3        RPAV Integer       01 = 0000000000000000
+ 3        _DSM Method        01 Args 4 Len 0164 Aml 
+ 3        PXSX Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          _PRW Method        01 Args 0 Len 0009 Aml 
+ 4          _RMV Method        01 Args 0 Len 0005 Aml 
+ 3        _REG Method        01 Args 2 Len 0010 Aml 
+ 3        HPME Method        01 Args 0 Len 0062 Aml 
+ 3        _PRT Method        01 Args 0 Len 0010 Aml 
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      RP03 Device        01 
+ 3        _ADR Integer       01 = 00000000001C0002
+ 3        PXCS Region        01 [PCI_Config] Addr 0000000000000000 Len 0380
+ 3        VDID RegionField   01 Rgn [PXCS] Off 000 Len 20 Acc 01
+ 3        L0SE RegionField   01 Rgn [PXCS] Off 280 Len 01 Acc 01
+ 3        LDIS RegionField   01 Rgn [PXCS] Off 284 Len 01 Acc 01
+ 3        LASX RegionField   01 Rgn [PXCS] Off 29D Len 01 Acc 01
+ 3        HPCE RegionField   01 Rgn [PXCS] Off 2A6 Len 01 Acc 01
+ 3        ABPX RegionField   01 Rgn [PXCS] Off 2D0 Len 01 Acc 01
+ 3        PDCX RegionField   01 Rgn [PXCS] Off 2D3 Len 01 Acc 01
+ 3        PDSX RegionField   01 Rgn [PXCS] Off 2D6 Len 01 Acc 01
+ 3        PSPX RegionField   01 Rgn [PXCS] Off 310 Len 01 Acc 01
+ 3        PMEP RegionField   01 Rgn [PXCS] Off 311 Len 01 Acc 01
+ 3        D3HT RegionField   01 Rgn [PXCS] Off 520 Len 02 Acc 01
+ 3        HPEX RegionField   01 Rgn [PXCS] Off 6DE Len 01 Acc 01
+ 3        PMEX RegionField   01 Rgn [PXCS] Off 6DF Len 01 Acc 01
+ 3        L23E RegionField   01 Rgn [PXCS] Off 712 Len 01 Acc 01
+ 3        L23R RegionField   01 Rgn [PXCS] Off 713 Len 01 Acc 01
+ 3        LEDM RegionField   01 Rgn [PXCS] Off 1923 Len 01 Acc 01
+ 3        HPSX RegionField   01 Rgn [PXCS] Off 6FE Len 01 Acc 01
+ 3        PMSX RegionField   01 Rgn [PXCS] Off 6FF Len 01 Acc 01
+ 3        _STA Method        01 Args 0 Len 0013 Aml 
+ 3        LTRV Package       01 Elements 04
+ 3        OPTS Integer       01 = 0000000000000000
+ 3        RPAV Integer       01 = 0000000000000000
+ 3        _DSM Method        01 Args 4 Len 0164 Aml 
+ 3        PXSX Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          _PRW Method        01 Args 0 Len 0009 Aml 
+ 4          _RMV Method        01 Args 0 Len 0005 Aml 
+ 3        _REG Method        01 Args 2 Len 0010 Aml 
+ 3        HPME Method        01 Args 0 Len 0062 Aml 
+ 3        _PRT Method        01 Args 0 Len 0010 Aml 
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      RP04 Device        01 
+ 3        _ADR Integer       01 = 00000000001C0003
+ 3        PXCS Region        01 [PCI_Config] Addr 0000000000000000 Len 0380
+ 3        VDID RegionField   01 Rgn [PXCS] Off 000 Len 20 Acc 01
+ 3        L0SE RegionField   01 Rgn [PXCS] Off 280 Len 01 Acc 01
+ 3        LDIS RegionField   01 Rgn [PXCS] Off 284 Len 01 Acc 01
+ 3        LASX RegionField   01 Rgn [PXCS] Off 29D Len 01 Acc 01
+ 3        HPCE RegionField   01 Rgn [PXCS] Off 2A6 Len 01 Acc 01
+ 3        ABPX RegionField   01 Rgn [PXCS] Off 2D0 Len 01 Acc 01
+ 3        PDCX RegionField   01 Rgn [PXCS] Off 2D3 Len 01 Acc 01
+ 3        PDSX RegionField   01 Rgn [PXCS] Off 2D6 Len 01 Acc 01
+ 3        PSPX RegionField   01 Rgn [PXCS] Off 310 Len 01 Acc 01
+ 3        PMEP RegionField   01 Rgn [PXCS] Off 311 Len 01 Acc 01
+ 3        D3HT RegionField   01 Rgn [PXCS] Off 520 Len 02 Acc 01
+ 3        HPEX RegionField   01 Rgn [PXCS] Off 6DE Len 01 Acc 01
+ 3        PMEX RegionField   01 Rgn [PXCS] Off 6DF Len 01 Acc 01
+ 3        L23E RegionField   01 Rgn [PXCS] Off 712 Len 01 Acc 01
+ 3        L23R RegionField   01 Rgn [PXCS] Off 713 Len 01 Acc 01
+ 3        LEDM RegionField   01 Rgn [PXCS] Off 1923 Len 01 Acc 01
+ 3        HPSX RegionField   01 Rgn [PXCS] Off 6FE Len 01 Acc 01
+ 3        PMSX RegionField   01 Rgn [PXCS] Off 6FF Len 01 Acc 01
+ 3        _STA Method        01 Args 0 Len 0013 Aml 
+ 3        LTRV Package       01 Elements 04
+ 3        OPTS Integer       01 = 0000000000000000
+ 3        RPAV Integer       01 = 0000000000000000
+ 3        _DSM Method        01 Args 4 Len 0164 Aml 
+ 3        PXSX Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          _PRW Method        01 Args 0 Len 0009 Aml 
+ 4          _RMV Method        01 Args 0 Len 0005 Aml 
+ 3        _REG Method        01 Args 2 Len 0010 Aml 
+ 3        HPME Method        01 Args 0 Len 0062 Aml 
+ 3        _PRT Method        01 Args 0 Len 0010 Aml 
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      RP05 Device        01 
+ 3        _ADR Integer       01 = 00000000001C0004
+ 3        PXCS Region        01 [PCI_Config] Addr 0000000000000000 Len 0380
+ 3        VDID RegionField   01 Rgn [PXCS] Off 000 Len 20 Acc 01
+ 3        L0SE RegionField   01 Rgn [PXCS] Off 280 Len 01 Acc 01
+ 3        LDIS RegionField   01 Rgn [PXCS] Off 284 Len 01 Acc 01
+ 3        LASX RegionField   01 Rgn [PXCS] Off 29D Len 01 Acc 01
+ 3        HPCE RegionField   01 Rgn [PXCS] Off 2A6 Len 01 Acc 01
+ 3        ABPX RegionField   01 Rgn [PXCS] Off 2D0 Len 01 Acc 01
+ 3        PDCX RegionField   01 Rgn [PXCS] Off 2D3 Len 01 Acc 01
+ 3        PDSX RegionField   01 Rgn [PXCS] Off 2D6 Len 01 Acc 01
+ 3        PSPX RegionField   01 Rgn [PXCS] Off 310 Len 01 Acc 01
+ 3        PMEP RegionField   01 Rgn [PXCS] Off 311 Len 01 Acc 01
+ 3        D3HT RegionField   01 Rgn [PXCS] Off 520 Len 02 Acc 01
+ 3        HPEX RegionField   01 Rgn [PXCS] Off 6DE Len 01 Acc 01
+ 3        PMEX RegionField   01 Rgn [PXCS] Off 6DF Len 01 Acc 01
+ 3        L23E RegionField   01 Rgn [PXCS] Off 712 Len 01 Acc 01
+ 3        L23R RegionField   01 Rgn [PXCS] Off 713 Len 01 Acc 01
+ 3        LEDM RegionField   01 Rgn [PXCS] Off 1923 Len 01 Acc 01
+ 3        HPSX RegionField   01 Rgn [PXCS] Off 6FE Len 01 Acc 01
+ 3        PMSX RegionField   01 Rgn [PXCS] Off 6FF Len 01 Acc 01
+ 3        _STA Method        01 Args 0 Len 0013 Aml 
+ 3        LTRV Package       01 Elements 04
+ 3        OPTS Integer       01 = 0000000000000000
+ 3        RPAV Integer       01 = 0000000000000000
+ 3        _DSM Method        01 Args 4 Len 0164 Aml 
+ 3        PXSX Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          _PRW Method        01 Args 0 Len 0009 Aml 
+ 4          _RMV Method        01 Args 0 Len 0005 Aml 
+ 3        _REG Method        01 Args 2 Len 0010 Aml 
+ 3        HPME Method        01 Args 0 Len 0062 Aml 
+ 3        _PRT Method        01 Args 0 Len 0010 Aml 
+ 3        MVL1 Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          CF40 Region        01 [PCI_Config] Addr 0000000000000040 Len 0004
+ 4          CHE0 RegionField   01 Rgn [CF40] Off 000 Len 01 Acc 01
+ 4          MULT RegionField   01 Rgn [CF40] Off 001 Len 01 Acc 01
+ 4          CAB0 RegionField   01 Rgn [CF40] Off 003 Len 01 Acc 01
+ 4          CHE1 RegionField   01 Rgn [CF40] Off 004 Len 01 Acc 01
+ 4          AHEN RegionField   01 Rgn [CF40] Off 008 Len 01 Acc 01
+ 4          PRT0 RegionField   01 Rgn [CF40] Off 00C Len 01 Acc 01
+ 4          AHM0 RegionField   01 Rgn [CF40] Off 00D Len 01 Acc 01
+ 4          PRT1 RegionField   01 Rgn [CF40] Off 00E Len 01 Acc 01
+ 4          AHM1 RegionField   01 Rgn [CF40] Off 00F Len 01 Acc 01
+ 4          CF42 RegionField   01 Rgn [CF40] Off 010 Len 06 Acc 01
+ 4          SWAP RegionField   01 Rgn [CF40] Off 016 Len 01 Acc 01
+ 4          PATA RegionField   01 Rgn [CF40] Off 017 Len 01 Acc 01
+ 4          WTEN RegionField   01 Rgn [CF40] Off 01E Len 01 Acc 01
+ 4          PIOT Package       01 Elements 05
+ 4          UDMA Package       01 Elements 07
+ 4          MDMA Package       01 Elements 03
+ 4          IDEB Buffer        01 Len 14 = 00 00 00 00 00 00 00 00 00 00 00 00
+ 4          PIO0 Integer       01 = 0000000000000004
+ 4          DMA0 Integer       01 = 0000000000000006
+ 4          MDA0 Integer       01 = 0000000000000002
+ 4          PIO1 Integer       01 = 0000000000000004
+ 4          DMA1 Integer       01 = 0000000000000006
+ 4          MDA1 Integer       01 = 0000000000000002
+ 4          PIO2 Integer       01 = 0000000000000004
+ 4          DMA2 Integer       01 = 0000000000000006
+ 4          MDA2 Integer       01 = 0000000000000002
+ 4          PIO3 Integer       01 = 0000000000000004
+ 4          DMA3 Integer       01 = 0000000000000006
+ 4          MDA3 Integer       01 = 0000000000000002
+ 4          FLGP Integer       01 = 000000000000001F
+ 4          FLGS Integer       01 = 000000000000001F
+ 4          IDE0 Device        01 
+ 5            _ADR Integer       01 = 0000000000000000
+ 5            _GTM Method        01 Args 0 Len 00BE Aml 
+ 5            _STM Method        01 Args 3 Len 00D5 Aml 
+ 5            DRV0 Device        01 
+ 6              _ADR Integer       01 = 0000000000000000
+ 6              _GTF Method        01 Args 0 Len 0074 Aml 
+ 5            DRV1 Device        01 
+ 6              _ADR Integer       01 = 0000000000000001
+ 6              _GTF Method        01 Args 0 Len 0075 Aml 
+ 4          IDE1 Device        01 
+ 5            _ADR Integer       01 = 0000000000000001
+ 5            _GTM Method        01 Args 0 Len 00C0 Aml 
+ 5            _STM Method        01 Args 3 Len 00D5 Aml 
+ 5            DRV0 Device        01 
+ 6              _ADR Integer       01 = 0000000000000000
+ 6              _GTF Method        01 Args 0 Len 0074 Aml 
+ 5            DRV1 Device        01 
+ 6              _ADR Integer       01 = 0000000000000001
+ 6              _GTF Method        01 Args 0 Len 0075 Aml 
+ 4          GTM0 BufferField   01 Buf [IDEB] Off 000 Len 20 Acc 04
+ 4          GTM1 BufferField   01 Buf [IDEB] Off 020 Len 20 Acc 04
+ 4          GTM2 BufferField   01 Buf [IDEB] Off 040 Len 20 Acc 04
+ 4          GTM3 BufferField   01 Buf [IDEB] Off 060 Len 20 Acc 04
+ 4          GTM4 BufferField   01 Buf [IDEB] Off 080 Len 20 Acc 04
+ 3        MVL2 Device        01 
+ 4          _ADR Integer       01 = 0000000000000001
+ 4          CF40 Region        01 [PCI_Config] Addr 0000000000000040 Len 0004
+ 4          CHE0 RegionField   01 Rgn [CF40] Off 000 Len 01 Acc 01
+ 4          MULT RegionField   01 Rgn [CF40] Off 001 Len 01 Acc 01
+ 4          CAB0 RegionField   01 Rgn [CF40] Off 003 Len 01 Acc 01
+ 4          CHE1 RegionField   01 Rgn [CF40] Off 004 Len 01 Acc 01
+ 4          AHEN RegionField   01 Rgn [CF40] Off 008 Len 01 Acc 01
+ 4          PRT0 RegionField   01 Rgn [CF40] Off 00C Len 01 Acc 01
+ 4          AHM0 RegionField   01 Rgn [CF40] Off 00D Len 01 Acc 01
+ 4          PRT1 RegionField   01 Rgn [CF40] Off 00E Len 01 Acc 01
+ 4          AHM1 RegionField   01 Rgn [CF40] Off 00F Len 01 Acc 01
+ 4          CF42 RegionField   01 Rgn [CF40] Off 010 Len 06 Acc 01
+ 4          SWAP RegionField   01 Rgn [CF40] Off 016 Len 01 Acc 01
+ 4          PATA RegionField   01 Rgn [CF40] Off 017 Len 01 Acc 01
+ 4          WTEN RegionField   01 Rgn [CF40] Off 01E Len 01 Acc 01
+ 4          PIOT Package       01 Elements 05
+ 4          UDMA Package       01 Elements 07
+ 4          MDMA Package       01 Elements 03
+ 4          IDEB Buffer        01 Len 14 = 00 00 00 00 00 00 00 00 00 00 00 00
+ 4          PIO0 Integer       01 = 0000000000000004
+ 4          DMA0 Integer       01 = 0000000000000006
+ 4          MDA0 Integer       01 = 0000000000000002
+ 4          PIO1 Integer       01 = 0000000000000004
+ 4          DMA1 Integer       01 = 0000000000000006
+ 4          MDA1 Integer       01 = 0000000000000002
+ 4          PIO2 Integer       01 = 0000000000000004
+ 4          DMA2 Integer       01 = 0000000000000006
+ 4          MDA2 Integer       01 = 0000000000000002
+ 4          PIO3 Integer       01 = 0000000000000004
+ 4          DMA3 Integer       01 = 0000000000000006
+ 4          MDA3 Integer       01 = 0000000000000002
+ 4          FLGP Integer       01 = 000000000000001F
+ 4          FLGS Integer       01 = 000000000000001F
+ 4          IDE0 Device        01 
+ 5            _ADR Integer       01 = 0000000000000000
+ 5            _GTM Method        01 Args 0 Len 00B7 Aml 
+ 5            _STM Method        01 Args 3 Len 00D5 Aml 
+ 5            DRV0 Device        01 
+ 6              _ADR Integer       01 = 0000000000000000
+ 6              _GTF Method        01 Args 0 Len 0074 Aml 
+ 5            DRV1 Device        01 
+ 6              _ADR Integer       01 = 0000000000000001
+ 6              _GTF Method        01 Args 0 Len 0075 Aml 
+ 4          IDE1 Device        01 
+ 5            _ADR Integer       01 = 0000000000000001
+ 5            _GTM Method        01 Args 0 Len 00B9 Aml 
+ 5            _STM Method        01 Args 3 Len 00D5 Aml 
+ 5            DRV0 Device        01 
+ 6              _ADR Integer       01 = 0000000000000000
+ 6              _GTF Method        01 Args 0 Len 0074 Aml 
+ 5            DRV1 Device        01 
+ 6              _ADR Integer       01 = 0000000000000001
+ 6              _GTF Method        01 Args 0 Len 0075 Aml 
+ 4          GTM0 BufferField   01 Buf [IDEB] Off 000 Len 20 Acc 04
+ 4          GTM1 BufferField   01 Buf [IDEB] Off 020 Len 20 Acc 04
+ 4          GTM2 BufferField   01 Buf [IDEB] Off 040 Len 20 Acc 04
+ 4          GTM3 BufferField   01 Buf [IDEB] Off 060 Len 20 Acc 04
+ 4          GTM4 BufferField   01 Buf [IDEB] Off 080 Len 20 Acc 04
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      RP06 Device        01 
+ 3        _ADR Integer       01 = 00000000001C0005
+ 3        PXCS Region        01 [PCI_Config] Addr 0000000000000000 Len 0380
+ 3        VDID RegionField   01 Rgn [PXCS] Off 000 Len 20 Acc 01
+ 3        L0SE RegionField   01 Rgn [PXCS] Off 280 Len 01 Acc 01
+ 3        LDIS RegionField   01 Rgn [PXCS] Off 284 Len 01 Acc 01
+ 3        LASX RegionField   01 Rgn [PXCS] Off 29D Len 01 Acc 01
+ 3        HPCE RegionField   01 Rgn [PXCS] Off 2A6 Len 01 Acc 01
+ 3        ABPX RegionField   01 Rgn [PXCS] Off 2D0 Len 01 Acc 01
+ 3        PDCX RegionField   01 Rgn [PXCS] Off 2D3 Len 01 Acc 01
+ 3        PDSX RegionField   01 Rgn [PXCS] Off 2D6 Len 01 Acc 01
+ 3        PSPX RegionField   01 Rgn [PXCS] Off 310 Len 01 Acc 01
+ 3        PMEP RegionField   01 Rgn [PXCS] Off 311 Len 01 Acc 01
+ 3        D3HT RegionField   01 Rgn [PXCS] Off 520 Len 02 Acc 01
+ 3        HPEX RegionField   01 Rgn [PXCS] Off 6DE Len 01 Acc 01
+ 3        PMEX RegionField   01 Rgn [PXCS] Off 6DF Len 01 Acc 01
+ 3        L23E RegionField   01 Rgn [PXCS] Off 712 Len 01 Acc 01
+ 3        L23R RegionField   01 Rgn [PXCS] Off 713 Len 01 Acc 01
+ 3        LEDM RegionField   01 Rgn [PXCS] Off 1923 Len 01 Acc 01
+ 3        HPSX RegionField   01 Rgn [PXCS] Off 6FE Len 01 Acc 01
+ 3        PMSX RegionField   01 Rgn [PXCS] Off 6FF Len 01 Acc 01
+ 3        _STA Method        01 Args 0 Len 0013 Aml 
+ 3        LTRV Package       01 Elements 04
+ 3        OPTS Integer       01 = 0000000000000000
+ 3        RPAV Integer       01 = 0000000000000000
+ 3        _DSM Method        01 Args 4 Len 0164 Aml 
+ 3        PXSX Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          _PRW Method        01 Args 0 Len 0009 Aml 
+ 4          _RMV Method        01 Args 0 Len 0005 Aml 
+ 3        _REG Method        01 Args 2 Len 0010 Aml 
+ 3        HPME Method        01 Args 0 Len 0062 Aml 
+ 3        _PRT Method        01 Args 0 Len 0010 Aml 
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      RP07 Device        01 
+ 3        _ADR Integer       01 = 00000000001C0006
+ 3        PXCS Region        01 [PCI_Config] Addr 0000000000000000 Len 0380
+ 3        VDID RegionField   01 Rgn [PXCS] Off 000 Len 20 Acc 01
+ 3        L0SE RegionField   01 Rgn [PXCS] Off 280 Len 01 Acc 01
+ 3        LDIS RegionField   01 Rgn [PXCS] Off 284 Len 01 Acc 01
+ 3        LASX RegionField   01 Rgn [PXCS] Off 29D Len 01 Acc 01
+ 3        HPCE RegionField   01 Rgn [PXCS] Off 2A6 Len 01 Acc 01
+ 3        ABPX RegionField   01 Rgn [PXCS] Off 2D0 Len 01 Acc 01
+ 3        PDCX RegionField   01 Rgn [PXCS] Off 2D3 Len 01 Acc 01
+ 3        PDSX RegionField   01 Rgn [PXCS] Off 2D6 Len 01 Acc 01
+ 3        PSPX RegionField   01 Rgn [PXCS] Off 310 Len 01 Acc 01
+ 3        PMEP RegionField   01 Rgn [PXCS] Off 311 Len 01 Acc 01
+ 3        D3HT RegionField   01 Rgn [PXCS] Off 520 Len 02 Acc 01
+ 3        HPEX RegionField   01 Rgn [PXCS] Off 6DE Len 01 Acc 01
+ 3        PMEX RegionField   01 Rgn [PXCS] Off 6DF Len 01 Acc 01
+ 3        L23E RegionField   01 Rgn [PXCS] Off 712 Len 01 Acc 01
+ 3        L23R RegionField   01 Rgn [PXCS] Off 713 Len 01 Acc 01
+ 3        LEDM RegionField   01 Rgn [PXCS] Off 1923 Len 01 Acc 01
+ 3        HPSX RegionField   01 Rgn [PXCS] Off 6FE Len 01 Acc 01
+ 3        PMSX RegionField   01 Rgn [PXCS] Off 6FF Len 01 Acc 01
+ 3        _STA Method        01 Args 0 Len 0013 Aml 
+ 3        LTRV Package       01 Elements 04
+ 3        OPTS Integer       01 = 0000000000000000
+ 3        RPAV Integer       01 = 0000000000000000
+ 3        _DSM Method        01 Args 4 Len 0164 Aml 
+ 3        PXSX Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          _PRW Method        01 Args 0 Len 0009 Aml 
+ 4          _RMV Method        01 Args 0 Len 0005 Aml 
+ 3        _REG Method        01 Args 2 Len 0010 Aml 
+ 3        HPME Method        01 Args 0 Len 0062 Aml 
+ 3        _PRT Method        01 Args 0 Len 0010 Aml 
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      RP08 Device        01 
+ 3        _ADR Integer       01 = 00000000001C0007
+ 3        PXCS Region        01 [PCI_Config] Addr 0000000000000000 Len 0380
+ 3        VDID RegionField   01 Rgn [PXCS] Off 000 Len 20 Acc 01
+ 3        L0SE RegionField   01 Rgn [PXCS] Off 280 Len 01 Acc 01
+ 3        LDIS RegionField   01 Rgn [PXCS] Off 284 Len 01 Acc 01
+ 3        LASX RegionField   01 Rgn [PXCS] Off 29D Len 01 Acc 01
+ 3        HPCE RegionField   01 Rgn [PXCS] Off 2A6 Len 01 Acc 01
+ 3        ABPX RegionField   01 Rgn [PXCS] Off 2D0 Len 01 Acc 01
+ 3        PDCX RegionField   01 Rgn [PXCS] Off 2D3 Len 01 Acc 01
+ 3        PDSX RegionField   01 Rgn [PXCS] Off 2D6 Len 01 Acc 01
+ 3        PSPX RegionField   01 Rgn [PXCS] Off 310 Len 01 Acc 01
+ 3        PMEP RegionField   01 Rgn [PXCS] Off 311 Len 01 Acc 01
+ 3        D3HT RegionField   01 Rgn [PXCS] Off 520 Len 02 Acc 01
+ 3        HPEX RegionField   01 Rgn [PXCS] Off 6DE Len 01 Acc 01
+ 3        PMEX RegionField   01 Rgn [PXCS] Off 6DF Len 01 Acc 01
+ 3        L23E RegionField   01 Rgn [PXCS] Off 712 Len 01 Acc 01
+ 3        L23R RegionField   01 Rgn [PXCS] Off 713 Len 01 Acc 01
+ 3        LEDM RegionField   01 Rgn [PXCS] Off 1923 Len 01 Acc 01
+ 3        HPSX RegionField   01 Rgn [PXCS] Off 6FE Len 01 Acc 01
+ 3        PMSX RegionField   01 Rgn [PXCS] Off 6FF Len 01 Acc 01
+ 3        _STA Method        01 Args 0 Len 0013 Aml 
+ 3        LTRV Package       01 Elements 04
+ 3        OPTS Integer       01 = 0000000000000000
+ 3        RPAV Integer       01 = 0000000000000000
+ 3        _DSM Method        01 Args 4 Len 0164 Aml 
+ 3        PXSX Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          _PRW Method        01 Args 0 Len 0009 Aml 
+ 4          _RMV Method        01 Args 0 Len 0005 Aml 
+ 3        _REG Method        01 Args 2 Len 0010 Aml 
+ 3        HPME Method        01 Args 0 Len 0062 Aml 
+ 3        _PRT Method        01 Args 0 Len 0010 Aml 
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      P0P2 Device        01 
+ 3        _ADR Integer       01 = 0000000000010000
+ 3        _PRT Method        01 Args 0 Len 0010 Aml 
+ 2      P0PA Device        01 
+ 3        _ADR Integer       01 = 0000000000010001
+ 3        _PRT Method        01 Args 0 Len 0010 Aml 
+ 2      P0PB Device        01 
+ 3        _ADR Integer       01 = 0000000000010002
+ 3        _PRT Method        01 Args 0 Len 0010 Aml 
+ 2      B0D4 Device        01 
+ 3        _ADR Integer       01 = 0000000000040000
+ 2      LTRE Integer       01 = 0000000000000000
+ 2      OBFF Integer       01 = 0000000000000000
+ 2      GLAN Device        01 
+ 3        _ADR Integer       01 = 0000000000190000
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      EHC1 Device        01 
+ 3        _ADR Integer       01 = 00000000001D0000
+ 3        PWKE Region        01 [PCI_Config] Addr 0000000000000054 Len 0012
+ 3        PMEE RegionField   01 Rgn [PWKE] Off 008 Len 01 Acc 04
+ 3        PMES RegionField   01 Rgn [PWKE] Off 00F Len 01 Acc 04
+ 3        PWUC RegionField   01 Rgn [PWKE] Off 071 Len 08 Acc 04
+ 3        _PSW Method        01 Args 1 Len 0011 Aml 
+ 3        _S3D Method        01 Args 0 Len 0003 Aml 
+ 3        _S4D Method        01 Args 0 Len 0003 Aml 
+ 3        HUBN Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          PR01 Device        01 
+ 5            _ADR Integer       01 = 0000000000000001
+ 5            _UPC Method        01 Args 0 Len 0012 Aml 
+ 5            _PLD Method        01 Args 0 Len 0021 Aml 
+ 5            PR11 Device        01 
+ 6              _ADR Integer       01 = 0000000000000001
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 5            PR12 Device        01 
+ 6              _ADR Integer       01 = 0000000000000002
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 5            PR13 Device        01 
+ 6              _ADR Integer       01 = 0000000000000003
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0049 Aml 
+ 5            PR14 Device        01 
+ 6              _ADR Integer       01 = 0000000000000004
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 6              SDGV Alias         01 Target SBV1 ()
+ 6              _DSM Method        01 Args 4 Len 0070 Aml 
+ 5            PR15 Device        01 
+ 6              _ADR Integer       01 = 0000000000000005
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 6              SDGV Alias         01 Target SBV2 ()
+ 6              _DSM Method        01 Args 4 Len 0070 Aml 
+ 5            PR16 Device        01 
+ 6              _ADR Integer       01 = 0000000000000006
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 6              SDGV Alias         01 Target SBV1 ()
+ 6              _DSM Method        01 Args 4 Len 0070 Aml 
+ 5            PR17 Device        01 
+ 6              _ADR Integer       01 = 0000000000000007
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 6              SDGV Alias         01 Target SBV2 ()
+ 6              _DSM Method        01 Args 4 Len 0070 Aml 
+ 5            PR18 Device        01 
+ 6              _ADR Integer       01 = 0000000000000008
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      EHC2 Device        01 
+ 3        _ADR Integer       01 = 00000000001A0000
+ 3        PWKE Region        01 [PCI_Config] Addr 0000000000000054 Len 0012
+ 3        PMEE RegionField   01 Rgn [PWKE] Off 008 Len 01 Acc 04
+ 3        PMES RegionField   01 Rgn [PWKE] Off 00F Len 01 Acc 04
+ 3        PWUC RegionField   01 Rgn [PWKE] Off 071 Len 06 Acc 04
+ 3        _PSW Method        01 Args 1 Len 0011 Aml 
+ 3        _S3D Method        01 Args 0 Len 0003 Aml 
+ 3        _S4D Method        01 Args 0 Len 0003 Aml 
+ 3        HUBN Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          PR01 Device        01 
+ 5            _ADR Integer       01 = 0000000000000001
+ 5            _UPC Method        01 Args 0 Len 0012 Aml 
+ 5            _PLD Method        01 Args 0 Len 0021 Aml 
+ 5            PR11 Device        01 
+ 6              _ADR Integer       01 = 0000000000000001
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 5            PR12 Device        01 
+ 6              _ADR Integer       01 = 0000000000000002
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 6              SDGV Alias         01 Target SBV1 ()
+ 6              _DSM Method        01 Args 4 Len 0070 Aml 
+ 5            PR13 Device        01 
+ 6              _ADR Integer       01 = 0000000000000003
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 6              SDGV Alias         01 Target SBV2 ()
+ 6              _DSM Method        01 Args 4 Len 0070 Aml 
+ 5            PR14 Device        01 
+ 6              _ADR Integer       01 = 0000000000000004
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 5            PR15 Device        01 
+ 6              _ADR Integer       01 = 0000000000000005
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 5            PR16 Device        01 
+ 6              _ADR Integer       01 = 0000000000000006
+ 6              _UPC Method        01 Args 0 Len 0013 Aml 
+ 6              _PLD Method        01 Args 0 Len 0021 Aml 
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      XHC_ Device        01 
+ 3        _ADR Integer       01 = 0000000000140000
+ 3        _DEP Method        01 Args 0 Len 0047 Aml 
+ 3        ISA0 Region        01 [SystemMemory] Addr 00000000E00F8000 Len 0004
+ 3        ISAV RegionField   01 Rgn [ISA0] Off 000 Len 20 Acc 04
+ 3        XPRT Region        01 [PCI_Config] Addr 0000000000000000 Len 0100
+ 3        DVID RegionField   01 Rgn [XPRT] Off 000 Len 10 Acc 01
+ 3        D0D3 RegionField   01 Rgn [XPRT] Off 3A0 Len 02 Acc 01
+ 3        PMEE RegionField   01 Rgn [XPRT] Off 3A8 Len 01 Acc 01
+ 3        PMES RegionField   01 Rgn [XPRT] Off 3AF Len 01 Acc 01
+ 3        MB13 RegionField   01 Rgn [XPRT] Off 58D Len 01 Acc 01
+ 3        MB14 RegionField   01 Rgn [XPRT] Off 58E Len 01 Acc 01
+ 3        PR2_ RegionField   01 Rgn [XPRT] Off 680 Len 20 Acc 01
+ 3        PR2M RegionField   01 Rgn [XPRT] Off 6A0 Len 20 Acc 01
+ 3        PR3_ RegionField   01 Rgn [XPRT] Off 6C0 Len 20 Acc 01
+ 3        PR3M RegionField   01 Rgn [XPRT] Off 6E0 Len 20 Acc 01
+ 3        XHCP Region        01 [SystemMemory] Addr 00000000E00A0000 Len 0100
+ 3        PDBM RegionField   01 Rgn [XHCP] Off 020 Len 08 Acc 04
+ 3        MEMB RegionField   01 Rgn [XHCP] Off 080 Len 20 Acc 04
+ 3        PR2S Method        01 Args 1 Len 0193 Aml 
+ 3        XRST Integer       01 = 0000000000000000
+ 3        _PS0 Method        01 Args 0 Len 025D Aml 
+ 3        _PS3 Method        01 Args 0 Len 0123 Aml 
+ 3        CUID Method        01 Args 1 Len 001C Aml 
+ 3        POSC Method        01 Args 3 Len 007C Aml 
+ 3        XSEL Method        01 Args 0 Len 004E Aml 
+ 3        ESEL Method        01 Args 0 Len 0039 Aml 
+ 3        XWAK Method        01 Args 0 Len 0013 Aml 
+ 3        _S3D Method        01 Args 0 Len 0003 Aml 
+ 3        _S4D Method        01 Args 0 Len 0003 Aml 
+ 3        RHUB Device        01 
+ 4          _ADR Integer       01 = 0000000000000000
+ 4          HS01 Device        01 
+ 5            _ADR Integer       01 = 0000000000000001
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0026 Aml 
+ 5            _PLD Method        01 Args 0 Len 0044 Aml 
+ 4          HS02 Device        01 
+ 5            _ADR Integer       01 = 0000000000000002
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0027 Aml 
+ 5            _PLD Method        01 Args 0 Len 0045 Aml 
+ 4          HS03 Device        01 
+ 5            _ADR Integer       01 = 0000000000000003
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0027 Aml 
+ 5            _PLD Method        01 Args 0 Len 005E Aml 
+ 4          HS04 Device        01 
+ 5            _ADR Integer       01 = 0000000000000004
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0027 Aml 
+ 5            _PLD Method        01 Args 0 Len 0045 Aml 
+ 4          HS05 Device        01 
+ 5            _ADR Integer       01 = 0000000000000005
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0026 Aml 
+ 5            _PLD Method        01 Args 0 Len 0045 Aml 
+ 4          HS06 Device        01 
+ 5            _ADR Integer       01 = 0000000000000006
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0026 Aml 
+ 5            _PLD Method        01 Args 0 Len 0045 Aml 
+ 4          HS07 Device        01 
+ 5            _ADR Integer       01 = 0000000000000007
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0026 Aml 
+ 5            _PLD Method        01 Args 0 Len 0045 Aml 
+ 4          HS08 Device        01 
+ 5            _ADR Integer       01 = 0000000000000008
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0026 Aml 
+ 5            _PLD Method        01 Args 0 Len 0045 Aml 
+ 4          HS09 Device        01 
+ 5            _ADR Integer       01 = 0000000000000009
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0028 Aml 
+ 5            _PLD Method        01 Args 0 Len 005F Aml 
+ 4          HS10 Device        01 
+ 5            _ADR Method        01 Args 0 Len 0017 Aml 
+ 5            _STA Method        01 Args 0 Len 0016 Aml 
+ 5            _UPC Method        01 Args 0 Len 0028 Aml 
+ 5            _PLD Method        01 Args 0 Len 0046 Aml 
+ 4          HS11 Device        01 
+ 5            _ADR Method        01 Args 0 Len 0017 Aml 
+ 5            _STA Method        01 Args 0 Len 0016 Aml 
+ 5            _UPC Method        01 Args 0 Len 0028 Aml 
+ 5            _PLD Method        01 Args 0 Len 0046 Aml 
+ 4          HS12 Device        01 
+ 5            _ADR Method        01 Args 0 Len 0017 Aml 
+ 5            _STA Method        01 Args 0 Len 0016 Aml 
+ 5            _UPC Method        01 Args 0 Len 0028 Aml 
+ 5            _PLD Method        01 Args 0 Len 0046 Aml 
+ 4          HS13 Device        01 
+ 5            _ADR Method        01 Args 0 Len 0017 Aml 
+ 5            _STA Method        01 Args 0 Len 0016 Aml 
+ 5            _UPC Method        01 Args 0 Len 0028 Aml 
+ 5            _PLD Method        01 Args 0 Len 0046 Aml 
+ 4          HS14 Device        01 
+ 5            _ADR Integer       01 = 000000000000000E
+ 5            _STA Method        01 Args 0 Len 0016 Aml 
+ 5            _UPC Method        01 Args 0 Len 0028 Aml 
+ 5            _PLD Method        01 Args 0 Len 0046 Aml 
+ 4          HS15 Device        01 
+ 5            _ADR Integer       01 = 000000000000000F
+ 5            _STA Method        01 Args 0 Len 0016 Aml 
+ 5            _UPC Method        01 Args 0 Len 0028 Aml 
+ 5            _PLD Method        01 Args 0 Len 0046 Aml 
+ 4          SSP1 Device        01 
+ 5            _ADR Method        01 Args 0 Len 0017 Aml 
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0026 Aml 
+ 5            _PLD Method        01 Args 0 Len 0044 Aml 
+ 4          SSP2 Device        01 
+ 5            _ADR Method        01 Args 0 Len 0017 Aml 
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0027 Aml 
+ 5            _PLD Method        01 Args 0 Len 0045 Aml 
+ 4          SSP3 Device        01 
+ 5            _ADR Method        01 Args 0 Len 0017 Aml 
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0051 Aml 
+ 5            _PLD Method        01 Args 0 Len 0045 Aml 
+ 4          SSP4 Device        01 
+ 5            _ADR Method        01 Args 0 Len 0017 Aml 
+ 5            _STA Integer       01 = 000000000000000F
+ 5            _UPC Method        01 Args 0 Len 0051 Aml 
+ 5            _PLD Method        01 Args 0 Len 0045 Aml 
+ 4          SSP5 Device        01 
+ 5            _ADR Integer       01 = 0000000000000014
+ 5            _STA Method        01 Args 0 Len 0016 Aml 
+ 5            _UPC Method        01 Args 0 Len 003C Aml 
+ 5            _PLD Method        01 Args 0 Len 0045 Aml 
+ 4          SSP6 Device        01 
+ 5            _ADR Integer       01 = 0000000000000015
+ 5            _STA Method        01 Args 0 Len 0016 Aml 
+ 5            _UPC Method        01 Args 0 Len 003C Aml 
+ 5            _PLD Method        01 Args 0 Len 0045 Aml 
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      HDEF Device        01 
+ 3        _ADR Integer       01 = 00000000001B0000
+ 3        HDAR Region        01 [PCI_Config] Addr 000000000000004C Len 0010
+ 3        DCKA RegionField   01 Rgn [HDAR] Off 000 Len 01 Acc 02
+ 3        DCKM RegionField   01 Rgn [HDAR] Off 008 Len 01 Acc 02
+ 3        DCKS RegionField   01 Rgn [HDAR] Off 00F Len 01 Acc 02
+ 3        PMEE RegionField   01 Rgn [HDAR] Off 048 Len 01 Acc 02
+ 3        PMES RegionField   01 Rgn [HDAR] Off 04F Len 01 Acc 02
+ 3        _PRW Method        01 Args 0 Len 0009 Aml 
+ 2      SAT0 Device        01 
+ 3        _ADR Integer       01 = 00000000001F0002
+ 3        FDEV Integer       01 = 0000000000000000
+ 3        FDRP Integer       01 = 0000000000000000
+ 3        PRT0 Device        01 
+ 4          _ADR Integer       01 = 000000000000FFFF
+ 4          _SDD Method        01 Args 1 Len 0022 Aml 
+ 4          _GTF Method        01 Args 0 Len 0048 Aml 
+ 3        PRT1 Device        01 
+ 4          _ADR Integer       01 = 000000000001FFFF
+ 4          FDEV Integer       01 = 0000000000000000
+ 4          FDRP Integer       01 = 0000000000000000
+ 4          _DEP Method        01 Args 0 Len 004E Aml 
+ 4          _SDD Method        01 Args 1 Len 0022 Aml 
+ 4          _GTF Method        01 Args 0 Len 0048 Aml 
+ 3        PRT3 Device        01 
+ 4          _ADR Integer       01 = 000000000003FFFF
+ 4          FDEV Integer       01 = 0000000000000000
+ 4          FDRP Integer       01 = 0000000000000000
+ 4          _SDD Method        01 Args 1 Len 0022 Aml 
+ 4          _GTF Method        01 Args 0 Len 0048 Aml 
+ 3        REGF Integer       04 = 0000000000000001
+ 3        _REG Method        04 Args 2 Len 000C Aml 
+ 3        TMD0 Buffer        04 Len 14 = 00 00 00 00 00 00 00 00 00 00 00 00
+ 3        _GTM Method        04 Args 0 Len 002C Aml 
+ 3        _STM Method        04 Args 3 Len 0000 Aml 
+ 3        SPT0 Device        04 
+ 4          _ADR Integer       04 = 000000000000FFFF
+ 4          _GTF Method        04 Args 0 Len 003E Aml 
+ 3        SPT1 Device        04 
+ 4          _ADR Integer       04 = 000000000001FFFF
+ 4          _GTF Method        04 Args 0 Len 003E Aml 
+ 3        SPT2 Device        04 
+ 4          _ADR Integer       04 = 000000000002FFFF
+ 4          _GTF Method        04 Args 0 Len 003E Aml 
+ 3        SPT3 Device        04 
+ 4          _ADR Integer       04 = 000000000003FFFF
+ 4          _GTF Method        04 Args 0 Len 003E Aml 
+ 3        SPT4 Device        04 
+ 4          _ADR Integer       04 = 000000000004FFFF
+ 4          _GTF Method        04 Args 0 Len 003E Aml 
+ 3        SPT5 Device        04 
+ 4          _ADR Integer       04 = 000000000005FFFF
+ 4          _GTF Method        04 Args 0 Len 003E Aml 
+ 3        PIO0 BufferField   04 Buf [TMD0] Off 000 Len 20 Acc 04
+ 3        DMA0 BufferField   04 Buf [TMD0] Off 020 Len 20 Acc 04
+ 3        PIO1 BufferField   04 Buf [TMD0] Off 040 Len 20 Acc 04
+ 3        DMA1 BufferField   04 Buf [TMD0] Off 060 Len 20 Acc 04
+ 3        CHNF BufferField   04 Buf [TMD0] Off 080 Len 20 Acc 04
+ 2      SAT1 Device        01 
+ 3        _ADR Integer       01 = 00000000001F0005
+ 2      SBUS Device        01 
+ 3        _ADR Integer       01 = 00000000001F0003
+ 3        SMBP Region        01 [PCI_Config] Addr 0000000000000040 Len 00C0
+ 3        I2CE RegionField   01 Rgn [SMBP] Off 002 Len 01 Acc 04
+ 3        SMPB Region        01 [PCI_Config] Addr 0000000000000020 Len 0004
+ 3        SBAR RegionField   01 Rgn [SMPB] Off 005 Len 0B Acc 04
+ 3        SMBI Region        01 [SystemIO] Addr 0000000000000000 Len 0010
+ 3        HSTS RegionField   01 Rgn [SMBI] Off 000 Len 08 Acc 01
+ 3        HCON RegionField   01 Rgn [SMBI] Off 010 Len 08 Acc 01
+ 3        HCOM RegionField   01 Rgn [SMBI] Off 018 Len 08 Acc 01
+ 3        TXSA RegionField   01 Rgn [SMBI] Off 020 Len 08 Acc 01
+ 3        DAT0 RegionField   01 Rgn [SMBI] Off 028 Len 08 Acc 01
+ 3        DAT1 RegionField   01 Rgn [SMBI] Off 030 Len 08 Acc 01
+ 3        HBDR RegionField   01 Rgn [SMBI] Off 038 Len 08 Acc 01
+ 3        PECR RegionField   01 Rgn [SMBI] Off 040 Len 08 Acc 01
+ 3        RXSA RegionField   01 Rgn [SMBI] Off 048 Len 08 Acc 01
+ 3        SDAT RegionField   01 Rgn [SMBI] Off 050 Len 10 Acc 01
+ 3        SSXB Method        01 Args 2 Len 003D Aml 
+ 3        SRXB Method        01 Args 1 Len 0041 Aml 
+ 3        SWRB Method        01 Args 3 Len 0043 Aml 
+ 3        SRDB Method        01 Args 2 Len 0047 Aml 
+ 3        SWRW Method        01 Args 3 Len 0051 Aml 
+ 3        SRDW Method        01 Args 2 Len 0053 Aml 
+ 3        SBLW Method        01 Args 4 Len 0093 Aml 
+ 3        SBLR Method        01 Args 3 Len 00C9 Aml 
+ 3        STRT Method        01 Args 0 Len 0048 Aml 
+ 3        COMP Method        01 Args 0 Len 0027 Aml 
+ 3        KILL Method        01 Args 0 Len 0016 Aml 
+ 2      PA0H Integer       01 = 0000000000000000
+ 2      PA1H Integer       01 = 0000000000000000
+ 2      PA2H Integer       01 = 0000000000000000
+ 2      PA3H Integer       01 = 0000000000000000
+ 2      PA4H Integer       01 = 0000000000000000
+ 2      PA5H Integer       01 = 0000000000000000
+ 2      PA6H Integer       01 = 0000000000000000
+ 2      NPTS Method        01 Args 1 Len 003F Aml 
+ 2      NWAK Method        01 Args 1 Len 003F Aml 
+ 2      PTMA Method        01 Args 0 Len 0005 Aml 
+ 2      PTMS Method        01 Args 0 Len 0005 Aml 
+ 2      PTIA Method        01 Args 0 Len 0005 Aml 
+ 2      _INI Method        01 Args 0 Len 00F6 Aml 
+ 2      NHPG Method        01 Args 0 Len 00C0 Aml 
+ 2      NPME Method        01 Args 0 Len 00C0 Aml 
+ 2      PDRC Device        01 
+ 3        _HID Integer       01 = 00000000020CD041
+ 3        _UID Integer       01 = 0000000000000001
+ 3        BUF0 Buffer        01 Len 92 = 86 09 00 01 00 00 00 00 00 40 00 00
+ 3        _CRS Method        01 Args 0 Len 00D4 Aml 
+ 2      SLIC Buffer        01 Len 9E = 39 38 37 33 36 35 39 38 36 34 35 36
+ 2      WMI1 Device        01 
+ 3        _HID String        01 Len 07 "pnp0c14"
+ 3        _UID String        01 Len 04 "MXM2"
+ 3        _WDG Buffer        01 Len 14 = 3C 5C CB F6 AE 9C BD 4E B5 77 93 1E
+ 3        WMMX Method        01 Args 3 Len 001A Aml 
+ 2      DOCK Device        01 
+ 3        _HID String        01 Len 08 "ABCD0000"
+ 3        _CID Integer       01 = 00000000150CD041
+ 3        _UID Integer       01 = 0000000000000002
+ 3        _STA Method        01 Args 0 Len 0002 Aml 
+ 2      LTRS Integer       05 = 0000000000000000
+ 2      OBFS Integer       05 = 0000000000000000
+ 2      PEG0 Device        05 
+ 3        _ADR Integer       05 = 0000000000010000
+ 3        PEGR Region        05 [PCI_Config] Addr 00000000000000C0 Len 0030
+ 3        PSTS RegionField   05 Rgn [PEGR] Off 010 Len 01 Acc 04
+ 3        GENG RegionField   05 Rgn [PEGR] Off 160 Len 01 Acc 04
+ 3        PMEG RegionField   05 Rgn [PEGR] Off 162 Len 01 Acc 04
+ 3        _PRW Method        05 Args 0 Len 0009 Aml 
+ 3        _PSW Method        05 Args 1 Len 001D Aml 
+ 3        HPME Method        05 Args 0 Len 0006 Aml 
+ 3        _PRT Method        05 Args 0 Len 0010 Aml 
+ 3        _INI Method        05 Args 0 Len 0012 Aml 
+ 3        LTRV Package       05 Elements 04
+ 3        OPTS Integer       05 = 0000000000000000
+ 3        _DSM Method        05 Args 4 Len 013B Aml 
+ 3        PEGP Device        05 
+ 4          _ADR Integer       05 = 0000000000000000
+ 4          _PRW Method        05 Args 0 Len 0009 Aml 
+ 2      PEG1 Device        05 
+ 3        _ADR Integer       05 = 0000000000010001
+ 3        PEGR Region        05 [PCI_Config] Addr 00000000000000C0 Len 0030
+ 3        PSTS RegionField   05 Rgn [PEGR] Off 010 Len 01 Acc 04
+ 3        GENG RegionField   05 Rgn [PEGR] Off 160 Len 01 Acc 04
+ 3        PMEG RegionField   05 Rgn [PEGR] Off 162 Len 01 Acc 04
+ 3        _PRW Method        05 Args 0 Len 0009 Aml 
+ 3        _PSW Method        05 Args 1 Len 001D Aml 
+ 3        HPME Method        05 Args 0 Len 0006 Aml 
+ 3        _PRT Method        05 Args 0 Len 0010 Aml 
+ 3        _INI Method        05 Args 0 Len 0012 Aml 
+ 3        LTRV Package       05 Elements 04
+ 3        OPTS Integer       05 = 0000000000000000
+ 3        _DSM Method        05 Args 4 Len 013B Aml 
+ 2      PEG2 Device        05 
+ 3        _ADR Integer       05 = 0000000000010002
+ 3        PEGR Region        05 [PCI_Config] Addr 00000000000000C0 Len 0030
+ 3        PSTS RegionField   05 Rgn [PEGR] Off 010 Len 01 Acc 04
+ 3        GENG RegionField   05 Rgn [PEGR] Off 160 Len 01 Acc 04
+ 3        PMEG RegionField   05 Rgn [PEGR] Off 162 Len 01 Acc 04
+ 3        _PRW Method        05 Args 0 Len 0009 Aml 
+ 3        _PSW Method        05 Args 1 Len 001D Aml 
+ 3        HPME Method        05 Args 0 Len 0006 Aml 
+ 3        _PRT Method        05 Args 0 Len 0010 Aml 
+ 3        _INI Method        05 Args 0 Len 0012 Aml 
+ 3        LTRV Package       05 Elements 04
+ 3        OPTS Integer       05 = 0000000000000000
+ 3        _DSM Method        05 Args 4 Len 013B Aml 
+ 2      B0D3 Device        05 
+ 3        _ADR Integer       05 = 0000000000030000
+ 3        _STA Method        05 Args 0 Len 0010 Aml 
+ 3        _INI Method        05 Args 0 Len 0000 Aml 
+ 3        RPCZ Region        05 [PCI_Config] Addr 0000000000000000 Len 0040
+ 3        AUVD RegionField   05 Rgn [RPCZ] Off 000 Len 10 Acc 04
+ 3        ABAR RegionField   05 Rgn [RPCZ] Off 080 Len 20 Acc 04
+ 3        ASTR Method        05 Args 0 Len 0078 Aml 
+ 3        VSTR Method        05 Args 1 Len 00EB Aml 
+ 3        CXDC Method        05 Args 0 Len 004D Aml 
+ 3        AINI Method        05 Args 0 Len 0108 Aml 
+ 2      GFX0 Device        05 
+ 3        _ADR Integer       05 = 0000000000020000
+ 3        _DEP Method        05 Args 0 Len 0024 Aml 
+ 3        _DOS Method        05 Args 1 Len 0020 Aml 
+ 3        _DOD Method        05 Args 0 Len 0C78 Aml 
+ 3        DD01 Device        05 
+ 4          _ADR Method        05 Args 0 Len 003F Aml 
+ 4          _DCS Method        05 Args 0 Len 0009 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD02 Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0013 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD03 Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD04 Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD05 Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD06 Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD07 Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD08 Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD09 Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD0A Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD0B Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD0C Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD0D Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD0E Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD0F Device        05 
+ 4          _ADR Method        05 Args 0 Len 0042 Aml 
+ 4          _DCS Method        05 Args 0 Len 0016 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 3        DD1F Device        05 
+ 4          _ADR Method        05 Args 0 Len 0017 Aml 
+ 4          _DCS Method        05 Args 0 Len 0015 Aml 
+ 4          _DGS Method        05 Args 0 Len 0022 Aml 
+ 4          _DSS Method        05 Args 1 Len 0019 Aml 
+ 4          _BCL Method        05 Args 0 Len 00D1 Aml 
+ 4          _BCM Method        05 Args 1 Len 0027 Aml 
+ 4          _BQC Method        05 Args 0 Len 0005 Aml 
+ 3        SDDL Method        05 Args 1 Len 00AD Aml 
+ 3        CDDS Method        05 Args 1 Len 006B Aml 
+ 3        NDDS Method        05 Args 1 Len 0061 Aml 
+ 3        IGDP Region        05 [PCI_Config] Addr 0000000000000040 Len 00C0
+ 3        GIVD RegionField   05 Rgn [IGDP] Off 091 Len 01 Acc 01
+ 3        GUMA RegionField   05 Rgn [IGDP] Off 094 Len 03 Acc 01
+ 3        GMFN RegionField   05 Rgn [IGDP] Off 0A4 Len 01 Acc 01
+ 3        ASLE RegionField   05 Rgn [IGDP] Off 520 Len 08 Acc 01
+ 3        GSSE RegionField   05 Rgn [IGDP] Off 540 Len 01 Acc 01
+ 3        GSSB RegionField   05 Rgn [IGDP] Off 541 Len 0E Acc 01
+ 3        GSES RegionField   05 Rgn [IGDP] Off 54F Len 01 Acc 01
+ 3        CDVL RegionField   05 Rgn [IGDP] Off 58C Len 01 Acc 01
+ 3        LBPC RegionField   05 Rgn [IGDP] Off 5A8 Len 08 Acc 01
+ 3        ASLS RegionField   05 Rgn [IGDP] Off 5E0 Len 20 Acc 01
+ 3        IGDM Region        05 [SystemMemory] Addr 0000000000000000 Len 2000
+ 3        SIGN RegionField   05 Rgn [IGDM] Off 000 Len 80 Acc 01
+ 3        SIZE RegionField   05 Rgn [IGDM] Off 080 Len 20 Acc 01
+ 3        OVER RegionField   05 Rgn [IGDM] Off 0A0 Len 20 Acc 01
+ 3        SVER RegionField   05 Rgn [IGDM] Off 0C0 Len 100 Acc 01
+ 3        VVER RegionField   05 Rgn [IGDM] Off 1C0 Len 80 Acc 01
+ 3        GVER RegionField   05 Rgn [IGDM] Off 240 Len 80 Acc 01
+ 3        MBOX RegionField   05 Rgn [IGDM] Off 2C0 Len 20 Acc 01
+ 3        DMOD RegionField   05 Rgn [IGDM] Off 2E0 Len 20 Acc 01
+ 3        PCON RegionField   05 Rgn [IGDM] Off 300 Len 20 Acc 01
+ 3        DVER RegionField   05 Rgn [IGDM] Off 320 Len 40 Acc 01
+ 3        DRDY RegionField   05 Rgn [IGDM] Off 800 Len 20 Acc 01
+ 3        CSTS RegionField   05 Rgn [IGDM] Off 820 Len 20 Acc 01
+ 3        CEVT RegionField   05 Rgn [IGDM] Off 840 Len 20 Acc 01
+ 3        DIDL RegionField   05 Rgn [IGDM] Off 900 Len 20 Acc 01
+ 3        DDL2 RegionField   05 Rgn [IGDM] Off 920 Len 20 Acc 01
+ 3        DDL3 RegionField   05 Rgn [IGDM] Off 940 Len 20 Acc 01
+ 3        DDL4 RegionField   05 Rgn [IGDM] Off 960 Len 20 Acc 01
+ 3        DDL5 RegionField   05 Rgn [IGDM] Off 980 Len 20 Acc 01
+ 3        DDL6 RegionField   05 Rgn [IGDM] Off 9A0 Len 20 Acc 01
+ 3        DDL7 RegionField   05 Rgn [IGDM] Off 9C0 Len 20 Acc 01
+ 3        DDL8 RegionField   05 Rgn [IGDM] Off 9E0 Len 20 Acc 01
+ 3        CPDL RegionField   05 Rgn [IGDM] Off A00 Len 20 Acc 01
+ 3        CPL2 RegionField   05 Rgn [IGDM] Off A20 Len 20 Acc 01
+ 3        CPL3 RegionField   05 Rgn [IGDM] Off A40 Len 20 Acc 01
+ 3        CPL4 RegionField   05 Rgn [IGDM] Off A60 Len 20 Acc 01
+ 3        CPL5 RegionField   05 Rgn [IGDM] Off A80 Len 20 Acc 01
+ 3        CPL6 RegionField   05 Rgn [IGDM] Off AA0 Len 20 Acc 01
+ 3        CPL7 RegionField   05 Rgn [IGDM] Off AC0 Len 20 Acc 01
+ 3        CPL8 RegionField   05 Rgn [IGDM] Off AE0 Len 20 Acc 01
+ 3        CADL RegionField   05 Rgn [IGDM] Off B00 Len 20 Acc 01
+ 3        CAL2 RegionField   05 Rgn [IGDM] Off B20 Len 20 Acc 01
+ 3        CAL3 RegionField   05 Rgn [IGDM] Off B40 Len 20 Acc 01
+ 3        CAL4 RegionField   05 Rgn [IGDM] Off B60 Len 20 Acc 01
+ 3        CAL5 RegionField   05 Rgn [IGDM] Off B80 Len 20 Acc 01
+ 3        CAL6 RegionField   05 Rgn [IGDM] Off BA0 Len 20 Acc 01
+ 3        CAL7 RegionField   05 Rgn [IGDM] Off BC0 Len 20 Acc 01
+ 3        CAL8 RegionField   05 Rgn [IGDM] Off BE0 Len 20 Acc 01
+ 3        NADL RegionField   05 Rgn [IGDM] Off C00 Len 20 Acc 01
+ 3        NDL2 RegionField   05 Rgn [IGDM] Off C20 Len 20 Acc 01
+ 3        NDL3 RegionField   05 Rgn [IGDM] Off C40 Len 20 Acc 01
+ 3        NDL4 RegionField   05 Rgn [IGDM] Off C60 Len 20 Acc 01
+ 3        NDL5 RegionField   05 Rgn [IGDM] Off C80 Len 20 Acc 01
+ 3        NDL6 RegionField   05 Rgn [IGDM] Off CA0 Len 20 Acc 01
+ 3        NDL7 RegionField   05 Rgn [IGDM] Off CC0 Len 20 Acc 01
+ 3        NDL8 RegionField   05 Rgn [IGDM] Off CE0 Len 20 Acc 01
+ 3        ASLP RegionField   05 Rgn [IGDM] Off D00 Len 20 Acc 01
+ 3        TIDX RegionField   05 Rgn [IGDM] Off D20 Len 20 Acc 01
+ 3        CHPD RegionField   05 Rgn [IGDM] Off D40 Len 20 Acc 01
+ 3        CLID RegionField   05 Rgn [IGDM] Off D60 Len 20 Acc 01
+ 3        CDCK RegionField   05 Rgn [IGDM] Off D80 Len 20 Acc 01
+ 3        SXSW RegionField   05 Rgn [IGDM] Off DA0 Len 20 Acc 01
+ 3        EVTS RegionField   05 Rgn [IGDM] Off DC0 Len 20 Acc 01
+ 3        CNOT RegionField   05 Rgn [IGDM] Off DE0 Len 20 Acc 01
+ 3        NRDY RegionField   05 Rgn [IGDM] Off E00 Len 20 Acc 01
+ 3        DDL9 RegionField   05 Rgn [IGDM] Off E20 Len 20 Acc 01
+ 3        DD10 RegionField   05 Rgn [IGDM] Off E40 Len 20 Acc 01
+ 3        DD11 RegionField   05 Rgn [IGDM] Off E60 Len 20 Acc 01
+ 3        DD12 RegionField   05 Rgn [IGDM] Off E80 Len 20 Acc 01
+ 3        DD13 RegionField   05 Rgn [IGDM] Off EA0 Len 20 Acc 01
+ 3        DD14 RegionField   05 Rgn [IGDM] Off EC0 Len 20 Acc 01
+ 3        DD15 RegionField   05 Rgn [IGDM] Off EE0 Len 20 Acc 01
+ 3        CPL9 RegionField   05 Rgn [IGDM] Off F00 Len 20 Acc 01
+ 3        CP10 RegionField   05 Rgn [IGDM] Off F20 Len 20 Acc 01
+ 3        CP11 RegionField   05 Rgn [IGDM] Off F40 Len 20 Acc 01
+ 3        CP12 RegionField   05 Rgn [IGDM] Off F60 Len 20 Acc 01
+ 3        CP13 RegionField   05 Rgn [IGDM] Off F80 Len 20 Acc 01
+ 3        CP14 RegionField   05 Rgn [IGDM] Off FA0 Len 20 Acc 01
+ 3        CP15 RegionField   05 Rgn [IGDM] Off FC0 Len 20 Acc 01
+ 3        SCIE RegionField   05 Rgn [IGDM] Off 1000 Len 01 Acc 01
+ 3        GEFC RegionField   05 Rgn [IGDM] Off 1001 Len 04 Acc 01
+ 3        GXFC RegionField   05 Rgn [IGDM] Off 1005 Len 03 Acc 01
+ 3        GESF RegionField   05 Rgn [IGDM] Off 1008 Len 08 Acc 01
+ 3        PARM RegionField   05 Rgn [IGDM] Off 1020 Len 20 Acc 01
+ 3        DSLP RegionField   05 Rgn [IGDM] Off 1040 Len 20 Acc 01
+ 3        ARDY RegionField   05 Rgn [IGDM] Off 1800 Len 20 Acc 01
+ 3        ASLC RegionField   05 Rgn [IGDM] Off 1820 Len 20 Acc 01
+ 3        TCHE RegionField   05 Rgn [IGDM] Off 1840 Len 20 Acc 01
+ 3        ALSI RegionField   05 Rgn [IGDM] Off 1860 Len 20 Acc 01
+ 3        BCLP RegionField   05 Rgn [IGDM] Off 1880 Len 20 Acc 01
+ 3        PFIT RegionField   05 Rgn [IGDM] Off 18A0 Len 20 Acc 01
+ 3        CBLV RegionField   05 Rgn [IGDM] Off 18C0 Len 20 Acc 01
+ 3        BCLM RegionField   05 Rgn [IGDM] Off 18E0 Len 140 Acc 01
+ 3        CPFM RegionField   05 Rgn [IGDM] Off 1A20 Len 20 Acc 01
+ 3        EPFM RegionField   05 Rgn [IGDM] Off 1A40 Len 20 Acc 01
+ 3        PLUT RegionField   05 Rgn [IGDM] Off 1A60 Len 250 Acc 01
+ 3        PFMB RegionField   05 Rgn [IGDM] Off 1CB0 Len 20 Acc 01
+ 3        CCDV RegionField   05 Rgn [IGDM] Off 1CD0 Len 20 Acc 01
+ 3        PCFT RegionField   05 Rgn [IGDM] Off 1CF0 Len 20 Acc 01
+ 3        SROT RegionField   05 Rgn [IGDM] Off 1D10 Len 20 Acc 01
+ 3        IUER RegionField   05 Rgn [IGDM] Off 1D30 Len 20 Acc 01
+ 3        FDSP RegionField   05 Rgn [IGDM] Off 1D50 Len 40 Acc 01
+ 3        FDSS RegionField   05 Rgn [IGDM] Off 1D90 Len 20 Acc 01
+ 3        STAT RegionField   05 Rgn [IGDM] Off 1DB0 Len 20 Acc 01
+ 3        GVD1 RegionField   05 Rgn [IGDM] Off 2000 Len C000 Acc 01
+ 3        PHED RegionField   05 Rgn [IGDM] Off E000 Len 20 Acc 01
+ 3        BDDC RegionField   05 Rgn [IGDM] Off E020 Len 800 Acc 01
+ 3        DBTB Package       05 Elements 15
+ 3        CDCT Package       05 Elements 05
+ 3        SUCC Integer       05 = 0000000000000001
+ 3        NVLD Integer       05 = 0000000000000002
+ 3        CRIT Integer       05 = 0000000000000004
+ 3        NCRT Integer       05 = 0000000000000006
+ 3        GSCI Method        05 Args 0 Len 0595 Aml 
+ 3        PDRD Method        05 Args 0 Len 0006 Aml 
+ 3        PSTS Method        05 Args 0 Len 0017 Aml 
+ 3        GNOT Method        05 Args 2 Len 0077 Aml 
+ 3        GHDS Method        05 Args 1 Len 000D Aml 
+ 3        GLID Method        05 Args 1 Len 002F Aml 
+ 3        GDCK Method        05 Args 1 Len 000E Aml 
+ 3        PARD Method        05 Args 0 Len 0013 Aml 
+ 3        IUEH Method        05 Args 1 Len 0030 Aml 
+ 3        AINT Method        05 Args 2 Len 0158 Aml 
+ 3        SCIP Method        05 Args 0 Len 0011 Aml 
+ 2      MCHP Region        05 [PCI_Config] Addr 0000000000000040 Len 00C0
+ 2      AUDE RegionField   05 Rgn [MCHP] Off 0A0 Len 08 Acc 01
+ 2      TASM RegionField   05 Rgn [MCHP] Off 300 Len 0A Acc 01
+ 1    BN00 Method        01 Args 0 Len 0002 Aml 
+ 1    CDID RegionField   01 Rgn [LPC1] Off 010 Len 10 Acc 01
+ 1    CRID RegionField   01 Rgn [LPC1] Off 040 Len 08 Acc 01
+ 1    PARC RegionField   01 Rgn [LPC1] Off 300 Len 08 Acc 01
+ 1    PBRC RegionField   01 Rgn [LPC1] Off 308 Len 08 Acc 01
+ 1    PCRC RegionField   01 Rgn [LPC1] Off 310 Len 08 Acc 01
+ 1    PDRC RegionField   01 Rgn [LPC1] Off 318 Len 08 Acc 01
+ 1    PERC RegionField   01 Rgn [LPC1] Off 340 Len 08 Acc 01
+ 1    PFRC RegionField   01 Rgn [LPC1] Off 348 Len 08 Acc 01
+ 1    PGRC RegionField   01 Rgn [LPC1] Off 350 Len 08 Acc 01
+ 1    PHRC RegionField   01 Rgn [LPC1] Off 358 Len 08 Acc 01
+ 1    XUSB RegionField   01 Rgn [LPC1] Off 570 Len 01 Acc 01
+ 1    LNKA Device        01 
+ 2      _HID Integer       01 = 000000000F0CD041
+ 2      _UID Integer       01 = 0000000000000001
+ 2      _DIS Method        01 Args 0 Len 000B Aml 
+ 2      _PRS Method        01 Args 0 Len 0005 Aml 
+ 2      _CRS Method        01 Args 0 Len 0032 Aml 
+ 2      _SRS Method        01 Args 1 Len 0015 Aml 
+ 2      _STA Method        01 Args 0 Len 0012 Aml 
+ 1    LNKB Device        01 
+ 2      _HID Integer       01 = 000000000F0CD041
+ 2      _UID Integer       01 = 0000000000000002
+ 2      _DIS Method        01 Args 0 Len 000B Aml 
+ 2      _PRS Method        01 Args 0 Len 0005 Aml 
+ 2      _CRS Method        01 Args 0 Len 0032 Aml 
+ 2      _SRS Method        01 Args 1 Len 0015 Aml 
+ 2      _STA Method        01 Args 0 Len 0012 Aml 
+ 1    LNKC Device        01 
+ 2      _HID Integer       01 = 000000000F0CD041
+ 2      _UID Integer       01 = 0000000000000003
+ 2      _DIS Method        01 Args 0 Len 000B Aml 
+ 2      _PRS Method        01 Args 0 Len 0005 Aml 
+ 2      _CRS Method        01 Args 0 Len 0032 Aml 
+ 2      _SRS Method        01 Args 1 Len 0015 Aml 
+ 2      _STA Method        01 Args 0 Len 0012 Aml 
+ 1    LNKD Device        01 
+ 2      _HID Integer       01 = 000000000F0CD041
+ 2      _UID Integer       01 = 0000000000000004
+ 2      _DIS Method        01 Args 0 Len 000B Aml 
+ 2      _PRS Method        01 Args 0 Len 0005 Aml 
+ 2      _CRS Method        01 Args 0 Len 0032 Aml 
+ 2      _SRS Method        01 Args 1 Len 0015 Aml 
+ 2      _STA Method        01 Args 0 Len 0012 Aml 
+ 1    LNKE Device        01 
+ 2      _HID Integer       01 = 000000000F0CD041
+ 2      _UID Integer       01 = 0000000000000005
+ 2      _DIS Method        01 Args 0 Len 000B Aml 
+ 2      _PRS Method        01 Args 0 Len 0005 Aml 
+ 2      _CRS Method        01 Args 0 Len 0032 Aml 
+ 2      _SRS Method        01 Args 1 Len 0015 Aml 
+ 2      _STA Method        01 Args 0 Len 0012 Aml 
+ 1    LNKF Device        01 
+ 2      _HID Integer       01 = 000000000F0CD041
+ 2      _UID Integer       01 = 0000000000000006
+ 2      _DIS Method        01 Args 0 Len 000B Aml 
+ 2      _PRS Method        01 Args 0 Len 0005 Aml 
+ 2      _CRS Method        01 Args 0 Len 0032 Aml 
+ 2      _SRS Method        01 Args 1 Len 0015 Aml 
+ 2      _STA Method        01 Args 0 Len 0012 Aml 
+ 1    LNKG Device        01 
+ 2      _HID Integer       01 = 000000000F0CD041
+ 2      _UID Integer       01 = 0000000000000007
+ 2      _DIS Method        01 Args 0 Len 000B Aml 
+ 2      _PRS Method        01 Args 0 Len 0005 Aml 
+ 2      _CRS Method        01 Args 0 Len 0032 Aml 
+ 2      _SRS Method        01 Args 1 Len 0015 Aml 
+ 2      _STA Method        01 Args 0 Len 0012 Aml 
+ 1    LNKH Device        01 
+ 2      _HID Integer       01 = 000000000F0CD041
+ 2      _UID Integer       01 = 0000000000000008
+ 2      _DIS Method        01 Args 0 Len 000B Aml 
+ 2      _PRS Method        01 Args 0 Len 0005 Aml 
+ 2      _CRS Method        01 Args 0 Len 0032 Aml 
+ 2      _SRS Method        01 Args 1 Len 0015 Aml 
+ 2      _STA Method        01 Args 0 Len 0012 Aml 
+ 1    PWRB Device        01 
+ 2      _HID Integer       01 = 000000000C0CD041
+ 2      _UID Integer       01 = 00000000000000AA
+ 2      _STA Integer       01 = 000000000000000B
+ 2      _PRW Method        01 Args 0 Len 0009 Aml 
+ 1    RDGI Method        01 Args 1 Len 0037 Aml 
+ 1    RDGP Method        01 Args 1 Len 0037 Aml 
+ 1    WTGP Method        01 Args 2 Len 0038 Aml 
+ 1    WTIN Method        01 Args 2 Len 0038 Aml 
+ 1    WPGP Method        01 Args 2 Len 0036 Aml 
+ 1    GP2N Method        01 Args 2 Len 0036 Aml 
+ 1    GP2A Method        01 Args 2 Len 00B9 Aml 
+ 1    GP2B Method        01 Args 2 Len 006B Aml 
+ 1    BIND Device        01 
+ 2      _HID String        01 Len 07 "INT33D2"
+ 2      _CID String        01 Len 07 "PNP0C40"
+ 2      _STA Method        01 Args 0 Len 0017 Aml 
+ 1    CIND Device        01 
+ 2      _HID String        01 Len 07 "INT33D3"
+ 2      _CID String        01 Len 07 "PNP0C60"
+ 2      _STA Method        01 Args 0 Len 0017 Aml 
+ 1    DIND Device        01 
+ 2      _HID String        01 Len 07 "INT33D4"
+ 2      _CID String        01 Len 07 "PNP0C70"
+ 2      _STA Method        01 Args 0 Len 0017 Aml 
+ 1    OSCI Integer       01 = 0000000000000000
+ 1    OSCO Integer       01 = 0000000000000000
+ 1    _OSC Method        01 Args 4 Len 00F8 Aml 
+ 1    PEPD Device        01 
+ 2      _HID String        01 Len 07 "INT33A1"
+ 2      _CID Integer       01 = 00000000800DD041
+ 2      _UID Integer       01 = 0000000000000001
+ 2      PEPP Integer       01 = 0000000000000000
+ 2      DEVS Package       01 Elements 03
+ 2      DEVX Package       01 Elements 08
+ 2      _STA Method        01 Args 0 Len 0027 Aml 
+ 2      _DSM Method        01 Args 4 Len 0183 Aml 
+ 1    BTKL Device        01 
+ 2      _HID String        01 Len 07 "INT3420"
+ 2      _STA Method        01 Args 0 Len 0024 Aml 
+ 2      _PS0 Method        01 Args 0 Len 000B Aml 
+ 2      _PS3 Method        01 Args 0 Len 000B Aml 
+ 2      PSTS Method        01 Args 0 Len 0007 Aml 
+ 1    PTMD Device        01 
+ 2      _HID Integer       01 = 000000009433D425
+ 2      _CID Integer       01 = 00000000020CD041
+ 2      IVER Integer       01 = 0000000000010000
+ 2      GSCV Integer       01 = 0000000000000069
+ 2      GACI Method        01 Args 0 Len 0053 Aml 
+ 2      GDSV Method        01 Args 1 Len 0051 Aml 
+ 2      CDRD Method        01 Args 1 Len 0006 Aml 
+ 2      CDWR Method        01 Args 2 Len 0002 Aml 
+ 2      GXDV Method        01 Args 1 Len 00C0 Aml 
+ 1    LID0 Device        01 
+ 2      _HID Integer       01 = 000000000D0CD041
+ 2      _STA Method        01 Args 0 Len 0002 Aml 
+ 1    MEM2 Device        05 
+ 2      _HID Integer       05 = 00000000010CD041
+ 2      _UID Integer       05 = 0000000000000002
+ 2      CRS2 Buffer        05 Len 1A = 86 09 00 01 00 00 00 20 00 00 20 00
+ 2      _STA Method        05 Args 0 Len 0017 Aml 
+ 2      _CRS Method        05 Args 0 Len 0005 Aml 
+ 0  _SI_ Scope         00 
+ 0  _TZ_ Device        00 
+ 1    ETMD Integer       01 = 0000000000000001
+ 1    THLD Integer       01 = 0000000000000078
+ 1    YBT4 Integer       01 = 0000000000000037
+ 1    YBT3 Integer       01 = 0000000000000040
+ 1    YBT2 Integer       01 = 0000000000000049
+ 1    YBT1 Integer       01 = 0000000000000050
+ 1    YBT0 Integer       01 = 000000000000005B
+ 1    FN00 Power         01 Object 
+ 2      _STA Method        01 Args 0 Len 0005 Aml 
+ 2      _ON_ Method        01 Args 0 Len 0046 Aml 
+ 2      _OFF Method        01 Args 0 Len 006B Aml 
+ 1    FAN0 Device        01 
+ 2      _HID Integer       01 = 000000000B0CD041
+ 2      _UID Integer       01 = 0000000000000000
+ 2      _PR0 Package       01 Elements 01
+ 1    FN01 Power         01 Object 
+ 2      _STA Method        01 Args 0 Len 0005 Aml 
+ 2      _ON_ Method        01 Args 0 Len 004F Aml 
+ 2      _OFF Method        01 Args 0 Len 0068 Aml 
+ 1    FAN1 Device        01 
+ 2      _HID Integer       01 = 000000000B0CD041
+ 2      _UID Integer       01 = 0000000000000001
+ 2      _PR0 Package       01 Elements 01
+ 1    FN02 Power         01 Object 
+ 2      _STA Method        01 Args 0 Len 0005 Aml 
+ 2      _ON_ Method        01 Args 0 Len 004C Aml 
+ 2      _OFF Method        01 Args 0 Len 0068 Aml 
+ 1    FAN2 Device        01 
+ 2      _HID Integer       01 = 000000000B0CD041
+ 2      _UID Integer       01 = 0000000000000002
+ 2      _PR0 Package       01 Elements 01
+ 1    FN03 Power         01 Object 
+ 2      _STA Method        01 Args 0 Len 0005 Aml 
+ 2      _ON_ Method        01 Args 0 Len 004C Aml 
+ 2      _OFF Method        01 Args 0 Len 0068 Aml 
+ 1    FAN3 Device        01 
+ 2      _HID Integer       01 = 000000000B0CD041
+ 2      _UID Integer       01 = 0000000000000003
+ 2      _PR0 Package       01 Elements 01
+ 1    FN04 Power         01 Object 
+ 2      _STA Method        01 Args 0 Len 0005 Aml 
+ 2      _ON_ Method        01 Args 0 Len 004C Aml 
+ 2      _OFF Method        01 Args 0 Len 0043 Aml 
+ 1    FAN4 Device        01 
+ 2      _HID Integer       01 = 000000000B0CD041
+ 2      _UID Integer       01 = 0000000000000004
+ 2      _PR0 Package       01 Elements 01
+ 1    TZ00 Thermal       01 
+ 2      PTMP Integer       01 = 0000000000000BB8
+ 2      _SCP Method        01 Args 1 Len 0006 Aml 
+ 2      _CRT Method        01 Args 0 Len 0040 Aml 
+ 2      _AC0 Method        01 Args 0 Len 0040 Aml 
+ 2      _AC1 Method        01 Args 0 Len 000E Aml 
+ 2      _AC2 Method        01 Args 0 Len 0004 Aml 
+ 2      _AC3 Method        01 Args 0 Len 0004 Aml 
+ 2      _AC4 Method        01 Args 0 Len 0004 Aml 
+ 2      _AL0 Package       01 Elements 01
+ 2      _AL1 Package       01 Elements 01
+ 2      _AL2 Package       01 Elements 01
+ 2      _AL3 Package       01 Elements 01
+ 2      _AL4 Package       01 Elements 01
+ 2      _TMP Method        01 Args 0 Len 00B4 Aml 
+ 1    TZ01 Thermal       01 
+ 2      PTMP Integer       01 = 0000000000000BB8
+ 2      _SCP Method        01 Args 1 Len 0006 Aml 
+ 2      _CRT Method        01 Args 0 Len 0040 Aml 
+ 2      _TMP Method        01 Args 0 Len 00E4 Aml 
+ 2      _PSL Method        01 Args 0 Len 00C3 Aml 
+ 2      _PSV Method        01 Args 0 Len 0040 Aml 
+ 2      _TC1 Method        01 Args 0 Len 0005 Aml 
+ 2      _TC2 Method        01 Args 0 Len 0005 Aml 
+ 2      _TSP Method        01 Args 0 Len 0005 Aml 
+ 0  _REV Integer       00 = 0000000000000002
+ 0  _OS_ String        00 Len 14 "Microsoft Windows NT"
+ 0  _GL_ Mutex         00 Object 
+ 0  _OSI Method        00 Args 1 Len 0000 Aml (nil)
+ 0  SP1O Integer       01 = 000000000000002E
+ 0  GPIB Integer       01 = 0000000000000A00
+ 0  GPIL Integer       01 = 0000000000000010
+ 0  PMEB Integer       01 = 0000000000000A20
+ 0  PMEL Integer       01 = 0000000000000010
+ 0  HWMB Integer       01 = 0000000000000A30
+ 0  HWML Integer       01 = 0000000000000010
+ 0  IOES Integer       01 = 0000000000000000
+ 0  H2MB Integer       01 = 0000000000000A40
+ 0  H2ML Integer       01 = 0000000000000010
+ 0  SMBS Integer       01 = 0000000000000580
+ 0  SMBL Integer       01 = 0000000000000020
+ 0  PMBS Integer       01 = 0000000000001800
+ 0  GPBS Integer       01 = 0000000000001C00
+ 0  SMIP Integer       01 = 00000000000000B2
+ 0  DSSP Integer       01 = 0000000000000000
+ 0  FHPP Integer       01 = 0000000000000000
+ 0  APCB Integer       01 = 00000000FEC00000
+ 0  APCL Integer       01 = 0000000000001000
+ 0  SMCR Integer       01 = 0000000000001830
+ 0  HPTB Integer       01 = 00000000FED00000
+ 0  HPTC Integer       01 = 00000000FED1F404
+ 0  FLSZ Integer       01 = 0000000000E00000
+ 0  SRCB Integer       01 = 00000000FED1C000
+ 0  RCLN Integer       01 = 0000000000004000
+ 0  ISAA Integer       01 = 00000000E00F8000
+ 0  PEBS Integer       01 = 00000000E0000000
+ 0  PELN Integer       01 = 0000000010000000
+ 0  LAPB Integer       01 = 00000000FEE00000
+ 0  EGPB Integer       01 = 00000000FED19000
+ 0  MCHB Integer       01 = 00000000FED10000
+ 0  VTBS Integer       01 = 00000000FED90000
+ 0  VTLN Integer       01 = 0000000000004000
+ 0  ACPH Integer       01 = 00000000000000DE
+ 0  ASSB Integer       01 = 0000000000000000
+ 0  AOTB Integer       01 = 0000000000000000
+ 0  AAXB Integer       01 = 0000000000000000
+ 0  HIDK Integer       01 = 000000000303D041
+ 0  HIDM Integer       01 = 00000000030FD041
+ 0  CIDK Integer       01 = 000000000B03D041
+ 0  CIDM Integer       01 = 00000000130FD041
+ 0  PEHP Integer       01 = 0000000000000001
+ 0  SHPC Integer       01 = 0000000000000001
+ 0  PEPM Integer       01 = 0000000000000001
+ 0  PEER Integer       01 = 0000000000000001
+ 0  PECS Integer       01 = 0000000000000001
+ 0  ITKE Integer       01 = 0000000000000000
+ 0  MBEC Integer       01 = 000000000000FFFF
+ 0  FMBL Integer       01 = 0000000000000001
+ 0  FDTP Integer       01 = 0000000000000002
+ 0  FUPS Integer       01 = 0000000000000003
+ 0  FUWS Integer       01 = 0000000000000004
+ 0  BGR_ Integer       01 = 0000000000000001
+ 0  BFR_ Integer       01 = 0000000000000002
+ 0  BBR_ Integer       01 = 0000000000000003
+ 0  BWC_ Integer       01 = 0000000000000004
+ 0  BWT1 Integer       01 = 0000000000000020
+ 0  BSPC Integer       01 = 0000000000000024
+ 0  BFHC Integer       01 = 0000000000000100
+ 0  TRTP Integer       01 = 0000000000000001
+ 0  WDTE Integer       01 = 0000000000000001
+ 0  TRTD Integer       01 = 0000000000000002
+ 0  TRTI Integer       01 = 0000000000000003
+ 0  PFTI Integer       01 = 0000000000000004
+ 0  GCDD Integer       01 = 0000000000000001
+ 0  DSTA Integer       01 = 000000000000000A
+ 0  DSLO Integer       01 = 000000000000000C
+ 0  DSLC Integer       01 = 000000000000000E
+ 0  PITS Integer       01 = 0000000000000010
+ 0  SBCS Integer       01 = 0000000000000012
+ 0  SALS Integer       01 = 0000000000000013
+ 0  LSSS Integer       01 = 000000000000002A
+ 0  SOOT Integer       01 = 0000000000000035
+ 0  PDBR Integer       01 = 000000000000004D
+ 0  BW1P Integer       01 = 0000000000000021
+ 0  BW2C Integer       01 = 0000000000000022
+ 0  BW2P Integer       01 = 0000000000000023
+ 0  BSPP Integer       01 = 0000000000000025
+ 0  BHB_ Integer       01 = 0000000000000030
+ 0  BFS2 Integer       01 = 0000000000000031
+ 0  BFS3 Integer       01 = 0000000000000032
+ 0  BFS4 Integer       01 = 0000000000000033
+ 0  BRH_ Integer       01 = 0000000000000035
+ 0  TBSW Integer       01 = 00000000000000BC
+ 0  PMLN Integer       01 = 0000000000000100
+ 0  GPLN Integer       01 = 0000000000000400
+ 0  SS1_ Integer       01 = 0000000000000000
+ 0  SS2_ Integer       01 = 0000000000000000
+ 0  SS3_ Integer       01 = 0000000000000001
+ 0  SS4_ Integer       01 = 0000000000000001
+ 0  IOST Integer       01 = 0000000000000001
+ 0  TOPM Integer       01 = 0000000000000000
+ 0  ROMS Integer       01 = 00000000FFE00000
+ 0  VGAF Integer       01 = 0000000000000001
+ 0  GNVS Region        01 [SystemMemory] Addr 000000006A1F6C18 Len 027E
+ 0  OSYS RegionField   01 Rgn [GNVS] Off 000 Len 10 Acc 01
+ 0  SMIF RegionField   01 Rgn [GNVS] Off 010 Len 08 Acc 01
+ 0  PRM0 RegionField   01 Rgn [GNVS] Off 018 Len 08 Acc 01
+ 0  PRM1 RegionField   01 Rgn [GNVS] Off 020 Len 08 Acc 01
+ 0  SCIF RegionField   01 Rgn [GNVS] Off 028 Len 08 Acc 01
+ 0  PRM2 RegionField   01 Rgn [GNVS] Off 030 Len 08 Acc 01
+ 0  PRM3 RegionField   01 Rgn [GNVS] Off 038 Len 08 Acc 01
+ 0  LCKF RegionField   01 Rgn [GNVS] Off 040 Len 08 Acc 01
+ 0  PRM4 RegionField   01 Rgn [GNVS] Off 048 Len 08 Acc 01
+ 0  PRM5 RegionField   01 Rgn [GNVS] Off 050 Len 08 Acc 01
+ 0  P80D RegionField   01 Rgn [GNVS] Off 058 Len 20 Acc 01
+ 0  PWRS RegionField   01 Rgn [GNVS] Off 078 Len 08 Acc 01
+ 0  DBGS RegionField   01 Rgn [GNVS] Off 080 Len 08 Acc 01
+ 0  THOF RegionField   01 Rgn [GNVS] Off 088 Len 08 Acc 01
+ 0  ACT1 RegionField   01 Rgn [GNVS] Off 090 Len 08 Acc 01
+ 0  ACTT RegionField   01 Rgn [GNVS] Off 098 Len 08 Acc 01
+ 0  PSVT RegionField   01 Rgn [GNVS] Off 0A0 Len 08 Acc 01
+ 0  TC1V RegionField   01 Rgn [GNVS] Off 0A8 Len 08 Acc 01
+ 0  TC2V RegionField   01 Rgn [GNVS] Off 0B0 Len 08 Acc 01
+ 0  TSPV RegionField   01 Rgn [GNVS] Off 0B8 Len 08 Acc 01
+ 0  CRTT RegionField   01 Rgn [GNVS] Off 0C0 Len 08 Acc 01
+ 0  DTSE RegionField   01 Rgn [GNVS] Off 0C8 Len 08 Acc 01
+ 0  DTS1 RegionField   01 Rgn [GNVS] Off 0D0 Len 08 Acc 01
+ 0  DTS2 RegionField   01 Rgn [GNVS] Off 0D8 Len 08 Acc 01
+ 0  DTSF RegionField   01 Rgn [GNVS] Off 0E0 Len 08 Acc 01
+ 0  REVN RegionField   01 Rgn [GNVS] Off 128 Len 08 Acc 01
+ 0  APIC RegionField   01 Rgn [GNVS] Off 140 Len 08 Acc 01
+ 0  TCNT RegionField   01 Rgn [GNVS] Off 148 Len 08 Acc 01
+ 0  PCP0 RegionField   01 Rgn [GNVS] Off 150 Len 08 Acc 01
+ 0  PCP1 RegionField   01 Rgn [GNVS] Off 158 Len 08 Acc 01
+ 0  PPCM RegionField   01 Rgn [GNVS] Off 160 Len 08 Acc 01
+ 0  PPMF RegionField   01 Rgn [GNVS] Off 168 Len 20 Acc 01
+ 0  C67L RegionField   01 Rgn [GNVS] Off 188 Len 08 Acc 01
+ 0  NATP RegionField   01 Rgn [GNVS] Off 190 Len 08 Acc 01
+ 0  CMAP RegionField   01 Rgn [GNVS] Off 198 Len 08 Acc 01
+ 0  CMBP RegionField   01 Rgn [GNVS] Off 1A0 Len 08 Acc 01
+ 0  LPTP RegionField   01 Rgn [GNVS] Off 1A8 Len 08 Acc 01
+ 0  FDCP RegionField   01 Rgn [GNVS] Off 1B0 Len 08 Acc 01
+ 0  CMCP RegionField   01 Rgn [GNVS] Off 1B8 Len 08 Acc 01
+ 0  CIRP RegionField   01 Rgn [GNVS] Off 1C0 Len 08 Acc 01
+ 0  SMSC RegionField   01 Rgn [GNVS] Off 1C8 Len 08 Acc 01
+ 0  W381 RegionField   01 Rgn [GNVS] Off 1D0 Len 08 Acc 01
+ 0  SMC1 RegionField   01 Rgn [GNVS] Off 1D8 Len 08 Acc 01
+ 0  EMAE RegionField   01 Rgn [GNVS] Off 1E0 Len 08 Acc 01
+ 0  EMAP RegionField   01 Rgn [GNVS] Off 1E8 Len 10 Acc 01
+ 0  EMAL RegionField   01 Rgn [GNVS] Off 1F8 Len 10 Acc 01
+ 0  MEFE RegionField   01 Rgn [GNVS] Off 210 Len 08 Acc 01
+ 0  DSTS RegionField   01 Rgn [GNVS] Off 218 Len 08 Acc 01
+ 0  MORD RegionField   01 Rgn [GNVS] Off 240 Len 08 Acc 01
+ 0  TCGP RegionField   01 Rgn [GNVS] Off 248 Len 08 Acc 01
+ 0  PPRP RegionField   01 Rgn [GNVS] Off 250 Len 20 Acc 01
+ 0  PPRQ RegionField   01 Rgn [GNVS] Off 270 Len 08 Acc 01
+ 0  LPPR RegionField   01 Rgn [GNVS] Off 278 Len 08 Acc 01
+ 0  GTF0 RegionField   01 Rgn [GNVS] Off 280 Len 38 Acc 01
+ 0  GTF2 RegionField   01 Rgn [GNVS] Off 2B8 Len 38 Acc 01
+ 0  IDEM RegionField   01 Rgn [GNVS] Off 2F0 Len 08 Acc 01
+ 0  GTF1 RegionField   01 Rgn [GNVS] Off 2F8 Len 38 Acc 01
+ 0  BID_ RegionField   01 Rgn [GNVS] Off 330 Len 10 Acc 01
+ 0  PLID RegionField   01 Rgn [GNVS] Off 340 Len 08 Acc 01
+ 0  ECTG RegionField   01 Rgn [GNVS] Off 348 Len 08 Acc 01
+ 0  OSCC RegionField   01 Rgn [GNVS] Off 380 Len 08 Acc 01
+ 0  NEXP RegionField   01 Rgn [GNVS] Off 388 Len 08 Acc 01
+ 0  SBV1 RegionField   01 Rgn [GNVS] Off 390 Len 08 Acc 01
+ 0  SBV2 RegionField   01 Rgn [GNVS] Off 398 Len 08 Acc 01
+ 0  DSEN RegionField   01 Rgn [GNVS] Off 3D0 Len 08 Acc 01
+ 0  ECON RegionField   01 Rgn [GNVS] Off 3D8 Len 08 Acc 01
+ 0  GPIC RegionField   01 Rgn [GNVS] Off 3E0 Len 08 Acc 01
+ 0  CTYP RegionField   01 Rgn [GNVS] Off 3E8 Len 08 Acc 01
+ 0  L01C RegionField   01 Rgn [GNVS] Off 3F0 Len 08 Acc 01
+ 0  VFN0 RegionField   01 Rgn [GNVS] Off 3F8 Len 08 Acc 01
+ 0  VFN1 RegionField   01 Rgn [GNVS] Off 400 Len 08 Acc 01
+ 0  VFN2 RegionField   01 Rgn [GNVS] Off 408 Len 08 Acc 01
+ 0  VFN3 RegionField   01 Rgn [GNVS] Off 410 Len 08 Acc 01
+ 0  VFN4 RegionField   01 Rgn [GNVS] Off 418 Len 08 Acc 01
+ 0  VFN5 RegionField   01 Rgn [GNVS] Off 420 Len 08 Acc 01
+ 0  VFN6 RegionField   01 Rgn [GNVS] Off 428 Len 08 Acc 01
+ 0  VFN7 RegionField   01 Rgn [GNVS] Off 430 Len 08 Acc 01
+ 0  VFN8 RegionField   01 Rgn [GNVS] Off 438 Len 08 Acc 01
+ 0  VFN9 RegionField   01 Rgn [GNVS] Off 440 Len 08 Acc 01
+ 0  ATMC RegionField   01 Rgn [GNVS] Off 478 Len 08 Acc 01
+ 0  PTMC RegionField   01 Rgn [GNVS] Off 480 Len 08 Acc 01
+ 0  ATRA RegionField   01 Rgn [GNVS] Off 488 Len 08 Acc 01
+ 0  PTRA RegionField   01 Rgn [GNVS] Off 490 Len 08 Acc 01
+ 0  PNHM RegionField   01 Rgn [GNVS] Off 498 Len 20 Acc 01
+ 0  TBAB RegionField   01 Rgn [GNVS] Off 4B8 Len 20 Acc 01
+ 0  TBAH RegionField   01 Rgn [GNVS] Off 4D8 Len 20 Acc 01
+ 0  RTIP RegionField   01 Rgn [GNVS] Off 4F8 Len 08 Acc 01
+ 0  TSOD RegionField   01 Rgn [GNVS] Off 500 Len 08 Acc 01
+ 0  ATPC RegionField   01 Rgn [GNVS] Off 508 Len 08 Acc 01
+ 0  PTPC RegionField   01 Rgn [GNVS] Off 510 Len 08 Acc 01
+ 0  PFLV RegionField   01 Rgn [GNVS] Off 518 Len 08 Acc 01
+ 0  BREV RegionField   01 Rgn [GNVS] Off 520 Len 08 Acc 01
+ 0  PDTS RegionField   01 Rgn [GNVS] Off 528 Len 08 Acc 01
+ 0  PKGA RegionField   01 Rgn [GNVS] Off 530 Len 08 Acc 01
+ 0  PAMT RegionField   01 Rgn [GNVS] Off 538 Len 08 Acc 01
+ 0  AC0F RegionField   01 Rgn [GNVS] Off 540 Len 08 Acc 01
+ 0  AC1F RegionField   01 Rgn [GNVS] Off 548 Len 08 Acc 01
+ 0  DTS3 RegionField   01 Rgn [GNVS] Off 550 Len 08 Acc 01
+ 0  DTS4 RegionField   01 Rgn [GNVS] Off 558 Len 08 Acc 01
+ 0  LTR1 RegionField   01 Rgn [GNVS] Off 580 Len 08 Acc 01
+ 0  LTR2 RegionField   01 Rgn [GNVS] Off 588 Len 08 Acc 01
+ 0  LTR3 RegionField   01 Rgn [GNVS] Off 590 Len 08 Acc 01
+ 0  LTR4 RegionField   01 Rgn [GNVS] Off 598 Len 08 Acc 01
+ 0  LTR5 RegionField   01 Rgn [GNVS] Off 5A0 Len 08 Acc 01
+ 0  LTR6 RegionField   01 Rgn [GNVS] Off 5A8 Len 08 Acc 01
+ 0  LTR7 RegionField   01 Rgn [GNVS] Off 5B0 Len 08 Acc 01
+ 0  LTR8 RegionField   01 Rgn [GNVS] Off 5B8 Len 08 Acc 01
+ 0  OBF1 RegionField   01 Rgn [GNVS] Off 5C0 Len 08 Acc 01
+ 0  OBF2 RegionField   01 Rgn [GNVS] Off 5C8 Len 08 Acc 01
+ 0  OBF3 RegionField   01 Rgn [GNVS] Off 5D0 Len 08 Acc 01
+ 0  OBF4 RegionField   01 Rgn [GNVS] Off 5D8 Len 08 Acc 01
+ 0  OBF5 RegionField   01 Rgn [GNVS] Off 5E0 Len 08 Acc 01
+ 0  OBF6 RegionField   01 Rgn [GNVS] Off 5E8 Len 08 Acc 01
+ 0  OBF7 RegionField   01 Rgn [GNVS] Off 5F0 Len 08 Acc 01
+ 0  OBF8 RegionField   01 Rgn [GNVS] Off 5F8 Len 08 Acc 01
+ 0  XHCI RegionField   01 Rgn [GNVS] Off 600 Len 08 Acc 01
+ 0  XTUB RegionField   01 Rgn [GNVS] Off 608 Len 20 Acc 01
+ 0  XTUS RegionField   01 Rgn [GNVS] Off 628 Len 20 Acc 01
+ 0  XMPB RegionField   01 Rgn [GNVS] Off 648 Len 20 Acc 01
+ 0  DDRF RegionField   01 Rgn [GNVS] Off 668 Len 08 Acc 01
+ 0  RTD3 RegionField   01 Rgn [GNVS] Off 670 Len 08 Acc 01
+ 0  PEP0 RegionField   01 Rgn [GNVS] Off 678 Len 08 Acc 01
+ 0  PEP3 RegionField   01 Rgn [GNVS] Off 680 Len 08 Acc 01
+ 0  DPTF RegionField   01 Rgn [GNVS] Off 688 Len 08 Acc 01
+ 0  SADE RegionField   01 Rgn [GNVS] Off 690 Len 08 Acc 01
+ 0  SACR RegionField   01 Rgn [GNVS] Off 698 Len 08 Acc 01
+ 0  SAHT RegionField   01 Rgn [GNVS] Off 6A0 Len 08 Acc 01
+ 0  PCHD RegionField   01 Rgn [GNVS] Off 6A8 Len 08 Acc 01
+ 0  PCHC RegionField   01 Rgn [GNVS] Off 6B0 Len 08 Acc 01
+ 0  PCHH RegionField   01 Rgn [GNVS] Off 6B8 Len 08 Acc 01
+ 0  CTDP RegionField   01 Rgn [GNVS] Off 6C0 Len 08 Acc 01
+ 0  LPMP RegionField   01 Rgn [GNVS] Off 6C8 Len 08 Acc 01
+ 0  LPMV RegionField   01 Rgn [GNVS] Off 6D0 Len 08 Acc 01
+ 0  ECEU RegionField   01 Rgn [GNVS] Off 6D8 Len 08 Acc 01
+ 0  TGFG RegionField   01 Rgn [GNVS] Off 6E0 Len 10 Acc 01
+ 0  MEMD RegionField   01 Rgn [GNVS] Off 6F0 Len 08 Acc 01
+ 0  MEMC RegionField   01 Rgn [GNVS] Off 6F8 Len 08 Acc 01
+ 0  MEMH RegionField   01 Rgn [GNVS] Off 700 Len 08 Acc 01
+ 0  FND1 RegionField   01 Rgn [GNVS] Off 708 Len 08 Acc 01
+ 0  FND2 RegionField   01 Rgn [GNVS] Off 710 Len 08 Acc 01
+ 0  AMBD RegionField   01 Rgn [GNVS] Off 718 Len 08 Acc 01
+ 0  AMAT RegionField   01 Rgn [GNVS] Off 720 Len 08 Acc 01
+ 0  AMPT RegionField   01 Rgn [GNVS] Off 728 Len 08 Acc 01
+ 0  AMCT RegionField   01 Rgn [GNVS] Off 730 Len 08 Acc 01
+ 0  AMHT RegionField   01 Rgn [GNVS] Off 738 Len 08 Acc 01
+ 0  SKDE RegionField   01 Rgn [GNVS] Off 740 Len 08 Acc 01
+ 0  SKAT RegionField   01 Rgn [GNVS] Off 748 Len 08 Acc 01
+ 0  SKPT RegionField   01 Rgn [GNVS] Off 750 Len 08 Acc 01
+ 0  SKCT RegionField   01 Rgn [GNVS] Off 758 Len 08 Acc 01
+ 0  SKHT RegionField   01 Rgn [GNVS] Off 760 Len 08 Acc 01
+ 0  EFDE RegionField   01 Rgn [GNVS] Off 768 Len 08 Acc 01
+ 0  EFAT RegionField   01 Rgn [GNVS] Off 770 Len 08 Acc 01
+ 0  EFPT RegionField   01 Rgn [GNVS] Off 778 Len 08 Acc 01
+ 0  EFCT RegionField   01 Rgn [GNVS] Off 780 Len 08 Acc 01
+ 0  EFHT RegionField   01 Rgn [GNVS] Off 788 Len 08 Acc 01
+ 0  VRDE RegionField   01 Rgn [GNVS] Off 790 Len 08 Acc 01
+ 0  VRAT RegionField   01 Rgn [GNVS] Off 798 Len 08 Acc 01
+ 0  VRPT RegionField   01 Rgn [GNVS] Off 7A0 Len 08 Acc 01
+ 0  VRCT RegionField   01 Rgn [GNVS] Off 7A8 Len 08 Acc 01
+ 0  VRHT RegionField   01 Rgn [GNVS] Off 7B0 Len 08 Acc 01
+ 0  DPAP RegionField   01 Rgn [GNVS] Off 7B8 Len 08 Acc 01
+ 0  DPPP RegionField   01 Rgn [GNVS] Off 7C0 Len 08 Acc 01
+ 0  DPCP RegionField   01 Rgn [GNVS] Off 7C8 Len 08 Acc 01
+ 0  DCMP RegionField   01 Rgn [GNVS] Off 7D0 Len 08 Acc 01
+ 0  TRTV RegionField   01 Rgn [GNVS] Off 7D8 Len 08 Acc 01
+ 0  LPOE RegionField   01 Rgn [GNVS] Off 7E0 Len 08 Acc 01
+ 0  LPOP RegionField   01 Rgn [GNVS] Off 7E8 Len 08 Acc 01
+ 0  LPOS RegionField   01 Rgn [GNVS] Off 7F0 Len 08 Acc 01
+ 0  LPOW RegionField   01 Rgn [GNVS] Off 7F8 Len 08 Acc 01
+ 0  LPER RegionField   01 Rgn [GNVS] Off 800 Len 08 Acc 01
+ 0  PPSZ RegionField   01 Rgn [GNVS] Off 808 Len 20 Acc 01
+ 0  DISE RegionField   01 Rgn [GNVS] Off 828 Len 08 Acc 01
+ 0  PFMA RegionField   01 Rgn [GNVS] Off 830 Len 40 Acc 01
+ 0  PFMS RegionField   01 Rgn [GNVS] Off 870 Len 08 Acc 01
+ 0  PFIA RegionField   01 Rgn [GNVS] Off 878 Len 10 Acc 01
+ 0  ICNF RegionField   01 Rgn [GNVS] Off 888 Len 08 Acc 01
+ 0  DSP0 RegionField   01 Rgn [GNVS] Off 890 Len 20 Acc 01
+ 0  DSP1 RegionField   01 Rgn [GNVS] Off 8B0 Len 20 Acc 01
+ 0  NFCE RegionField   01 Rgn [GNVS] Off 8D0 Len 08 Acc 01
+ 0  CODS RegionField   01 Rgn [GNVS] Off 8D8 Len 08 Acc 01
+ 0  SNHE RegionField   01 Rgn [GNVS] Off 8E0 Len 08 Acc 01
+ 0  S0ID RegionField   01 Rgn [GNVS] Off 8E8 Len 08 Acc 01
+ 0  CTDB RegionField   01 Rgn [GNVS] Off 8F0 Len 08 Acc 01
+ 0  PWRE RegionField   01 Rgn [GNVS] Off 1038 Len 08 Acc 01
+ 0  PWRP RegionField   01 Rgn [GNVS] Off 1040 Len 08 Acc 01
+ 0  XHPR RegionField   01 Rgn [GNVS] Off 1048 Len 08 Acc 01
+ 0  SDS0 RegionField   01 Rgn [GNVS] Off 1050 Len 08 Acc 01
+ 0  SDS1 RegionField   01 Rgn [GNVS] Off 1058 Len 10 Acc 01
+ 0  SDS2 RegionField   01 Rgn [GNVS] Off 1068 Len 08 Acc 01
+ 0  SDS3 RegionField   01 Rgn [GNVS] Off 1070 Len 08 Acc 01
+ 0  SDS4 RegionField   01 Rgn [GNVS] Off 1078 Len 08 Acc 01
+ 0  SDS5 RegionField   01 Rgn [GNVS] Off 1080 Len 08 Acc 01
+ 0  SDS6 RegionField   01 Rgn [GNVS] Off 1088 Len 08 Acc 01
+ 0  RIC0 RegionField   01 Rgn [GNVS] Off 1090 Len 08 Acc 01
+ 0  PEPY RegionField   01 Rgn [GNVS] Off 1098 Len 08 Acc 01
+ 0  DVS0 RegionField   01 Rgn [GNVS] Off 10A0 Len 08 Acc 01
+ 0  DVS1 RegionField   01 Rgn [GNVS] Off 10A8 Len 08 Acc 01
+ 0  DVS2 RegionField   01 Rgn [GNVS] Off 10B0 Len 08 Acc 01
+ 0  DVS3 RegionField   01 Rgn [GNVS] Off 10B8 Len 08 Acc 01
+ 0  GBSX RegionField   01 Rgn [GNVS] Off 10C0 Len 08 Acc 01
+ 0  IUBE RegionField   01 Rgn [GNVS] Off 10C8 Len 08 Acc 01
+ 0  IUCE RegionField   01 Rgn [GNVS] Off 10D0 Len 08 Acc 01
+ 0  IUDE RegionField   01 Rgn [GNVS] Off 10D8 Len 08 Acc 01
+ 0  ECNO RegionField   01 Rgn [GNVS] Off 10E0 Len 08 Acc 01
+ 0  AUDD RegionField   01 Rgn [GNVS] Off 10E8 Len 10 Acc 01
+ 0  DSPD RegionField   01 Rgn [GNVS] Off 10F8 Len 10 Acc 01
+ 0  IC0D RegionField   01 Rgn [GNVS] Off 1108 Len 10 Acc 01
+ 0  IC1D RegionField   01 Rgn [GNVS] Off 1118 Len 10 Acc 01
+ 0  IC1S RegionField   01 Rgn [GNVS] Off 1128 Len 10 Acc 01
+ 0  VRRD RegionField   01 Rgn [GNVS] Off 1138 Len 10 Acc 01
+ 0  PSCP RegionField   01 Rgn [GNVS] Off 1148 Len 08 Acc 01
+ 0  RWAG RegionField   01 Rgn [GNVS] Off 1150 Len 08 Acc 01
+ 0  RCG0 RegionField   01 Rgn [GNVS] Off 1168 Len 08 Acc 01
+ 0  ECDB RegionField   01 Rgn [GNVS] Off 1170 Len 08 Acc 01
+ 0  P2ME RegionField   01 Rgn [GNVS] Off 1178 Len 08 Acc 01
+ 0  SSH0 RegionField   01 Rgn [GNVS] Off 1180 Len 10 Acc 01
+ 0  SSL0 RegionField   01 Rgn [GNVS] Off 1190 Len 10 Acc 01
+ 0  SSD0 RegionField   01 Rgn [GNVS] Off 11A0 Len 10 Acc 01
+ 0  FMH0 RegionField   01 Rgn [GNVS] Off 11B0 Len 10 Acc 01
+ 0  FML0 RegionField   01 Rgn [GNVS] Off 11C0 Len 10 Acc 01
+ 0  FMD0 RegionField   01 Rgn [GNVS] Off 11D0 Len 10 Acc 01
+ 0  FPH0 RegionField   01 Rgn [GNVS] Off 11E0 Len 10 Acc 01
+ 0  FPL0 RegionField   01 Rgn [GNVS] Off 11F0 Len 10 Acc 01
+ 0  FPD0 RegionField   01 Rgn [GNVS] Off 1200 Len 10 Acc 01
+ 0  SSH1 RegionField   01 Rgn [GNVS] Off 1210 Len 10 Acc 01
+ 0  SSL1 RegionField   01 Rgn [GNVS] Off 1220 Len 10 Acc 01
+ 0  SSD1 RegionField   01 Rgn [GNVS] Off 1230 Len 10 Acc 01
+ 0  FMH1 RegionField   01 Rgn [GNVS] Off 1240 Len 10 Acc 01
+ 0  FML1 RegionField   01 Rgn [GNVS] Off 1250 Len 10 Acc 01
+ 0  FMD1 RegionField   01 Rgn [GNVS] Off 1260 Len 10 Acc 01
+ 0  FPH1 RegionField   01 Rgn [GNVS] Off 1270 Len 10 Acc 01
+ 0  FPL1 RegionField   01 Rgn [GNVS] Off 1280 Len 10 Acc 01
+ 0  FPD1 RegionField   01 Rgn [GNVS] Off 1290 Len 10 Acc 01
+ 0  M0C0 RegionField   01 Rgn [GNVS] Off 12A0 Len 10 Acc 01
+ 0  M1C0 RegionField   01 Rgn [GNVS] Off 12B0 Len 10 Acc 01
+ 0  M2C0 RegionField   01 Rgn [GNVS] Off 12C0 Len 10 Acc 01
+ 0  M0C1 RegionField   01 Rgn [GNVS] Off 12D0 Len 10 Acc 01
+ 0  M1C1 RegionField   01 Rgn [GNVS] Off 12E0 Len 10 Acc 01
+ 0  M2C1 RegionField   01 Rgn [GNVS] Off 12F0 Len 10 Acc 01
+ 0  M0C2 RegionField   01 Rgn [GNVS] Off 1300 Len 10 Acc 01
+ 0  M1C2 RegionField   01 Rgn [GNVS] Off 1310 Len 10 Acc 01
+ 0  M0C3 RegionField   01 Rgn [GNVS] Off 1320 Len 10 Acc 01
+ 0  M1C3 RegionField   01 Rgn [GNVS] Off 1330 Len 10 Acc 01
+ 0  M0C4 RegionField   01 Rgn [GNVS] Off 1340 Len 10 Acc 01
+ 0  M1C4 RegionField   01 Rgn [GNVS] Off 1350 Len 10 Acc 01
+ 0  M0C5 RegionField   01 Rgn [GNVS] Off 1360 Len 10 Acc 01
+ 0  M1C5 RegionField   01 Rgn [GNVS] Off 1370 Len 10 Acc 01
+ 0  TBSF RegionField   01 Rgn [GNVS] Off 1380 Len 08 Acc 01
+ 0  GIRQ RegionField   01 Rgn [GNVS] Off 1388 Len 20 Acc 01
+ 0  DMTP RegionField   01 Rgn [GNVS] Off 13A8 Len 08 Acc 01
+ 0  DMTD RegionField   01 Rgn [GNVS] Off 13B0 Len 08 Acc 01
+ 0  DMSH RegionField   01 Rgn [GNVS] Off 13B8 Len 08 Acc 01
+ 0  LANP RegionField   01 Rgn [GNVS] Off 13C0 Len 08 Acc 01
+ 0  XHDS RegionField   01 Rgn [GNVS] Off 13C8 Len 08 Acc 01
+ 0  SHSB RegionField   01 Rgn [GNVS] Off 13D0 Len 08 Acc 01
+ 0  PLCS RegionField   01 Rgn [GNVS] Off 13D8 Len 08 Acc 01
+ 0  PLVL RegionField   01 Rgn [GNVS] Off 13E0 Len 10 Acc 01
+ 0  KBFG Integer       01 = 0000000000000001
+ 0  MSFG Integer       01 = 0000000000000001
+ 0  RPA0 Integer       01 = 00000000001C0000
+ 0  RPA1 Integer       01 = 00000000001C0001
+ 0  RPA2 Integer       01 = 00000000001C0002
+ 0  RPA3 Integer       01 = 00000000001C0003
+ 0  RPA4 Integer       01 = 00000000001C0004
+ 0  RPA5 Integer       01 = 00000000001C0005
+ 0  RPA6 Integer       01 = 00000000001C0006
+ 0  RPA7 Integer       01 = 00000000001C0007
+ 0  PCHS Integer       01 = 0000000000000001
+ 0  IO_D Region        01 [SystemIO] Addr 0000000000000810 Len 0004
+ 0  TRPD RegionField   01 Rgn [IO_D] Off 000 Len 08 Acc 01
+ 0  IO_H Region        01 [SystemIO] Addr 0000000000001000 Len 0004
+ 0  TRPH RegionField   01 Rgn [IO_H] Off 000 Len 08 Acc 01
+ 0  PMIO Region        01 [SystemIO] Addr 0000000000001800 Len 0080
+ 0  GPE3 RegionField   01 Rgn [PMIO] Off 153 Len 01 Acc 01
+ 0  GPEB RegionField   01 Rgn [PMIO] Off 15B Len 01 Acc 01
+ 0  UPRW RegionField   01 Rgn [PMIO] Off 1E1 Len 01 Acc 01
+ 0  GPEC RegionField   01 Rgn [PMIO] Off 211 Len 01 Acc 01
+ 0  GPS3 RegionField   01 Rgn [PMIO] Off 113 Len 01 Acc 01
+ 0  GPSB RegionField   01 Rgn [PMIO] Off 11B Len 01 Acc 01
+ 0  SCIS RegionField   01 Rgn [PMIO] Off 329 Len 01 Acc 01
+ 0  PMLP Region        01 [SystemIO] Addr 0000000000001880 Len 0020
+ 0  GE08 RegionField   01 Rgn [PMLP] Off 088 Len 01 Acc 01
+ 0  GE17 RegionField   01 Rgn [PMLP] Off 091 Len 01 Acc 01
+ 0  GE35 RegionField   01 Rgn [PMLP] Off 0A3 Len 01 Acc 01
+ 0  GE45 RegionField   01 Rgn [PMLP] Off 0AD Len 01 Acc 01
+ 0  GE51 RegionField   01 Rgn [PMLP] Off 0B3 Len 01 Acc 01
+ 0  GS08 RegionField   01 Rgn [PMLP] Off 008 Len 01 Acc 01
+ 0  GS17 RegionField   01 Rgn [PMLP] Off 011 Len 01 Acc 01
+ 0  GS35 RegionField   01 Rgn [PMLP] Off 023 Len 01 Acc 01
+ 0  GS45 RegionField   01 Rgn [PMLP] Off 02D Len 01 Acc 01
+ 0  GS51 RegionField   01 Rgn [PMLP] Off 033 Len 01 Acc 01
+ 0  GPR_ Region        01 [SystemIO] Addr 0000000000001C00 Len 0400
+ 0  GU00 RegionField   01 Rgn [GPR_] Off 000 Len 08 Acc 01
+ 0  GU01 RegionField   01 Rgn [GPR_] Off 008 Len 08 Acc 01
+ 0  GU02 RegionField   01 Rgn [GPR_] Off 010 Len 08 Acc 01
+ 0  GU03 RegionField   01 Rgn [GPR_] Off 018 Len 08 Acc 01
+ 0  GIO0 RegionField   01 Rgn [GPR_] Off 020 Len 08 Acc 01
+ 0  GIO1 RegionField   01 Rgn [GPR_] Off 028 Len 08 Acc 01
+ 0  GIO2 RegionField   01 Rgn [GPR_] Off 030 Len 08 Acc 01
+ 0  GIO3 RegionField   01 Rgn [GPR_] Off 038 Len 08 Acc 01
+ 0  GL00 RegionField   01 Rgn [GPR_] Off 060 Len 08 Acc 01
+ 0  GL01 RegionField   01 Rgn [GPR_] Off 068 Len 08 Acc 01
+ 0  GL02 RegionField   01 Rgn [GPR_] Off 070 Len 08 Acc 01
+ 0  GP24 RegionField   01 Rgn [GPR_] Off 078 Len 01 Acc 01
+ 0  GP27 RegionField   01 Rgn [GPR_] Off 07B Len 01 Acc 01
+ 0  GP28 RegionField   01 Rgn [GPR_] Off 07C Len 01 Acc 01
+ 0  GB00 RegionField   01 Rgn [GPR_] Off 0C0 Len 08 Acc 01
+ 0  GB01 RegionField   01 Rgn [GPR_] Off 0C8 Len 08 Acc 01
+ 0  GB02 RegionField   01 Rgn [GPR_] Off 0D0 Len 08 Acc 01
+ 0  GB03 RegionField   01 Rgn [GPR_] Off 0D8 Len 08 Acc 01
+ 0  GIV0 RegionField   01 Rgn [GPR_] Off 160 Len 08 Acc 01
+ 0  GIV1 RegionField   01 Rgn [GPR_] Off 168 Len 08 Acc 01
+ 0  GIV2 RegionField   01 Rgn [GPR_] Off 170 Len 08 Acc 01
+ 0  GIV3 RegionField   01 Rgn [GPR_] Off 178 Len 08 Acc 01
+ 0  GU04 RegionField   01 Rgn [GPR_] Off 180 Len 08 Acc 01
+ 0  GU05 RegionField   01 Rgn [GPR_] Off 188 Len 08 Acc 01
+ 0  GU06 RegionField   01 Rgn [GPR_] Off 190 Len 08 Acc 01
+ 0  GU07 RegionField   01 Rgn [GPR_] Off 198 Len 08 Acc 01
+ 0  GIO4 RegionField   01 Rgn [GPR_] Off 1A0 Len 08 Acc 01
+ 0  GIO5 RegionField   01 Rgn [GPR_] Off 1A8 Len 08 Acc 01
+ 0  GIO6 RegionField   01 Rgn [GPR_] Off 1B0 Len 08 Acc 01
+ 0  GIO7 RegionField   01 Rgn [GPR_] Off 1B8 Len 08 Acc 01
+ 0  GL04 RegionField   01 Rgn [GPR_] Off 1C0 Len 08 Acc 01
+ 0  GL05 RegionField   01 Rgn [GPR_] Off 1C8 Len 08 Acc 01
+ 0  GL06 RegionField   01 Rgn [GPR_] Off 1D0 Len 08 Acc 01
+ 0  GL07 RegionField   01 Rgn [GPR_] Off 1D8 Len 08 Acc 01
+ 0  GU08 RegionField   01 Rgn [GPR_] Off 200 Len 08 Acc 01
+ 0  GU09 RegionField   01 Rgn [GPR_] Off 208 Len 08 Acc 01
+ 0  GU0A RegionField   01 Rgn [GPR_] Off 210 Len 08 Acc 01
+ 0  GU0B RegionField   01 Rgn [GPR_] Off 218 Len 08 Acc 01
+ 0  GIO8 RegionField   01 Rgn [GPR_] Off 220 Len 08 Acc 01
+ 0  GIO9 RegionField   01 Rgn [GPR_] Off 228 Len 08 Acc 01
+ 0  GIOA RegionField   01 Rgn [GPR_] Off 230 Len 08 Acc 01
+ 0  GIOB RegionField   01 Rgn [GPR_] Off 238 Len 08 Acc 01
+ 0  GL08 RegionField   01 Rgn [GPR_] Off 240 Len 08 Acc 01
+ 0  GL09 RegionField   01 Rgn [GPR_] Off 248 Len 08 Acc 01
+ 0  GL0A RegionField   01 Rgn [GPR_] Off 250 Len 08 Acc 01
+ 0  GL0B RegionField   01 Rgn [GPR_] Off 258 Len 08 Acc 01
+ 0  GPRL Region        01 [SystemIO] Addr 0000000000001C00 Len 0040
+ 0  GO08 RegionField   01 Rgn [GPRL] Off 008 Len 01 Acc 01
+ 0  GO09 RegionField   01 Rgn [GPRL] Off 009 Len 01 Acc 01
+ 0  GO14 RegionField   01 Rgn [GPRL] Off 00E Len 01 Acc 01
+ 0  GO17 RegionField   01 Rgn [GPRL] Off 011 Len 01 Acc 01
+ 0  GO45 RegionField   01 Rgn [GPRL] Off 02D Len 01 Acc 01
+ 0  GO51 RegionField   01 Rgn [GPRL] Off 033 Len 01 Acc 01
+ 0  GR00 RegionField   01 Rgn [GPRL] Off 180 Len 20 Acc 01
+ 0  GR01 RegionField   01 Rgn [GPRL] Off 1A0 Len 20 Acc 01
+ 0  GR02 RegionField   01 Rgn [GPRL] Off 1C0 Len 20 Acc 01
+ 0  RCRB Region        01 [SystemMemory] Addr 00000000FED1C000 Len 4000
+ 0  AFEA RegionField   01 Rgn [RCRB] Off 11980 Len 20 Acc 04
+ 0  AFED RegionField   01 Rgn [RCRB] Off 119A0 Len 20 Acc 04
+ 0  AFES RegionField   01 Rgn [RCRB] Off 119C0 Len 10 Acc 04
+ 0  AFER RegionField   01 Rgn [RCRB] Off 119D0 Len 10 Acc 04
+ 0  HPAS RegionField   01 Rgn [RCRB] Off 1A020 Len 02 Acc 04
+ 0  HPAE RegionField   01 Rgn [RCRB] Off 1A027 Len 01 Acc 04
+ 0  ADSD RegionField   01 Rgn [RCRB] Off 1A0C1 Len 01 Acc 04
+ 0  SATD RegionField   01 Rgn [RCRB] Off 1A0C2 Len 01 Acc 04
+ 0  SMBD RegionField   01 Rgn [RCRB] Off 1A0C3 Len 01 Acc 04
+ 0  HDAD RegionField   01 Rgn [RCRB] Off 1A0C4 Len 01 Acc 04
+ 0  RP1D RegionField   01 Rgn [RCRB] Off 1A0D0 Len 01 Acc 04
+ 0  RP2D RegionField   01 Rgn [RCRB] Off 1A0D1 Len 01 Acc 04
+ 0  RP3D RegionField   01 Rgn [RCRB] Off 1A0D2 Len 01 Acc 04
+ 0  RP4D RegionField   01 Rgn [RCRB] Off 1A0D3 Len 01 Acc 04
+ 0  RP5D RegionField   01 Rgn [RCRB] Off 1A0D4 Len 01 Acc 04
+ 0  RP6D RegionField   01 Rgn [RCRB] Off 1A0D5 Len 01 Acc 04
+ 0  RP7D RegionField   01 Rgn [RCRB] Off 1A0D6 Len 01 Acc 04
+ 0  RP8D RegionField   01 Rgn [RCRB] Off 1A0D7 Len 01 Acc 04
+ 0  UP0D RegionField   01 Rgn [RCRB] Off 1ACE0 Len 01 Acc 04
+ 0  UP1D RegionField   01 Rgn [RCRB] Off 1ACE1 Len 01 Acc 04
+ 0  UP2D RegionField   01 Rgn [RCRB] Off 1ACE2 Len 01 Acc 04
+ 0  UP3D RegionField   01 Rgn [RCRB] Off 1ACE3 Len 01 Acc 04
+ 0  UP4D RegionField   01 Rgn [RCRB] Off 1ACE4 Len 01 Acc 04
+ 0  UP5D RegionField   01 Rgn [RCRB] Off 1ACE5 Len 01 Acc 04
+ 0  UP6D RegionField   01 Rgn [RCRB] Off 1ACE6 Len 01 Acc 04
+ 0  UP7D RegionField   01 Rgn [RCRB] Off 1ACE7 Len 01 Acc 04
+ 0  UP8D RegionField   01 Rgn [RCRB] Off 1ACE8 Len 01 Acc 04
+ 0  UP9D RegionField   01 Rgn [RCRB] Off 1ACE9 Len 01 Acc 04
+ 0  UPAD RegionField   01 Rgn [RCRB] Off 1ACEA Len 01 Acc 04
+ 0  UPBD RegionField   01 Rgn [RCRB] Off 1ACEB Len 01 Acc 04
+ 0  UPCD RegionField   01 Rgn [RCRB] Off 1ACEC Len 01 Acc 04
+ 0  UPDD RegionField   01 Rgn [RCRB] Off 1ACED Len 01 Acc 04
+ 0  IO_P Region        01 [SystemIO] Addr 0000000000001000 Len 0004
+ 0  TRPF RegionField   01 Rgn [IO_P] Off 000 Len 08 Acc 01
+ 0  CADR RegionField   01 Rgn [LPCR] Off 000 Len 03 Acc 01
+ 0  CBDR RegionField   01 Rgn [LPCR] Off 004 Len 03 Acc 01
+ 0  LTDR RegionField   01 Rgn [LPCR] Off 008 Len 02 Acc 01
+ 0  FDDR RegionField   01 Rgn [LPCR] Off 00C Len 01 Acc 01
+ 0  CALE RegionField   01 Rgn [LPCR] Off 010 Len 01 Acc 01
+ 0  CBLE RegionField   01 Rgn [LPCR] Off 011 Len 01 Acc 01
+ 0  LTLE RegionField   01 Rgn [LPCR] Off 012 Len 01 Acc 01
+ 0  FDLE RegionField   01 Rgn [LPCR] Off 013 Len 01 Acc 01
+ 0  GLLE RegionField   01 Rgn [LPCR] Off 018 Len 01 Acc 01
+ 0  GHLE RegionField   01 Rgn [LPCR] Off 019 Len 01 Acc 01
+ 0  KCLE RegionField   01 Rgn [LPCR] Off 01A Len 01 Acc 01
+ 0  MCLE RegionField   01 Rgn [LPCR] Off 01B Len 01 Acc 01
+ 0  C1LE RegionField   01 Rgn [LPCR] Off 01C Len 01 Acc 01
+ 0  C2LE RegionField   01 Rgn [LPCR] Off 01D Len 01 Acc 01
+ 0  UXDV Method        01 Args 1 Len 0099 Aml 
+ 0  RRIO Method        01 Args 4 Len 0220 Aml 
+ 0  RDMA Method        01 Args 3 Len 0000 Aml 
+ 0  NFC1 Device        01 
+ 1    _HID Integer       01 = 0000000000D0744D
+ 1    _STA Method        01 Args 0 Len 0010 Aml 
+ 0  NFC2 Device        01 
+ 1    _HID Integer       01 = 000000004254103B
+ 1    _STA Method        01 Args 0 Len 0010 Aml 
+ 0  NFC3 Device        01 
+ 1    _HID Integer       01 = 00000000120A7624
+ 1    _STA Method        01 Args 0 Len 000F Aml 
+ 0  MUTX Mutex         01 Object 
+ 0  DEB0 Region        01 [SystemIO] Addr 0000000000000080 Len 0001
+ 0  DBG8 RegionField   01 Rgn [DEB0] Off 000 Len 08 Acc 01
+ 0  DEB1 Region        01 [SystemIO] Addr 0000000000000090 Len 0002
+ 0  DBG9 RegionField   01 Rgn [DEB1] Off 000 Len 10 Acc 02
+ 0  PRT0 Region        01 [SystemIO] Addr 0000000000000080 Len 0004
+ 0  P80H RegionField   01 Rgn [PRT0] Off 000 Len 20 Acc 04
+ 0  P8XH Method        01 Args 2 Len 0077 Aml 
+ 0  ADBG Method        01 Args 1 Len 0011 Aml 
+ 0  SPRT Region        01 [SystemIO] Addr 00000000000000B2 Len 0002
+ 0  SSMP RegionField   01 Rgn [SPRT] Off 000 Len 08 Acc 01
+ 0  _PIC Method        01 Args 1 Len 000C Aml 
+ 0  _PTS Method        01 Args 1 Len 0317 Aml 
+ 0  _WAK Method        01 Args 1 Len 05E3 Aml 
+ 0  GETB Method        01 Args 3 Len 0018 Aml 
+ 0  PNOT Method        01 Args 0 Len 02CE Aml 
+ 0  MBAR Region        01 [SystemMemory] Addr 0000000000005000 Len 1000
+ 0  PWRU RegionField   01 Rgn [MBAR] Off 49C0 Len 04 Acc 01
+ 0  PPL1 RegionField   01 Rgn [MBAR] Off 4D00 Len 0F Acc 01
+ 0  PL1E RegionField   01 Rgn [MBAR] Off 4D0F Len 01 Acc 01
+ 0  CLP1 RegionField   01 Rgn [MBAR] Off 4D10 Len 01 Acc 01
+ 0  CLMP Integer       01 = 0000000000000000
+ 0  PLEN Integer       01 = 0000000000000000
+ 0  PLSV Integer       01 = 0000000000008000
+ 0  CSEM Integer       01 = 0000000000000000
+ 0  SPL1 Method        01 Args 0 Len 0070 Aml 
+ 0  RPL1 Method        01 Args 0 Len 0021 Aml 
+ 0  DDPS Integer       01 = 0000000000000000
+ 0  UAMS Integer       01 = 0000000000000000
+ 0  TRAP Method        01 Args 2 Len 0040 Aml 
+ 0  PICM Integer       01 = 0000000000000000
+ 0  PRWP Package       01 Elements 02
+ 0  GPRW Method        01 Args 2 Len 0059 Aml 
+ 0  SRMB Integer       01 = 00000000DFFF0000
+ 0  BRTN Method        01 Args 1 Len 0024 Aml 
+ 0  WCAM Device        01 
+ 1    _ADR Integer       01 = 0000000000000001
+ 1    _UPC Method        01 Args 0 Len 0013 Aml 
+ 1    _PLD Method        01 Args 0 Len 0025 Aml 
+ 0  OSUM Mutex         01 Object 
+ 0  TPMF Integer       01 = 0000000000000000
+ 0  BNUM RegionField   01 Rgn [GNVS] Off 0F0 Len 08 Acc 01
+ 0  B1SC RegionField   01 Rgn [GNVS] Off 100 Len 08 Acc 01
+ 0  B1SS RegionField   01 Rgn [GNVS] Off 118 Len 08 Acc 01
+ 0  B2SC RegionField   01 Rgn [GNVS] Off 108 Len 08 Acc 01
+ 0  B2SS RegionField   01 Rgn [GNVS] Off 120 Len 08 Acc 01
+ 0  _S0_ Package       01 Elements 04
+ 0  _S5_ Package       01 Elements 04
+ 0  PTS_ Method        01 Args 1 Len 0050 Aml 
+ 0  WAK_ Method        01 Args 1 Len 004C Aml 
+ 0  OSCM Method        01 Args 4 Len 0002 Aml 
+ 0  PINI Method        01 Args 0 Len 0000 Aml 
+ 0  _S3_ Package       01 Elements 04
+ 0  _S4_ Package       01 Elements 04
+ 0  SSDT Package       03 Elements 0C
+ 0  PDC0 Integer       03 = 0000000080000000
+ 0  PDC1 Integer       03 = 0000000080000000
+ 0  PDC2 Integer       03 = 0000000080000000
+ 0  PDC3 Integer       03 = 0000000080000000
+ 0  PDC4 Integer       03 = 0000000080000000
+ 0  PDC5 Integer       03 = 0000000080000000
+ 0  PDC6 Integer       03 = 0000000080000000
+ 0  PDC7 Integer       03 = 0000000080000000
+ 0  SDTL Integer       03 = 0000000000000000
+ 0  STFE Buffer        04 Len 07 = 10 06 00 00 00 00 EF
+ 0  STFD Buffer        04 Len 07 = 90 06 00 00 00 00 EF
+ 0  FZTF Buffer        04 Len 07 = 00 00 00 00 00 00 F5
+ 0  DCFL Buffer        04 Len 07 = C1 00 00 00 00 00 B1
+ 0  SCBF Buffer        04 Len 15 = 00 00 00 00 00 00 00 00 00 00 00 00
+ 0  CMDC Integer       04 = 0000000000000000
+ 0  GTFB Method        04 Args 2 Len 003B Aml 
+ 0  SANV Region        05 [SystemMemory] Addr 000000006A1E3C18 Len 0169
+ 0  SARV RegionField   05 Rgn [SANV] Off 000 Len 20 Acc 01
+ 0  ASLB RegionField   05 Rgn [SANV] Off 020 Len 20 Acc 01
+ 0  IMON RegionField   05 Rgn [SANV] Off 040 Len 08 Acc 01
+ 0  IGDS RegionField   05 Rgn [SANV] Off 048 Len 08 Acc 01
+ 0  CADL RegionField   05 Rgn [SANV] Off 050 Len 08 Acc 01
+ 0  PADL RegionField   05 Rgn [SANV] Off 058 Len 08 Acc 01
+ 0  CSTE RegionField   05 Rgn [SANV] Off 060 Len 10 Acc 01
+ 0  NSTE RegionField   05 Rgn [SANV] Off 070 Len 10 Acc 01
+ 0  DID9 RegionField   05 Rgn [SANV] Off 080 Len 20 Acc 01
+ 0  DIDA RegionField   05 Rgn [SANV] Off 0A0 Len 20 Acc 01
+ 0  DIDB RegionField   05 Rgn [SANV] Off 0C0 Len 20 Acc 01
+ 0  IBTT RegionField   05 Rgn [SANV] Off 0E0 Len 08 Acc 01
+ 0  IPAT RegionField   05 Rgn [SANV] Off 0E8 Len 08 Acc 01
+ 0  IPSC RegionField   05 Rgn [SANV] Off 0F0 Len 08 Acc 01
+ 0  IBLC RegionField   05 Rgn [SANV] Off 0F8 Len 08 Acc 01
+ 0  IBIA RegionField   05 Rgn [SANV] Off 100 Len 08 Acc 01
+ 0  ISSC RegionField   05 Rgn [SANV] Off 108 Len 08 Acc 01
+ 0  IPCF RegionField   05 Rgn [SANV] Off 110 Len 08 Acc 01
+ 0  IDMS RegionField   05 Rgn [SANV] Off 118 Len 08 Acc 01
+ 0  IF1E RegionField   05 Rgn [SANV] Off 120 Len 08 Acc 01
+ 0  HVCO RegionField   05 Rgn [SANV] Off 128 Len 08 Acc 01
+ 0  NXD1 RegionField   05 Rgn [SANV] Off 130 Len 20 Acc 01
+ 0  NXD2 RegionField   05 Rgn [SANV] Off 150 Len 20 Acc 01
+ 0  NXD3 RegionField   05 Rgn [SANV] Off 170 Len 20 Acc 01
+ 0  NXD4 RegionField   05 Rgn [SANV] Off 190 Len 20 Acc 01
+ 0  NXD5 RegionField   05 Rgn [SANV] Off 1B0 Len 20 Acc 01
+ 0  NXD6 RegionField   05 Rgn [SANV] Off 1D0 Len 20 Acc 01
+ 0  NXD7 RegionField   05 Rgn [SANV] Off 1F0 Len 20 Acc 01
+ 0  NXD8 RegionField   05 Rgn [SANV] Off 210 Len 20 Acc 01
+ 0  GSMI RegionField   05 Rgn [SANV] Off 230 Len 08 Acc 01
+ 0  PAVP RegionField   05 Rgn [SANV] Off 238 Len 08 Acc 01
+ 0  LIDS RegionField   05 Rgn [SANV] Off 240 Len 08 Acc 01
+ 0  KSV0 RegionField   05 Rgn [SANV] Off 248 Len 20 Acc 01
+ 0  KSV1 RegionField   05 Rgn [SANV] Off 268 Len 08 Acc 01
+ 0  BBAR RegionField   05 Rgn [SANV] Off 270 Len 20 Acc 01
+ 0  BLCS RegionField   05 Rgn [SANV] Off 290 Len 08 Acc 01
+ 0  BRTL RegionField   05 Rgn [SANV] Off 298 Len 08 Acc 01
+ 0  ALSE RegionField   05 Rgn [SANV] Off 2A0 Len 08 Acc 01
+ 0  ALAF RegionField   05 Rgn [SANV] Off 2A8 Len 08 Acc 01
+ 0  LLOW RegionField   05 Rgn [SANV] Off 2B0 Len 08 Acc 01
+ 0  LHIH RegionField   05 Rgn [SANV] Off 2B8 Len 08 Acc 01
+ 0  ALFP RegionField   05 Rgn [SANV] Off 2C0 Len 08 Acc 01
+ 0  AUDA RegionField   05 Rgn [SANV] Off 2C8 Len 20 Acc 01
+ 0  AUDB RegionField   05 Rgn [SANV] Off 2E8 Len 20 Acc 01
+ 0  AUDC RegionField   05 Rgn [SANV] Off 308 Len 20 Acc 01
+ 0  DIDC RegionField   05 Rgn [SANV] Off 328 Len 20 Acc 01
+ 0  DIDD RegionField   05 Rgn [SANV] Off 348 Len 20 Acc 01
+ 0  DIDE RegionField   05 Rgn [SANV] Off 368 Len 20 Acc 01
+ 0  DIDF RegionField   05 Rgn [SANV] Off 388 Len 20 Acc 01
+ 0  CCSA RegionField   05 Rgn [SANV] Off 3A8 Len 20 Acc 01
+ 0  CCNT RegionField   05 Rgn [SANV] Off 3C8 Len 20 Acc 01
+ 0  SGMD RegionField   05 Rgn [SANV] Off 640 Len 08 Acc 01
+ 0  SGFL RegionField   05 Rgn [SANV] Off 648 Len 08 Acc 01
+ 0  PWOK RegionField   05 Rgn [SANV] Off 650 Len 08 Acc 01
+ 0  HLRS RegionField   05 Rgn [SANV] Off 658 Len 08 Acc 01
+ 0  PWEN RegionField   05 Rgn [SANV] Off 660 Len 08 Acc 01
+ 0  PRST RegionField   05 Rgn [SANV] Off 668 Len 08 Acc 01
+ 0  CPSP RegionField   05 Rgn [SANV] Off 670 Len 20 Acc 01
+ 0  EECP RegionField   05 Rgn [SANV] Off 690 Len 08 Acc 01
+ 0  EVCP RegionField   05 Rgn [SANV] Off 698 Len 10 Acc 01
+ 0  XBAS RegionField   05 Rgn [SANV] Off 6A8 Len 20 Acc 01
+ 0  GBAS RegionField   05 Rgn [SANV] Off 6C8 Len 10 Acc 01
+ 0  SGGP RegionField   05 Rgn [SANV] Off 6D8 Len 08 Acc 01
+ 0  NVGA RegionField   05 Rgn [SANV] Off 6E0 Len 20 Acc 01
+ 0  NVHA RegionField   05 Rgn [SANV] Off 700 Len 20 Acc 01
+ 0  AMDA RegionField   05 Rgn [SANV] Off 720 Len 20 Acc 01
+ 0  NDID RegionField   05 Rgn [SANV] Off 740 Len 08 Acc 01
+ 0  DID1 RegionField   05 Rgn [SANV] Off 748 Len 20 Acc 01
+ 0  DID2 RegionField   05 Rgn [SANV] Off 768 Len 20 Acc 01
+ 0  DID3 RegionField   05 Rgn [SANV] Off 788 Len 20 Acc 01
+ 0  DID4 RegionField   05 Rgn [SANV] Off 7A8 Len 20 Acc 01
+ 0  DID5 RegionField   05 Rgn [SANV] Off 7C8 Len 20 Acc 01
+ 0  DID6 RegionField   05 Rgn [SANV] Off 7E8 Len 20 Acc 01
+ 0  DID7 RegionField   05 Rgn [SANV] Off 808 Len 20 Acc 01
+ 0  DID8 RegionField   05 Rgn [SANV] Off 828 Len 20 Acc 01
+ 0  OBS1 RegionField   05 Rgn [SANV] Off 848 Len 20 Acc 01
+ 0  OBS2 RegionField   05 Rgn [SANV] Off 868 Len 20 Acc 01
+ 0  OBS3 RegionField   05 Rgn [SANV] Off 888 Len 20 Acc 01
+ 0  OBS4 RegionField   05 Rgn [SANV] Off 8A8 Len 20 Acc 01
+ 0  OBS5 RegionField   05 Rgn [SANV] Off 8C8 Len 20 Acc 01
+ 0  OBS6 RegionField   05 Rgn [SANV] Off 8E8 Len 20 Acc 01
+ 0  OBS7 RegionField   05 Rgn [SANV] Off 908 Len 20 Acc 01
+ 0  OBS8 RegionField   05 Rgn [SANV] Off 928 Len 20 Acc 01
+ 0  LTRA RegionField   05 Rgn [SANV] Off 948 Len 08 Acc 01
+ 0  OBFA RegionField   05 Rgn [SANV] Off 950 Len 08 Acc 01
+ 0  LTRB RegionField   05 Rgn [SANV] Off 958 Len 08 Acc 01
+ 0  OBFB RegionField   05 Rgn [SANV] Off 960 Len 08 Acc 01
+ 0  LTRC RegionField   05 Rgn [SANV] Off 968 Len 08 Acc 01
+ 0  OBFC RegionField   05 Rgn [SANV] Off 970 Len 08 Acc 01
+ 0  SMSL RegionField   05 Rgn [SANV] Off 978 Len 10 Acc 01
+ 0  SNSL RegionField   05 Rgn [SANV] Off 988 Len 10 Acc 01
+ 0  P0UB RegionField   05 Rgn [SANV] Off 998 Len 08 Acc 01
+ 0  P1UB RegionField   05 Rgn [SANV] Off 9A0 Len 08 Acc 01
+ 0  P2UB RegionField   05 Rgn [SANV] Off 9A8 Len 08 Acc 01
+ 0  EDPV RegionField   05 Rgn [SANV] Off 9B0 Len 08 Acc 01
+ 0  NXDX RegionField   05 Rgn [SANV] Off 9B8 Len 20 Acc 01
+ 0  DIDX RegionField   05 Rgn [SANV] Off 9D8 Len 20 Acc 01
+ 0  PCSL RegionField   05 Rgn [SANV] Off 9F8 Len 08 Acc 01
+ 0  SC7A RegionField   05 Rgn [SANV] Off A00 Len 08 Acc 01
+ 0  DSEL RegionField   05 Rgn [SANV] Off A08 Len 08 Acc 01
+ 0  ESEL RegionField   05 Rgn [SANV] Off A10 Len 08 Acc 01
+ 0  PSEL RegionField   05 Rgn [SANV] Off A18 Len 08 Acc 01
+ 0  MXD1 RegionField   05 Rgn [SANV] Off A20 Len 20 Acc 01
+ 0  MXD2 RegionField   05 Rgn [SANV] Off A40 Len 20 Acc 01
+ 0  MXD3 RegionField   05 Rgn [SANV] Off A60 Len 20 Acc 01
+ 0  MXD4 RegionField   05 Rgn [SANV] Off A80 Len 20 Acc 01
+ 0  MXD5 RegionField   05 Rgn [SANV] Off AA0 Len 20 Acc 01
+ 0  MXD6 RegionField   05 Rgn [SANV] Off AC0 Len 20 Acc 01
+ 0  MXD7 RegionField   05 Rgn [SANV] Off AE0 Len 20 Acc 01
+ 0  MXD8 RegionField   05 Rgn [SANV] Off B00 Len 20 Acc 01
+ 0  PXFD RegionField   05 Rgn [SANV] Off B20 Len 08 Acc 01
+ 0  EBAS RegionField   05 Rgn [SANV] Off B28 Len 20 Acc 01
+ 0  _TI_ Untyped       00 
+ 1    _T97 Method        00 Args 1 Len 0023 Aml 

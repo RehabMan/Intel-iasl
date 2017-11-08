@@ -216,6 +216,37 @@ run_test_case()
 	return $TEST_RET
 }
 
+# Run a simple sanity test. This test loads a set of acpi tables and dumps
+# the namespace using acpiexec. The output is compared to a known good output.
+# The path name of the good known output is $ASLTSDIR/src/sanity/goodOutput.txt 
+# If the results differ, this test will inform the user that resulting output
+# has changed and provides a method to update the goodOutput.txt to the current
+# output. Note: all output files ignore hexadecimal characters to avoid taking
+# a diff of the address. This means that integer values could be eliminated.
+# However, we can run simple ASLTS test cases (like arithmetic) to ensure that
+# arithmetic and numeric constants have not been altered.
+run_sanity_test()
+{
+	local original_dir=`pwd`
+	cd "$ASLTSDIR/src/sanity"
+	if [ ! -f goodOutput.txt ]; then
+		>&2 echo "[[ Error: $ASLTSDIR/src/sanity/goodOutput.txt does not exist. ]]"
+		return
+	fi;
+        $acpiexec -b "n" tables/*.dat 2> /dev/null | sed '1,/Copyright/d' | sed 's/ 0x[[:alnum:]]* //g' > tempOutput.txt
+	diff goodOutput.txt tempOutput.txt 2> /dev/null > /dev/null
+	if [ "x$SANITYACCEPT" = "xyes" ]; then
+		mv tempOutput.txt goodOutput.txt
+		return
+	fi;
+	if [ $? -ne 0 ]; then
+		>&2 echo "[[ Warning: Sanity check output has changed. ]]"
+	else
+		>&2 echo "Sanity test: PASS"
+		rm tempOutput.txt
+        fi;
+}
+
 # Run a set of test cases (specified by INIT_SET_OF_TEST_CASES)
 # in one particular mode.
 # arg1 - bitmap of mode
@@ -953,6 +984,14 @@ INIT_MEM_STAT
 
 if [ ! -f "$acpiexec" ]; then
 	do_exit 1 "Undefined acpiexec variable! Set it to pathname of AcpiExec utility."
+fi
+
+# Run sanity test
+if [ "x$ENABLESANITY" = "xyes" ]; then
+	run_sanity_test
+fi
+if [ "x$SANITYONLY" = "xyes" ]; then
+	exit 0
 fi
 
 # Determine the working directory and take precautions (last name should be aslts)

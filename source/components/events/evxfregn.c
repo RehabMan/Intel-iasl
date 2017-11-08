@@ -361,6 +361,15 @@ AcpiRemoveAddressSpaceHandler (
 
             *LastObjPtr = HandlerObj->AddressSpace.Next;
 
+            /* Wait for handlers to exit */
+
+            while (AcpiEvSpaceHandlerCount (HandlerObj) != 0)
+            {
+                (void) AcpiUtReleaseMutex (ACPI_MTX_NAMESPACE);
+                AcpiOsSleep ((UINT64) 10);
+                (void) AcpiUtAcquireMutex (ACPI_MTX_NAMESPACE);
+            }
+
             /* Now we can delete the handler object */
 
             AcpiUtRemoveReference (HandlerObj);

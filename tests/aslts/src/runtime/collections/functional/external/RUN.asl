@@ -27,7 +27,7 @@
  */
 
 
-if (STTT("External", TCLF, 2, W002)) {
+if (STTT("External", TCLF, 15, W023)) {
 	SRMT("EXT1")
 	EXT1()
 }

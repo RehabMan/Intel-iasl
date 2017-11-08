@@ -67,6 +67,9 @@ Name(W00b, 0) // region
 Name(W00c, 0) // synchronization
 Name(W00d, 0) // table
 Name(W01a, 0) // module
+Name(W023, 0) // external
+Name(W024, 0) // alias
+Name(W025, 0) // fwdref
 
 // COMPLEX
 
@@ -166,6 +169,11 @@ Store(1, W00a) // reference        10
 Store(1, W00b) // region           11
 Store(1, W00c) // synchronization  12
 Store(1, W00d) // table            13
+Store(1, W023) // external         14
+Store(1, W024) // alias            15
+Store(1, W025) // alias            16
+
+
 
 // COMPLEX, collection # 2
 
@@ -280,6 +288,7 @@ Name(y261, 0)	// Crash when DDBHandle parameter of Load is an Indexed Reference
 Name(y262, 0)	// Unexpected AE_STACK_OVERFLOW for a method call expression with nested calls
 Name(y263, 0)	// The sequence of evaluating operands of expression with the named objects is violated
 Name(y264, 0)	// Crash on re-writing named element of Package
+Name(y274, 0)	// Named object as element of Package is handled by ACPICA differently than by MS
 Name(y275, 0)	// Pop result from bottom principle doesn't work
 Name(y276, 0)	// 'Large Reference Count' on AML code with LoadTable/UnLoad in a slack mode
 Name(y281, 0)	// Normal strings as the LoadTable parameters can cause the matching table to be not found

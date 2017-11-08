@@ -335,6 +335,9 @@
 #elif defined(__QNX__)
 #include "acqnx.h"
 
+#elif defined(ACOS)
+#include "acos.h"
+
 /*
  * EFI applications can be built with -nostdlib, in this case, it must be
  * included after including all other host environmental definitions, in

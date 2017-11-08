@@ -515,6 +515,7 @@ typedef struct acpi_object_addr_handler
 {
     ACPI_OBJECT_COMMON_HEADER
     UINT8                           SpaceId;
+    UINT16                          InvocationCount;
     UINT8                           HandlerFlags;
     ACPI_ADR_SPACE_HANDLER          Handler;
     ACPI_NAMESPACE_NODE             *Node;              /* Parent device */

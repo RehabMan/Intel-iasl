@@ -207,7 +207,16 @@ AdDisassemblerHeader (
     /* Header and input table info */
 
     AcpiOsPrintf ("/*\n");
-    AcpiOsPrintf (ACPI_COMMON_HEADER (AML_DISASSEMBLER_NAME, " * "));
+
+    if (Gbl_CaptureComments)
+    {
+        AcpiOsPrintf (ACPI_COMMON_HEADER (ASL_CONVERTER_NAME, " * "));
+        return;
+    }
+    else
+    {
+        AcpiOsPrintf (ACPI_COMMON_HEADER (AML_DISASSEMBLER_NAME, " * "));
+    }
 
     if (TableType == ACPI_IS_AML_TABLE)
     {
@@ -262,6 +271,17 @@ AdCreateTableHeader (
      */
     AdDisassemblerHeader (Filename, ACPI_IS_AML_TABLE);
 
+    /*
+     * Print comments that come before this definition block. Skip definition block
+     * comments to reduce the amount of comments emitted above the Definition block.
+     */
+    if (Gbl_CaptureComments)
+    {
+        AcpiOsPrintf (" */\n");
+        ASL_CV_PRINT_ONE_COMMENT (AcpiGbl_ParseOpRoot, AML_COMMENT_STANDARD, NULL, 0);
+        goto PrintDefinitionBlock;
+    }
+
     AcpiOsPrintf (" * Original Table Header:\n");
     AcpiOsPrintf (" *     Signature        \"%4.4s\"\n",    Table->Signature);
     AcpiOsPrintf (" *     Length           0x%8.8X (%u)\n", Table->Length, Table->Length);
@@ -311,13 +331,6 @@ AdCreateTableHeader (
     AcpiOsPrintf (" *     Compiler Version 0x%8.8X (%u)\n", Table->AslCompilerRevision, Table->AslCompilerRevision);
     AcpiOsPrintf (" */\n");
 
-    /*
-     * Print comments that come before this definition block.
-     */
-    if (Gbl_CaptureComments)
-    {
-        ASL_CV_PRINT_ONE_COMMENT(AcpiGbl_ParseOpRoot,AML_COMMENT_STANDARD, NULL, 0);
-    }
 
     /*
      * Open the ASL definition block.
@@ -326,6 +339,7 @@ AdCreateTableHeader (
      * the compiler create it when the disassembled file is compiled. This
      * makes it easier to rename the disassembled ASL file if needed.
      */
+PrintDefinitionBlock:
     AcpiOsPrintf (
         "DefinitionBlock (\"\", \"%4.4s\", %hu, \"%.6s\", \"%.8s\", 0x%8.8X)\n",
         Table->Signature, Table->Revision,

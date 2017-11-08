@@ -2092,6 +2092,12 @@ AcpiDmDumpIort (
             Length = IortNode->Length - NodeOffset;
             break;
 
+        case ACPI_IORT_NODE_PMCG:
+
+            InfoTable = AcpiDmTableInfoIort5;
+            Length = IortNode->Length - NodeOffset;
+            break;
+
         default:
 
             AcpiOsPrintf ("\n**** Unknown IORT node type 0x%X\n",
@@ -3059,6 +3065,11 @@ AcpiDmDumpNfit (
             InfoTable = AcpiDmTableInfoNfit6;
             Hint = ACPI_CAST_PTR (ACPI_NFIT_FLUSH_ADDRESS, Subtable);
             FieldOffset = sizeof (ACPI_NFIT_FLUSH_ADDRESS) - sizeof (UINT64);
+            break;
+
+        case ACPI_NFIT_TYPE_CAPABILITIES:    /* ACPI 6.0A */
+
+            InfoTable = AcpiDmTableInfoNfit7;
             break;
 
         default:

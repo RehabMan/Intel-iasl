@@ -158,11 +158,12 @@
  */
 #define ASL_COMPILER_NAME           "ASL+ Optimizing Compiler/Disassembler"
 #define AML_DISASSEMBLER_NAME       "AML/ASL+ Disassembler"
+#define ASL_CONVERTER_NAME          "AML/ASL+ Converter"
 #define ASL_INVOCATION_NAME         "iasl"
 #define ASL_CREATOR_ID              "INTL"
 #define ASL_DEFINE                  "__IASL__"
 #define ASL_PREFIX                  "iASL: "
-#define ASL_COMPLIANCE              "Supports ACPI Specification Revision 6.2"
+#define ASL_COMPLIANCE              "Supports ACPI Specification Revision 6.2A"
 
 
 /* Configuration constants */

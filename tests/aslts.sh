@@ -14,17 +14,24 @@ TEST_MODES=
 REBUILD_TOOLS=yes
 BINCOMPONLY=no
 EXECONLY=no
+export ENABLESANITY=yes
+export SANITYONLY=no
+export SANITYACCEPT=no
 
 usage() {
 
 	echo "Usage:"
-	echo "`basename $0` [-c case] [-m mode] [-u]"
+	echo "`basename $0` [-c case] [-m mode] [-s arg][-u]"
 	echo "Where:"
 	echo "  -c:	Specify individual test cases (can be used multiple times)"
 	echo "  -m:	Specify individual test modes (can be used multiple times)"
 	echo "  -u:	Do not force rebuilding of ACPICA utilities (acpiexec, iasl)"
-	echo "  -e:     Perform the execution of aml files and omit binary comparison of regular aml and disassembled aml file."
-	echo "  -b:     Only perform binary comparison of regular aml and disasssembled aml file"
+	echo "  -e:	Perform the execution of aml files and omit binary comparison of regular aml and disassembled aml file."
+	echo "  -s:	Sanity test options"
+	echo "     		off: disable sanity test"
+	echo "     		solo: run the sanity test, disable all other modes."
+	echo "     		accept: run the sanity test, accept the result as the new good output"
+	echo "  -b:	Only perform binary comparison of regular aml and disasssembled aml file"
 	echo ""
 
 	echo "Available test modes:"
@@ -82,6 +89,8 @@ build_acpi_tools() {
 	# Build native-width iASL compiler and acpiexec
 	if [ ! -e bin/iasl -o ! -e bin/acpiexec ]; then
 		REBUILD_TOOLS=yes
+  else
+    REBUILD_TOOLS=no
 	fi
 	if [ "x$REBUILD_TOOLS" = "xyes" ]; then
 		make clean
@@ -122,10 +131,13 @@ run_aslts() {
 	version=`$ASL | grep version | awk '{print $5}'`
 	rm -rf $ASLTSDIR/tmp/aml/$version
 
-	if [ "x$TEST_MODES" = "x" ]; then
-		TEST_MODES="n32 n64 o32 o64"
+	if [ "x$SANITYONLY" = "xno" ]; then
+		if [ "x$TEST_MODES" = "x" ]; then
+			TEST_MODES="n32 n64 o32 o64"
+		fi
+		echo "DO 0 $SANITYONLY"
+		Do 0 $TEST_MODES $TEST_CASES $EXECONLY
 	fi
-	Do 0 $TEST_MODES $TEST_CASES $EXECONLY
 	if [ $? -ne 0 ]; then
 		echo "ASLTS Compile Failure"
 		exit 1
@@ -160,7 +172,7 @@ RESET_SETTINGS
 INIT_ALL_AVAILABLE_CASES
 INIT_ALL_AVAILABLE_MODES
 
-while getopts "c:m:ueb" opt
+while getopts "c:m:s:ueb" opt
 do
 	case $opt in
 	b)
@@ -188,6 +200,16 @@ do
 		else
 			TEST_MODES="$OPTARG $TEST_MODES"
 		fi
+	;;
+	s)
+		if [ "x$OPTARG" = "off" ]; then
+			ENABLESANITY=no
+		elif [ "x$OPTARG" = "xaccept" ]; then
+			SANITYACCEPT=yes
+			SANITYONLY=yes
+		elif [ "x$OPTARG" = "xsolo" ]; then
+			SANITYONLY=yes
+		fi;
 	;;
 	u)
 		REBUILD_TOOLS=no

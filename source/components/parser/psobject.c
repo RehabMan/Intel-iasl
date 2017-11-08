@@ -793,7 +793,8 @@ AcpiPsCompleteFinalOp (
     ACPI_PARSE_OBJECT       *Op,
     ACPI_STATUS             Status)
 {
-    ACPI_STATUS             Status2;
+    ACPI_STATUS             ReturnStatus = AE_OK;
+    BOOLEAN                 Ascending = TRUE;
 
 
     ACPI_FUNCTION_TRACE_PTR (PsCompleteFinalOp, WalkState);
@@ -810,7 +811,7 @@ AcpiPsCompleteFinalOp (
     {
         if (Op)
         {
-            if (WalkState->AscendingCallback != NULL)
+            if (Ascending && WalkState->AscendingCallback != NULL)
             {
                 WalkState->Op = Op;
                 WalkState->OpInfo = AcpiPsGetOpcodeInfo (Op->Common.AmlOpcode);
@@ -829,41 +830,28 @@ AcpiPsCompleteFinalOp (
 
                 if (Status == AE_CTRL_TERMINATE)
                 {
-                    Status = AE_OK;
-
-                    /* Clean up */
-                    do
-                    {
-                        if (Op)
-                        {
-                            Status2 = AcpiPsCompleteThisOp (WalkState, Op);
-                            if (ACPI_FAILURE (Status2))
-                            {
-                                return_ACPI_STATUS (Status2);
-                            }
-                        }
-
-                        AcpiPsPopScope (&(WalkState->ParserState), &Op,
-                            &WalkState->ArgTypes, &WalkState->ArgCount);
-
-                    } while (Op);
-
-                    return_ACPI_STATUS (Status);
+                    Ascending = FALSE;
+                    ReturnStatus = AE_CTRL_TERMINATE;
                 }
 
                 else if (ACPI_FAILURE (Status))
                 {
                     /* First error is most important */
 
-                    (void) AcpiPsCompleteThisOp (WalkState, Op);
-                    return_ACPI_STATUS (Status);
+                    Ascending = FALSE;
+                    ReturnStatus = Status;
                 }
             }
 
-            Status2 = AcpiPsCompleteThisOp (WalkState, Op);
-            if (ACPI_FAILURE (Status2))
+            Status = AcpiPsCompleteThisOp (WalkState, Op);
+            if (ACPI_FAILURE (Status))
             {
-                return_ACPI_STATUS (Status2);
+                Ascending = FALSE;
+                if (ACPI_SUCCESS (ReturnStatus) ||
+                    ReturnStatus == AE_CTRL_TERMINATE)
+                {
+                    ReturnStatus = Status;
+                }
             }
         }
 
@@ -872,5 +860,5 @@ AcpiPsCompleteFinalOp (
 
     } while (Op);
 
-    return_ACPI_STATUS (Status);
+    return_ACPI_STATUS (ReturnStatus);
 }

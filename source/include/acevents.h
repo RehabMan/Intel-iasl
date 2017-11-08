@@ -250,6 +250,12 @@ ACPI_STATUS
 AcpiEvFinishGpe (
     ACPI_GPE_EVENT_INFO     *GpeEventInfo);
 
+UINT32
+AcpiEvDetectGpe (
+    ACPI_NAMESPACE_NODE     *GpeDevice,
+    ACPI_GPE_EVENT_INFO     *GpeEventInfo,
+    UINT32                  GpeNumber);
+
 
 /*
  * evgpeblk - Upper-level GPE block support
@@ -356,6 +362,18 @@ AcpiEvInstallSpaceHandler (
     ACPI_ADR_SPACE_HANDLER  Handler,
     ACPI_ADR_SPACE_SETUP    Setup,
     void                    *Context);
+
+void
+AcpiEvGetSpaceHandler (
+    ACPI_OPERAND_OBJECT     *HandlerDesc);
+
+void
+AcpiEvPutSpaceHandler (
+    ACPI_OPERAND_OBJECT     *HandlerDesc);
+
+UINT32
+AcpiEvSpaceHandlerCount (
+    ACPI_OPERAND_OBJECT     *HandlerDesc);
 
 
 /*

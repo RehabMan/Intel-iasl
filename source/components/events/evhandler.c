@@ -680,6 +680,7 @@ AcpiEvInstallSpaceHandler (
     HandlerObj->AddressSpace.SpaceId = (UINT8) SpaceId;
     HandlerObj->AddressSpace.HandlerFlags = Flags;
     HandlerObj->AddressSpace.RegionList = NULL;
+    HandlerObj->AddressSpace.InvocationCount = 0;
     HandlerObj->AddressSpace.Node = Node;
     HandlerObj->AddressSpace.Handler = Handler;
     HandlerObj->AddressSpace.Context = Context;
@@ -711,4 +712,106 @@ AcpiEvInstallSpaceHandler (
 
 UnlockAndExit:
     return_ACPI_STATUS (Status);
+}
+
+
+/*******************************************************************************
+ *
+ * FUNCTION:    AcpiEvGetSpaceHandler
+ *
+ * PARAMETERS:  HandlerDesc      - Address space object
+ *                                 (ACPI_TYPE_LOCAL_ADDRESS_HANDLER)
+ *
+ * RETURN:      None.
+ *
+ * DESCRIPTION: Acquire an reference of the given address space handler object.
+ *
+ ******************************************************************************/
+
+void
+AcpiEvGetSpaceHandler (
+    ACPI_OPERAND_OBJECT     *HandlerDesc)
+{
+    ACPI_CPU_FLAGS          LockFlags;
+
+
+    ACPI_FUNCTION_TRACE_PTR (AcpiEvGetSpaceHandler, HandlerDesc);
+
+    if (HandlerDesc)
+    {
+        LockFlags = AcpiOsAcquireLock (AcpiGbl_ReferenceCountLock);
+        HandlerDesc->AddressSpace.InvocationCount++;
+        AcpiOsReleaseLock (AcpiGbl_ReferenceCountLock, LockFlags);
+    }
+
+    return_VOID;
+}
+
+
+/*******************************************************************************
+ *
+ * FUNCTION:    AcpiEvPutSpaceHandler
+ *
+ * PARAMETERS:  HandlerDesc      - Address space object
+ *                                 (ACPI_TYPE_LOCAL_ADDRESS_HANDLER)
+ *
+ * RETURN:      None.
+ *
+ * DESCRIPTION: Release an reference of the given address space handler object.
+ *
+ ******************************************************************************/
+
+void
+AcpiEvPutSpaceHandler (
+    ACPI_OPERAND_OBJECT     *HandlerDesc)
+{
+    ACPI_CPU_FLAGS          LockFlags;
+
+
+    ACPI_FUNCTION_TRACE_PTR (AcpiEvPutSpaceHandler, HandlerDesc);
+
+
+    if (HandlerDesc)
+    {
+        LockFlags = AcpiOsAcquireLock (AcpiGbl_ReferenceCountLock);
+        HandlerDesc->AddressSpace.InvocationCount--;
+        AcpiOsReleaseLock (AcpiGbl_ReferenceCountLock, LockFlags);
+    }
+
+    return_VOID;
+}
+
+
+/*******************************************************************************
+ *
+ * FUNCTION:    AcpiEvSpaceHandlerCount
+ *
+ * PARAMETERS:  HandlerDesc      - Address space object
+ *                                 (ACPI_TYPE_LOCAL_ADDRESS_HANDLER)
+ *
+ * RETURN:      Invocation count of the handler.
+ *
+ * DESCRIPTION: Get the reference of the given address space handler object.
+ *
+ ******************************************************************************/
+
+UINT32
+AcpiEvSpaceHandlerCount (
+    ACPI_OPERAND_OBJECT     *HandlerDesc)
+{
+    UINT32                  Count = 0;
+    ACPI_CPU_FLAGS          LockFlags;
+
+
+    ACPI_FUNCTION_TRACE_PTR (AcpiEvSpaceHandlerCount, HandlerDesc);
+
+
+    if (HandlerDesc)
+    {
+        LockFlags = AcpiOsAcquireLock (AcpiGbl_ReferenceCountLock);
+        Count = HandlerDesc->AddressSpace.InvocationCount;
+        AcpiOsReleaseLock (AcpiGbl_ReferenceCountLock, LockFlags);
+    }
+
+    return_UINT32 (Count);
 }

@@ -429,6 +429,9 @@ AcpiDsGetFieldNames (
     ACPI_STATUS             Status;
     UINT64                  Position;
     ACPI_PARSE_OBJECT       *Child;
+    UINT8                   AccessType;
+    UINT8                   AccessAttrib;
+    UINT8                   AccessLength;
 
 
     ACPI_FUNCTION_TRACE_PTR (DsGetFieldNames, Info);
@@ -481,19 +484,54 @@ AcpiDsGetFieldNames (
 
             /* AccessType (ByteAcc, WordAcc, etc.) */
 
+            AccessType = (UINT8) (Arg->Common.Value.Integer & 0xFF);
             Info->FieldFlags = (UINT8)
                 ((Info->FieldFlags & ~(AML_FIELD_ACCESS_TYPE_MASK)) |
-                ((UINT8) ((UINT32) (Arg->Common.Value.Integer & 0x07))));
+                ((UINT8) ((UINT32) (AccessType & 0x07))));
 
-            /* AccessAttribute (AttribQuick, AttribByte, etc.) */
+            /*
+             * AccessAttribute (AttribQuick, AttribByte, etc.) and
+             * AccessLength (for serial/buffer protocols)
+             */
+            if (Arg->Common.AmlOpcode == AML_INT_ACCESSFIELD_OP)
+            {
+                AccessAttrib = (UINT8) ((AccessType >> 6) & 0x03);
+                if (AccessAttrib != 0)
+                {
+                    AccessLength = (UINT8)
+                        ((Arg->Common.Value.Integer >> 8) & 0xFF);
+                }
+                else
+                {
+                    AccessLength = 0;
+                }
 
-            Info->Attribute = (UINT8)
-                ((Arg->Common.Value.Integer >> 8) & 0xFF);
-
-            /* AccessLength (for serial/buffer protocols) */
-
-            Info->AccessLength = (UINT8)
-                ((Arg->Common.Value.Integer >> 16) & 0xFF);
+                switch (AccessAttrib)
+                {
+                case 0:
+                    AccessAttrib = (UINT8)
+                        ((Arg->Common.Value.Integer >> 8) & 0xFF);
+                    break;
+                case 1:
+                    AccessAttrib = AML_FIELD_ATTRIB_MULTIBYTE;
+                    break;
+                case 2:
+                    AccessAttrib = AML_FIELD_ATTRIB_RAW_BYTES;
+                    break;
+                case 3:
+                    AccessAttrib = AML_FIELD_ATTRIB_RAW_PROCESS;
+                    break;
+                }
+            }
+            else
+            {
+                AccessAttrib = (UINT8)
+                    ((Arg->Common.Value.Integer >> 8) & 0xFF);
+                AccessLength = (UINT8)
+                    ((Arg->Common.Value.Integer >> 16) & 0xFF);
+            }
+            Info->Attribute = AccessAttrib;
+            Info->AccessLength = AccessLength;
             break;
 
         case AML_INT_CONNECTION_OP:
