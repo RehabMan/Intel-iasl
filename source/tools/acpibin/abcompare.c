@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -537,7 +537,11 @@ AbCompareAmlFiles (
     printf ("Compare offset: %u\n", AbGbl_CompareOffset);
     if (AbGbl_CompareOffset)
     {
-        fseek (File2, AbGbl_CompareOffset, SEEK_CUR);
+        if (fseek (File2, AbGbl_CompareOffset, SEEK_CUR))
+        {
+            printf ("Seek error on file %s\n", File2Path);
+            goto Exit2;
+        }
     }
 
     Actual1 = fread (&Char1, 1, 1, File1);

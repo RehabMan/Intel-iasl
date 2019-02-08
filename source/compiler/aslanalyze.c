@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -317,7 +317,7 @@ AnCheckId (
         {
             if (!isupper ((int) Op->Asl.Value.String[i]))
             {
-                AslError (Gbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_UPPER_CASE,
+                AslError (AslGbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_UPPER_CASE,
                     Op, &Op->Asl.Value.String[i]);
                 return;
             }
@@ -452,8 +452,8 @@ AnCheckMethodReturnValue (
     {
         /* Method returns a value, but the type is wrong */
 
-        AnFormatBtype (StringBuffer, ThisNodeBtype);
-        AnFormatBtype (StringBuffer2, RequiredBtypes);
+        AnFormatBtype (AslGbl_StringBuffer, ThisNodeBtype);
+        AnFormatBtype (AslGbl_StringBuffer2, RequiredBtypes);
 
         /*
          * The case where the method does not return any value at all
@@ -463,11 +463,11 @@ AnCheckMethodReturnValue (
          */
         if (ThisNodeBtype != 0)
         {
-            sprintf (MsgBuffer,
+            sprintf (AslGbl_MsgBuffer,
                 "Method returns [%s], %s operator requires [%s]",
-                StringBuffer, OpInfo->Name, StringBuffer2);
+                AslGbl_StringBuffer, OpInfo->Name, AslGbl_StringBuffer2);
 
-            AslError (ASL_ERROR, ASL_MSG_INVALID_TYPE, ArgOp, MsgBuffer);
+            AslError (ASL_ERROR, ASL_MSG_INVALID_TYPE, ArgOp, AslGbl_MsgBuffer);
         }
     }
 }

@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -1819,6 +1819,19 @@ DtCompileIort (
         case ACPI_IORT_NODE_SMMU_V3:
 
             Status = DtCompileTable (PFieldList, AcpiDmTableInfoIort4,
+                &Subtable);
+            if (ACPI_FAILURE (Status))
+            {
+                return (Status);
+            }
+
+            DtInsertSubtable (ParentTable, Subtable);
+            NodeLength += Subtable->Length;
+            break;
+
+        case ACPI_IORT_NODE_PMCG:
+
+            Status = DtCompileTable (PFieldList, AcpiDmTableInfoIort5,
                 &Subtable);
             if (ACPI_FAILURE (Status))
             {

@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -197,7 +197,7 @@ RsSmallAddressCheck (
     ACPI_PARSE_OBJECT       *Op)
 {
 
-    if (Gbl_NoResourceChecking)
+    if (AslGbl_NoResourceChecking)
     {
         return;
     }
@@ -224,7 +224,7 @@ RsSmallAddressCheck (
         {
             /* No resource tag. Descriptor is fixed and is also illegal */
 
-            AslError (Gbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_NULL_DESCRIPTOR, Op, NULL);
+            AslError (AslGbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_NULL_DESCRIPTOR, Op, NULL);
         }
 
         return;
@@ -244,7 +244,7 @@ RsSmallAddressCheck (
         }
         else if (Length > (Maximum - Minimum + 1))
         {
-            AslError (Gbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_INVALID_LENGTH, LengthOp, NULL);
+            AslError (AslGbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_INVALID_LENGTH, LengthOp, NULL);
         }
 
         /* Special case for Memory24, min/max values are compressed */
@@ -329,7 +329,7 @@ RsLargeAddressCheck (
     ACPI_PARSE_OBJECT       *Op)
 {
 
-    if (Gbl_NoResourceChecking)
+    if (AslGbl_NoResourceChecking)
     {
         return;
     }
@@ -354,7 +354,7 @@ RsLargeAddressCheck (
         {
             /* No resource tag. Descriptor is fixed and is also illegal */
 
-            AslError (Gbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_NULL_DESCRIPTOR, Op, NULL);
+            AslError (AslGbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_NULL_DESCRIPTOR, Op, NULL);
         }
 
         return;
@@ -369,7 +369,7 @@ RsLargeAddressCheck (
     }
     else if (Length > (Maximum - Minimum + 1))
     {
-        AslError (Gbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_INVALID_LENGTH, LengthOp, NULL);
+        AslError (AslGbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_INVALID_LENGTH, LengthOp, NULL);
         return;
     }
 
@@ -418,7 +418,7 @@ RsLargeAddressCheck (
 
             if (Length != (Maximum - Minimum + 1))
             {
-                AslError (Gbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_INVALID_LENGTH_FIXED, LengthOp, NULL);
+                AslError (AslGbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_INVALID_LENGTH_FIXED, LengthOp, NULL);
             }
             break;
 
@@ -474,7 +474,7 @@ RsLargeAddressCheck (
         case (ACPI_RESOURCE_FLAG_MIF | ACPI_RESOURCE_FLAG_MAF):
         default:
 
-            AslError (Gbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_INVALID_ADDR_FLAGS, LengthOp, NULL);
+            AslError (AslGbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_INVALID_ADDR_FLAGS, LengthOp, NULL);
         }
     }
 }

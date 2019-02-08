@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -188,6 +188,7 @@ AeDoOptions (
 /* Globals */
 
 BOOLEAN                     AcpiGbl_UseLocalFaultHandler = TRUE;
+BOOLEAN                     AcpiGbl_VerboseHandlers = FALSE;
 UINT8                       AcpiGbl_RegionFillValue = 0;
 BOOLEAN                     AcpiGbl_IgnoreErrors = FALSE;
 BOOLEAN                     AcpiGbl_AbortLoopOnTimeout = FALSE;
@@ -198,6 +199,8 @@ BOOLEAN                     AcpiGbl_LoadTestTables = FALSE;
 BOOLEAN                     AcpiGbl_AeLoadOnly = FALSE;
 static UINT8                AcpiGbl_ExecutionMode = AE_MODE_COMMAND_LOOP;
 static char                 BatchBuffer[AE_BUFFER_SIZE];    /* Batch command buffer */
+INIT_FILE_ENTRY             *AcpiGbl_InitEntries = NULL;
+UINT32                      AcpiGbl_InitFileLineCount = 0;
 
 #define ACPIEXEC_NAME               "AML Execution/Debug Utility"
 #define AE_SUPPORTED_OPTIONS        "?b:d:e:f^ghlm^rt^v^:x:"
@@ -252,7 +255,6 @@ usage (
     ACPI_OPTION ("-df",                 "Disable Local fault handler");
     ACPI_OPTION ("-di",                 "Disable execution of STA/INI methods during init");
     ACPI_OPTION ("-do",                 "Disable Operation Region address simulation");
-    ACPI_OPTION ("-dp",                 "Disable TermList parsing for scope objects");
     ACPI_OPTION ("-dr",                 "Disable repair of method return values");
     ACPI_OPTION ("-ds",                 "Disable method auto-serialization");
     ACPI_OPTION ("-dt",                 "Disable allocation tracking (performance)");
@@ -262,7 +264,7 @@ usage (
     ACPI_OPTION ("-ef",                 "Enable display of final memory statistics");
     ACPI_OPTION ("-ei",                 "Enable additional tests for ACPICA interfaces");
     ACPI_OPTION ("-el",                 "Enable loading of additional test tables");
-    ACPI_OPTION ("-em",                 "Enable (legacy) grouping of module-level code");
+    ACPI_OPTION ("-eo",                 "Enable object evaluation log");
     ACPI_OPTION ("-es",                 "Enable Interpreter Slack Mode");
     ACPI_OPTION ("-et",                 "Enable debug semaphore timeout");
     printf ("\n");
@@ -278,7 +280,9 @@ usage (
     printf ("\n");
 
     ACPI_OPTION ("-v",                  "Display version information");
+    ACPI_OPTION ("-va",                 "Display verbose dump of any memory leaks");
     ACPI_OPTION ("-vd",                 "Display build date and time");
+    ACPI_OPTION ("-vh",                 "Verbose exception handler output");
     ACPI_OPTION ("-vi",                 "Verbose initialization output");
     ACPI_OPTION ("-vr",                 "Verbose region handler output");
     ACPI_OPTION ("-x <DebugLevel>",     "Debug output level");
@@ -315,7 +319,7 @@ AeDoOptions (
 
         if (strlen (AcpiGbl_Optarg) > (AE_BUFFER_SIZE -1))
         {
-            printf ("**** The length of command line (%u) exceeded maximum (%u)\n",
+            printf ("**** The length of command line (%u) exceeded maximum (%d)\n",
                 (UINT32) strlen (AcpiGbl_Optarg), (AE_BUFFER_SIZE -1));
             return (-1);
         }
@@ -345,11 +349,6 @@ AeDoOptions (
         case 'o':
 
             AcpiGbl_DbOpt_NoRegionSupport = TRUE;
-            break;
-
-        case 'p':
-
-            AcpiGbl_ExecuteTablesAsMethods = FALSE;
             break;
 
         case 'r':
@@ -402,9 +401,10 @@ AeDoOptions (
             AcpiGbl_LoadTestTables = TRUE;
             break;
 
-        case 'm':
+        case 'o':
 
-            AcpiGbl_GroupModuleLevelCode = TRUE;
+            AcpiDbgLevel |= ACPI_LV_EVALUATION;
+            AcpiGbl_DbConsoleDebugLevel |= ACPI_LV_EVALUATION;
             break;
 
         case 's':
@@ -542,10 +542,20 @@ AeDoOptions (
 
             return (1);
 
+        case 'a':
+
+            AcpiGbl_VerboseLeakDump = TRUE;
+            break;
+
         case 'd':
 
             printf (ACPI_COMMON_BUILD_TIME);
             return (1);
+
+        case 'h':
+
+            AcpiGbl_VerboseHandlers = TRUE;
+            break;
 
         case 'i':
 
@@ -566,7 +576,7 @@ AeDoOptions (
 
     case 'x':
 
-        AcpiDbgLevel = strtoul (AcpiGbl_Optarg, NULL, 0);
+        AcpiDbgLevel = strtoul (AcpiGbl_Optarg, NULL, 16);
         AcpiGbl_DbConsoleDebugLevel = AcpiDbgLevel;
         printf ("Debug Level: 0x%8.8X\n", AcpiDbgLevel);
         break;
@@ -607,20 +617,11 @@ main (
     ACPI_DEBUG_INITIALIZE (); /* For debug version only */
 
     signal (SIGINT, AeSignalHandler);
-    if (AcpiGbl_UseLocalFaultHandler)
-    {
-        signal (SIGSEGV, AeSignalHandler);
-    }
 
     /* Init debug globals */
 
     AcpiDbgLevel = ACPI_NORMAL_DEFAULT;
     AcpiDbgLayer = 0xFFFFFFFF;
-
-    /* Module-level code. Use new architecture */
-
-    AcpiGbl_ExecuteTablesAsMethods = TRUE;
-    AcpiGbl_GroupModuleLevelCode = FALSE;
 
     /*
      * Initialize ACPICA and start debugger thread.
@@ -668,6 +669,13 @@ main (
 
         goto ErrorExit;
     }
+
+    if (AcpiGbl_UseLocalFaultHandler)
+    {
+        signal (SIGSEGV, AeSignalHandler);
+    }
+
+    AeProcessInitFile();
 
     /* The remaining arguments are filenames for ACPI tables */
 
@@ -777,12 +785,6 @@ main (
      */
     AeInstallLateHandlers ();
 
-    /*
-     * This call implements the "initialization file" option for AcpiExec.
-     * This is the precise point that we want to perform the overrides.
-     */
-    AeDoObjectOverrides ();
-
     /* Finish the ACPICA initialization */
 
     Status = AcpiInitializeObjects (InitFlags);
@@ -840,5 +842,6 @@ NormalExit:
 ErrorExit:
     (void) AcpiTerminate ();
     AcDeleteTableList (ListHead);
+    AcpiOsFree (AcpiGbl_InitEntries);
     return (ExitCode);
 }

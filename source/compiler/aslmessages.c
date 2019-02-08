@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -285,7 +285,7 @@ const char                      *AslCompilerMsgs [] =
 /*    ASL_MSG_NON_ASCII */                  "Invalid characters found in file",
 /*    ASL_MSG_NON_ZERO */                   "Operand evaluates to zero",
 /*    ASL_MSG_NOT_EXIST */                  "Object does not exist",
-/*    ASL_MSG_NOT_FOUND */                  "Object not found or not accessible from scope",
+/*    ASL_MSG_NOT_FOUND */                  "Object not found or not accessible from current scope",
 /*    ASL_MSG_NOT_METHOD */                 "Not a control method, cannot invoke",
 /*    ASL_MSG_NOT_PARAMETER */              "Not a parameter, used as local only",
 /*    ASL_MSG_NOT_REACHABLE */              "Object is not accessible from this scope",
@@ -357,10 +357,15 @@ const char                      *AslCompilerMsgs [] =
 /*    ASL_MSG_EXTERN_COLLISION */           "A name cannot be defined and declared external in the same table",
 /*    ASL_MSG_FOUND_HERE_EXTERN */          "Remove one of the declarations indicated above or below:",
 /*    ASL_MSG_OEM_TABLE_ID */               "Invalid OEM Table ID",
-/*    ASL_MSG_OEM_ID */                     "Invalid OEM ID"
-
+/*    ASL_MSG_OEM_ID */                     "Invalid OEM ID",
     //REVIEW_REHABMAN: added
 /*    ASL_MSG_NAME_ALREADY_HAS_TYPE */      "Name already has different type in scope",
+/*    ASL_MSG_UNLOAD */                     "Unload is not supported by all operating systems",
+/*    ASL_MSG_OFFSET */                     "Unnecessary/redundant use of Offset operator",
+/*    ASL_MSG_PREFIX_NOT_EXIST */           "One or more prefix Scopes do not exist",
+/*    ASL_MSG_NAMEPATH_NOT_EXIST */         "One or more objects within the Pathname do not exist",
+/*    ASL_MSG_REGION_LENGTH */              "Operation Region declared with zero length",
+/*    ASL_MSG_TEMPORARY_OBJECT */           "Object is created temporarily in another method and cannot be accessed"
 };
 
 /* Table compiler */
@@ -498,7 +503,7 @@ AeDecodeExceptionLevel (
 
     /* Differentiate the string type to be used (IDE is all lower case) */
 
-    if (Gbl_VerboseErrors)
+    if (AslGbl_VerboseErrors)
     {
         return (AslErrorLevel[Level]);
     }

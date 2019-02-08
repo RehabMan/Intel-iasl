@@ -9,7 +9,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -566,7 +566,7 @@ NamePathTail                [.]{NameSeg}
 
     /* ExtendedAttribKeyword: Bus attributes, AccessAs operator (ACPI 5.0) */
 
-"AttribBytes"               { count (0); return (PARSEOP_ACCESSATTRIB_MULTIBYTE); }
+"AttribBytes"               { count (0); return (PARSEOP_ACCESSATTRIB_BYTES); }
 "AttribRawBytes"            { count (0); return (PARSEOP_ACCESSATTRIB_RAW_BYTES); }
 "AttribRawProcessBytes"     { count (0); return (PARSEOP_ACCESSATTRIB_RAW_PROCESS); }
 
@@ -816,6 +816,13 @@ NamePathTail                [.]{NameSeg}
                                 s=UtLocalCacheCalloc (ACPI_NAME_SIZE + 1);
                                 if (strcmp (AslCompilertext, "\\"))
                                 {
+                                    /*
+                                     * According to the ACPI specification,
+                                     * NameSegments must have length of 4. If
+                                     * the NameSegment has length less than 4,
+                                     * they are padded with underscores to meet
+                                     * the required length.
+                                     */
                                     strcpy (s, "____");
                                     AcpiUtStrupr (AslCompilertext);
                                 }
@@ -836,17 +843,17 @@ NamePathTail                [.]{NameSeg}
 .                           { count (1);
                                 if (isprint ((int) *AslCompilertext))
                                 {
-                                    sprintf (MsgBuffer,
+                                    sprintf (AslGbl_MsgBuffer,
                                         "Invalid character (%c), expecting ASL keyword or name",
                                         *AslCompilertext);
                                 }
                                 else
                                 {
-                                    sprintf (MsgBuffer,
+                                    sprintf (AslGbl_MsgBuffer,
                                         "Invalid character (0x%2.2X), expecting ASL keyword or name",
                                         *AslCompilertext);
                                 }
-                                AslCompilererror (MsgBuffer);}
+                                AslCompilererror (AslGbl_MsgBuffer);}
 
 <<EOF>>                     { if (AslPopInputFileStack ())
                                 {yyterminate();}
