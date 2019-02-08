@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -466,6 +466,10 @@ AcpiEvDefaultRegionSetup (
 ACPI_STATUS
 AcpiEvInitializeRegion (
     ACPI_OPERAND_OBJECT     *RegionObj);
+
+BOOLEAN
+AcpiEvIsPciRootBridge (
+    ACPI_NAMESPACE_NODE     *Node);
 
 
 /*

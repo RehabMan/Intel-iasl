@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -154,6 +154,7 @@
 #include "acparser.h"
 #include "amlcode.h"
 #include "acconvert.h"
+#include "acnamesp.h"
 
 #define _COMPONENT          ACPI_PARSER
         ACPI_MODULE_NAME    ("psobject")
@@ -727,6 +728,20 @@ AcpiPsCompleteOp (
         {
             if (*Op)
             {
+                /*
+                 * These Opcodes need to be removed from the namespace because they
+                 * get created even if these opcodes cannot be created due to
+                 * errors.
+                 */
+                if (((*Op)->Common.AmlOpcode == AML_REGION_OP) ||
+                    ((*Op)->Common.AmlOpcode == AML_DATA_REGION_OP))
+                {
+                    AcpiNsDeleteChildren ((*Op)->Common.Node);
+                    AcpiNsRemoveNode ((*Op)->Common.Node);
+                    (*Op)->Common.Node = NULL;
+                    AcpiPsDeleteParseTree (*Op);
+                }
+
                 Status2 = AcpiPsCompleteThisOp (WalkState, *Op);
                 if (ACPI_FAILURE (Status2))
                 {
@@ -752,6 +767,20 @@ AcpiPsCompleteOp (
 #endif
         WalkState->PrevOp = NULL;
         WalkState->PrevArgTypes = WalkState->ArgTypes;
+
+        if (WalkState->ParseFlags & ACPI_PARSE_MODULE_LEVEL)
+        {
+            /*
+             * There was something that went wrong while executing code at the
+             * module-level. We need to skip parsing whatever caused the
+             * error and keep going. One runtime error during the table load
+             * should not cause the entire table to not be loaded. This is
+             * because there could be correct AML beyond the parts that caused
+             * the runtime error.
+             */
+            ACPI_INFO (("Ignoring error and continuing table load"));
+            return_ACPI_STATUS (AE_OK);
+        }
         return_ACPI_STATUS (Status);
     }
 

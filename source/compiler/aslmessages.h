@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -359,6 +359,13 @@ typedef enum
     ASL_MSG_EXTERN_FOUND_HERE,
     ASL_MSG_OEM_TABLE_ID,
     ASL_MSG_OEM_ID,
+    ASL_MSG_UNLOAD,
+    ASL_MSG_OFFSET,
+    ASL_MSG_LONG_SLEEP,
+    ASL_MSG_PREFIX_NOT_EXIST,
+    ASL_MSG_NAMEPATH_NOT_EXIST,
+    ASL_MSG_REGION_LENGTH,
+    ASL_MSG_TEMPORARY_OBJECT,
 
 //REVIEW_REHABMAN: added
     ASL_MSG_NAME_ALREADY_HAS_TYPE,

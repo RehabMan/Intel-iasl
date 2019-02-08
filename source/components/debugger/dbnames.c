@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -522,6 +522,7 @@ AcpiDbWalkAndMatchName (
     }
     else
     {
+        Info.Count = 0;
         Info.OwnerId = ACPI_OWNER_ID_MAX;
         Info.DebugLevel = ACPI_UINT32_MAX;
         Info.DisplayType = ACPI_DISPLAY_SUMMARY | ACPI_DISPLAY_SHORT;

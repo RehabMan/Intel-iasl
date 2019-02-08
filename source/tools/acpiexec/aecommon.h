@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -189,10 +189,22 @@ typedef struct ae_debug_regions
 } AE_DEBUG_REGIONS;
 
 
+/*
+ * Init file entry
+ */
+typedef struct init_file_entry
+{
+    char                    *Name;
+    UINT64                  Value;
+} INIT_FILE_ENTRY;
+
 extern BOOLEAN              AcpiGbl_UseLocalFaultHandler;
+extern BOOLEAN              AcpiGbl_VerboseHandlers;
 extern BOOLEAN              AcpiGbl_IgnoreErrors;
 extern BOOLEAN              AcpiGbl_AbortLoopOnTimeout;
 extern UINT8                AcpiGbl_RegionFillValue;
+extern INIT_FILE_ENTRY      *AcpiGbl_InitEntries;
+extern UINT32               AcpiGbl_InitFileLineCount;
 extern UINT8                AcpiGbl_UseHwReducedFadt;
 extern BOOLEAN              AcpiGbl_DisplayRegionAccess;
 extern BOOLEAN              AcpiGbl_DoInterfaceTests;
@@ -330,12 +342,17 @@ AeOpenInitializationFile (
     char                    *Filename);
 
 void
-AeDoObjectOverrides (
+AeProcessInitFile (
     void);
 
 ACPI_STATUS
 AeSetupConfiguration (
     void                    *RegionAddr);
+
+ACPI_STATUS
+AeLookupInitFileEntry (
+    char                    *Pathname,
+    UINT64                  *Value);
 
 /* aeexec */
 

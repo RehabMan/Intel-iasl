@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -711,9 +711,9 @@ AcpiTbVerifyTempTable (
             {
                 if (Status != AE_CTRL_TERMINATE)
                 {
-                    ACPI_EXCEPTION ((AE_INFO, AE_NO_MEMORY,
+                    ACPI_EXCEPTION ((AE_INFO, Status,
                         "%4.4s 0x%8.8X%8.8X"
-                        " Table is duplicated",
+                        " Table is already loaded",
                         AcpiUtValidNameseg (TableDesc->Signature.Ascii) ?
                             TableDesc->Signature.Ascii : "????",
                         ACPI_FORMAT_UINT64 (TableDesc->Address)));

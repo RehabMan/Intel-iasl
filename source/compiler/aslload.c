@@ -8,7 +8,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -233,7 +233,11 @@ LdLoadNamespace (
 
     /* Dump the namespace if debug is enabled */
 
-    AcpiNsDumpTables (ACPI_NS_ALL, ACPI_UINT32_MAX);
+    if (AcpiDbgLevel & ACPI_LV_TABLES)
+    {
+        AcpiNsDumpTables (ACPI_NS_ALL, ACPI_UINT32_MAX);
+    }
+
     ACPI_FREE (WalkState);
     return (AE_OK);
 }
@@ -318,7 +322,7 @@ LdLoadFieldElements (
                 }
                 else if (Status == AE_ALREADY_EXISTS &&
                     (Node->Flags & ANOBJ_IS_EXTERNAL) &&
-                    (Node->OwnerId != WalkState->OwnerId || Gbl_RehabManHacks))
+                    (Node->OwnerId != WalkState->OwnerId || AslGbl_RehabManHacks))
                 {
                     Node->Type = (UINT8) ACPI_TYPE_LOCAL_REGION_FIELD;
                 }
@@ -414,10 +418,8 @@ LdLoadResourceElements (
         {
             Status = AcpiNsLookup (WalkState->ScopeInfo,
                 InitializerOp->Asl.ExternalName,
-                ACPI_TYPE_LOCAL_RESOURCE_FIELD,
-                ACPI_IMODE_LOAD_PASS1,
-                ACPI_NS_NO_UPSEARCH | ACPI_NS_DONT_OPEN_SCOPE,
-                NULL, &Node);
+                ACPI_TYPE_LOCAL_RESOURCE_FIELD, ACPI_IMODE_LOAD_PASS1,
+                ACPI_NS_NO_UPSEARCH | ACPI_NS_DONT_OPEN_SCOPE, NULL, &Node);
             if (ACPI_FAILURE (Status))
             {
                 return (Status);
@@ -470,7 +472,6 @@ LdNamespace1Begin (
     ACPI_PARSE_OBJECT       *Arg;
     UINT32                  i;
     BOOLEAN                 ForceNewScope = FALSE;
-    ACPI_OWNER_ID           OwnerId = 0;
     const ACPI_OPCODE_INFO  *OpInfo;
     ACPI_PARSE_OBJECT       *ParentOp;
 
@@ -480,23 +481,6 @@ LdNamespace1Begin (
 
     ACPI_DEBUG_PRINT ((ACPI_DB_DISPATCH, "Op %p [%s]\n",
         Op, Op->Asl.ParseOpName));
-
-    if (Op->Asl.ParseOpcode == PARSEOP_DEFINITION_BLOCK)
-    {
-        /*
-         * Allocate an OwnerId for this block. This helps identify the owners
-         * of each namespace node. This is used in determining whether if
-         * certain external declarations cause redefinition errors.
-         */
-        Status = AcpiUtAllocateOwnerId (&OwnerId);
-        WalkState->OwnerId = OwnerId;
-        if (ACPI_FAILURE (Status))
-        {
-            AslCoreSubsystemError (Op, Status,
-                "Failure to allocate owner ID to this definition block.", FALSE);
-            return_ACPI_STATUS (Status);
-        }
-    }
 
     /*
      * We are only interested in opcodes that have an associated name
@@ -702,8 +686,7 @@ LdNamespace1Begin (
          * handle this case. Perhaps someday this case can go away.
          */
         Status = AcpiNsLookup (WalkState->ScopeInfo, Path, ACPI_TYPE_ANY,
-            ACPI_IMODE_EXECUTE, ACPI_NS_SEARCH_PARENT,
-            WalkState, &(Node));
+            ACPI_IMODE_EXECUTE, ACPI_NS_SEARCH_PARENT, WalkState, &Node);
         if (ACPI_FAILURE (Status))
         {
             if (Status == AE_NOT_FOUND)
@@ -711,23 +694,26 @@ LdNamespace1Begin (
                 /* The name was not found, go ahead and create it */
 
                 Status = AcpiNsLookup (WalkState->ScopeInfo, Path,
-                    ACPI_TYPE_LOCAL_SCOPE,
-                    ACPI_IMODE_LOAD_PASS1, Flags,
-                    WalkState, &(Node));
+                    ACPI_TYPE_LOCAL_SCOPE, ACPI_IMODE_LOAD_PASS1,
+                    Flags, WalkState, &Node);
                 if (ACPI_FAILURE (Status))
                 {
                     return_ACPI_STATUS (Status);
                 }
 
-                /*
-                 * However, this is an error -- primarily because the MS
-                 * interpreter can't handle a forward reference from the
-                 * Scope() operator.
-                 */
-                AslError (ASL_ERROR, ASL_MSG_NOT_FOUND, Op,
-                    Op->Asl.ExternalName);
-                AslError (ASL_ERROR, ASL_MSG_SCOPE_FWD_REF, Op,
-                    Op->Asl.ExternalName);
+                /* However, this is an error -- operand to Scope must exist */
+
+                if (strlen (Op->Asl.ExternalName) == ACPI_NAME_SIZE)
+                {
+                    AslError (ASL_ERROR, ASL_MSG_NOT_FOUND, Op,
+                        Op->Asl.ExternalName);
+                }
+                else
+                {
+                    AslError (ASL_ERROR, ASL_MSG_NAMEPATH_NOT_EXIST, Op,
+                        Op->Asl.ExternalName);
+                }
+
                 goto FinishNode;
             }
 
@@ -746,7 +732,7 @@ LdNamespace1Begin (
              * 10/2015.
              */
             if ((Node->Flags & ANOBJ_IS_EXTERNAL) &&
-                (ACPI_COMPARE_NAME (Gbl_TableSignature, "DSDT")))
+                (ACPI_COMPARE_NAME (AslGbl_TableSignature, "DSDT")))
             {
                 /* However, allowed if the reference is within a method */
 
@@ -761,7 +747,7 @@ LdNamespace1Begin (
                 {
                     /* Not in a control method, error */
 
-                    AslError (Gbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_CROSS_TABLE_SCOPE, Op, NULL);
+                    AslError (AslGbl_RehabManHacks ? ASL_WARNING : ASL_ERROR, ASL_MSG_CROSS_TABLE_SCOPE, Op, NULL);
                 }
             }
         }
@@ -792,9 +778,9 @@ LdNamespace1Begin (
              * Which is used to workaround the fact that the MS interpreter
              * does not allow Scope() forward references.
              */
-            sprintf (MsgBuffer, "%s [%s], changing type to [Scope]",
+            sprintf (AslGbl_MsgBuffer, "%s [%s], changing type to [Scope]",
                 Op->Asl.ExternalName, AcpiUtGetTypeName (Node->Type));
-            AslError (ASL_REMARK, ASL_MSG_SCOPE_TYPE, Op, MsgBuffer);
+            AslError (ASL_REMARK, ASL_MSG_SCOPE_TYPE, Op, AslGbl_MsgBuffer);
 
             /* Switch the type to scope, open the new scope */
 
@@ -811,9 +797,9 @@ LdNamespace1Begin (
 
             /* All other types are an error */
 
-            sprintf (MsgBuffer, "%s [%s]", Op->Asl.ExternalName,
+            sprintf (AslGbl_MsgBuffer, "%s [%s]", Op->Asl.ExternalName,
                 AcpiUtGetTypeName (Node->Type));
-            AslError (ASL_ERROR, ASL_MSG_SCOPE_TYPE, Op, MsgBuffer);
+            AslError (ASL_ERROR, ASL_MSG_SCOPE_TYPE, Op, AslGbl_MsgBuffer);
 
             /*
              * However, switch the type to be an actual scope so
@@ -839,13 +825,24 @@ LdNamespace1Begin (
         break;
     }
 
-
     ACPI_DEBUG_PRINT ((ACPI_DB_DISPATCH, "Loading name: %s, (%s)\n",
         Op->Asl.ExternalName, AcpiUtGetTypeName (ObjectType)));
 
     /* The name must not already exist */
 
     Flags |= ACPI_NS_ERROR_IF_FOUND;
+
+    /*
+     * For opcodes that enter new names into the namespace,
+     * all prefix NameSegs must exist.
+     */
+    WalkState->OpInfo = AcpiPsGetOpcodeInfo (Op->Asl.AmlOpcode);
+    if (((WalkState->OpInfo->Flags & AML_NAMED) ||
+        (WalkState->OpInfo->Flags & AML_CREATE)) &&
+        (Op->Asl.AmlOpcode != AML_EXTERNAL_OP))
+    {
+        Flags |= ACPI_NS_PREFIX_MUST_EXIST;
+    }
 
     /*
      * Enter the named type into the internal namespace. We enter the name
@@ -871,21 +868,19 @@ LdNamespace1Begin (
             else if ((Node->Flags & ANOBJ_IS_EXTERNAL) &&
                      (Op->Asl.ParseOpcode != PARSEOP_EXTERNAL))
             {
-                if (Gbl_RehabManHacks && Node->Type != ACPI_TYPE_ANY && Node->Type != ObjectType
+                if (AslGbl_RehabManHacks && Node->Type != ACPI_TYPE_ANY && Node->Type != ObjectType
                     // this exception for External(CPU0, DeviceObj), followed by Processor(CPU0,...)
                     && !(ObjectType == ACPI_TYPE_PROCESSOR && Node->Type == ACPI_TYPE_DEVICE)
                     && !(ObjectType == ACPI_TYPE_THERMAL && Node->Type == ACPI_TYPE_DEVICE))
                 {
-                    sprintf (MsgBuffer, "%s [%s]", Op->Asl.ExternalName, AcpiUtGetTypeName (Node->Type));
-                    AslError (ASL_ERROR, ASL_MSG_NAME_ALREADY_HAS_TYPE, Op, MsgBuffer);
+                    sprintf (AslGbl_MsgBuffer, "%s [%s]", Op->Asl.ExternalName, AcpiUtGetTypeName (Node->Type));
+                    AslError (ASL_ERROR, ASL_MSG_NAME_ALREADY_HAS_TYPE, Op, AslGbl_MsgBuffer);
                     //REVIEW_REHABMAN: we can't just ignore it here, as there is no good way to avoid opening the scope...
                     //return_ACPI_STATUS (AE_OK);
                 }
                 /*
                  * Allow one create on an object or segment that was
-                 * previously declared External only if WalkState->OwnerId and
-                 * Node->OwnerId are different (meaning that the current WalkState
-                 * and the Node are in different tables).
+                 * previously declared External
                  */
                 Node->Flags &= ~ANOBJ_IS_EXTERNAL;
                 Node->Type = (UINT8) ObjectType;
@@ -903,17 +898,12 @@ LdNamespace1Begin (
 
                 Status = AE_OK;
 
-                if (!Gbl_RehabManHacks &&
-                    Node->OwnerId == WalkState->OwnerId &&
-                    !(Node->Flags & IMPLICIT_EXTERNAL))
+                if (!AslGbl_RehabManHacks &&
+                    Node->OwnerId == WalkState->OwnerId)
                 {
                     AslDualParseOpError (ASL_WARNING, ASL_MSG_EXTERN_COLLISION, Op,
                         Op->Asl.ExternalName, ASL_MSG_EXTERN_FOUND_HERE, Node->Op,
                         Node->Op->Asl.ExternalName);
-                }
-                if (Node->Flags & IMPLICIT_EXTERNAL)
-                {
-                    Node->Flags &= ~IMPLICIT_EXTERNAL;
                 }
             }
             else if (!(Node->Flags & ANOBJ_IS_EXTERNAL) &&
@@ -922,23 +912,21 @@ LdNamespace1Begin (
                 /*
                  * Allow externals in same scope as the definition of the
                  * actual object. Similar to C. Allows multiple definition
-                 * blocks that refer to each other in the same file. However,
-                 * do not allow name declaration and an external declaration
-                 * within the same table. This is considered a re-declaration.
+                 * blocks that refer to each other in the same file.
                  */
                 Status = AE_OK;
 
-                if (Gbl_RehabManHacks && Node->Type != ActualObjectType)
+                if (AslGbl_RehabManHacks && Node->Type != ActualObjectType)
                 {
                     if (ActualObjectType != ACPI_TYPE_ANY)
                     {
-                        sprintf (MsgBuffer, "%s [%s]", Op->Asl.ExternalName, AcpiUtGetTypeName (Node->Type));
-                        AslError (ASL_ERROR, ASL_MSG_NAME_ALREADY_HAS_TYPE, Op, MsgBuffer);
+                        sprintf (AslGbl_MsgBuffer, "%s [%s]", Op->Asl.ExternalName, AcpiUtGetTypeName (Node->Type));
+                        AslError (ASL_ERROR, ASL_MSG_NAME_ALREADY_HAS_TYPE, Op, AslGbl_MsgBuffer);
                     }
                     return_ACPI_STATUS (Status);
                 }
 
-                if (!Gbl_RehabManHacks && Node->OwnerId == WalkState->OwnerId)
+                if (!AslGbl_RehabManHacks && Node->OwnerId == WalkState->OwnerId)
                 {
                     AslDualParseOpError (ASL_WARNING, ASL_MSG_EXTERN_COLLISION, Op,
                         Op->Asl.ExternalName, ASL_MSG_EXTERN_FOUND_HERE, Node->Op,
@@ -980,26 +968,26 @@ LdNamespace1Begin (
                  */
                 Node->OwnerId = WalkState->OwnerId;
 
-                if (Gbl_RehabManHacks && Node->Type != ACPI_TYPE_ANY && Node->Type != ActualObjectType)
+                if (AslGbl_RehabManHacks && Node->Type != ACPI_TYPE_ANY && Node->Type != ActualObjectType)
                 {
                     if (ActualObjectType != ACPI_TYPE_ANY)
                     {
-                        sprintf (MsgBuffer, "%s [%s]", Op->Asl.ExternalName, AcpiUtGetTypeName (Node->Type));
-                        AslError (ASL_ERROR, ASL_MSG_NAME_ALREADY_HAS_TYPE, Op, MsgBuffer);
+                        sprintf (AslGbl_MsgBuffer, "%s [%s]", Op->Asl.ExternalName, AcpiUtGetTypeName (Node->Type));
+                        AslError (ASL_ERROR, ASL_MSG_NAME_ALREADY_HAS_TYPE, Op, AslGbl_MsgBuffer);
                     }
                     return_ACPI_STATUS (AE_OK);
                 }
                 else if (AcpiNsOpensScope (ActualObjectType) ||
-                         (Gbl_RehabManHacks && Node->Type == ACPI_TYPE_ANY) || Node->Type == ActualObjectType)
+                         (AslGbl_RehabManHacks && Node->Type == ACPI_TYPE_ANY) || Node->Type == ActualObjectType)
                 {
                     Node->Type = (UINT8) ActualObjectType;
                     Status = AE_OK;
                 }
                 else
                 {
-                    sprintf (MsgBuffer, "%s [%s]", Op->Asl.ExternalName,
+                    sprintf (AslGbl_MsgBuffer, "%s [%s]", Op->Asl.ExternalName,
                         AcpiUtGetTypeName (Node->Type));
-                    AslError (ASL_ERROR, ASL_MSG_SCOPE_TYPE, Op, MsgBuffer);
+                    AslError (ASL_ERROR, ASL_MSG_SCOPE_TYPE, Op, AslGbl_MsgBuffer);
                     return_ACPI_STATUS (AE_OK);
                 }
             }
@@ -1013,8 +1001,20 @@ LdNamespace1Begin (
                 return_ACPI_STATUS (AE_OK);
             }
         }
+        else if (AE_NOT_FOUND)
+        {
+            /*
+             * One or more prefix NameSegs of the NamePath do not exist
+             * (all of them must exist). Attempt to continue compilation
+             * by setting the current scope to the root.
+             */
+            Node = AcpiGbl_RootNode;
+            Status = AE_OK;
+        }
         else
         {
+            /* Flag all other errors as coming from the ACPICA core */
+
             AslCoreSubsystemError (Op, Status,
                 "Failure from namespace lookup", FALSE);
             return_ACPI_STATUS (Status);
@@ -1141,10 +1141,10 @@ LdNamespace2Begin (
 
     if (Op->Asl.ParseOpcode == PARSEOP_ALIAS)
     {
-        /* Complete the alias node by getting and saving the target node */
-
-        /* First child is the alias target */
-
+        /*
+         * Complete the alias node by getting and saving the target node.
+         * First child is the alias target
+         */
         Arg = Op->Asl.Child;
 
         /* Get the target pathname */
@@ -1168,18 +1168,34 @@ LdNamespace2Begin (
         {
             if (Status == AE_NOT_FOUND)
             {
-                AslError (ASL_ERROR, ASL_MSG_NOT_FOUND, Op,
-                    Op->Asl.ExternalName);
+                /* Standalone NameSeg vs. NamePath */
 
+                if (strlen (Arg->Asl.ExternalName) == ACPI_NAME_SIZE)
+                {
+                    AslError (ASL_ERROR, ASL_MSG_NOT_FOUND, Op,
+                        Arg->Asl.ExternalName);
+                }
+                else
+                {
+                    AslError (ASL_ERROR, ASL_MSG_NAMEPATH_NOT_EXIST, Op,
+                        Arg->Asl.ExternalName);
+                }
+
+#if 0
+/*
+ * NOTE: Removed 10/2018 to enhance compiler error reporting. No
+ * regressions seen.
+ */
                 /*
                  * The name was not found, go ahead and create it.
                  * This prevents more errors later.
                  */
                 Status = AcpiNsLookup (WalkState->ScopeInfo, Path,
-                    ACPI_TYPE_ANY,
-                    ACPI_IMODE_LOAD_PASS1, ACPI_NS_NO_UPSEARCH,
-                    WalkState, &(Node));
-                return (AE_OK);
+                    ACPI_TYPE_ANY, ACPI_IMODE_LOAD_PASS1,
+                    ACPI_NS_NO_UPSEARCH, WalkState, &Node);
+#endif
+                return (Status);
+/* Removed: return (AE_OK)*/
             }
 
             AslCoreSubsystemError (Op, Status,

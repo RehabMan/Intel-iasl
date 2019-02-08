@@ -9,7 +9,7 @@
  *
  * 1. Copyright Notice
  *
- * Some or all of this work - Copyright (c) 1999 - 2018, Intel Corp.
+ * Some or all of this work - Copyright (c) 1999 - 2019, Intel Corp.
  * All rights reserved.
  *
  * 2. License
@@ -198,16 +198,21 @@ AcpiHwLegacySleep (
         return_ACPI_STATUS (Status);
     }
 
-    /*
-     * 1) Disable all GPEs
-     * 2) Enable all wakeup GPEs
-     */
+    /* Disable all GPEs */
+
     Status = AcpiHwDisableAllGpes ();
     if (ACPI_FAILURE (Status))
     {
         return_ACPI_STATUS (Status);
     }
+    Status = AcpiHwClearAcpiStatus();
+    if (ACPI_FAILURE(Status))
+    {
+        return_ACPI_STATUS(Status);
+    }
     AcpiGbl_SystemAwakeAndRunning = FALSE;
+
+    /* Enable all wakeup GPEs */
 
     Status = AcpiHwEnableAllWakeupGpes ();
     if (ACPI_FAILURE (Status))
